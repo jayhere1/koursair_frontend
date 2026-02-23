@@ -270,10 +270,12 @@ if (!isAuthenticated) {
                             {!["CANCELLED", "COMPLETED"].includes(booking.trip_status?.label) && (
                               <button
                                 onClick={() => {
-                                  setSelectedBookingId(booking.id);
-                                  setShowCancelModal(true);
+                                  if (window.confirm('Are you sure you want to cancel this booking?')) {
+                                    setSelectedBookingId(booking.id);
+                                    setShowCancelModal(true);
+                                  }
                                 }}
-                                className="mt-6 bg-primary text-white px-4 py-2  rounded-xl disabled:bg-gray-300 cursor-pointer"
+                                className="mt-6 bg-primary text-white px-4 py-2 rounded-xl disabled:bg-gray-300 cursor-pointer"
                               >
                                 Cancel Booking
                               </button>
@@ -331,19 +333,19 @@ if (!isAuthenticated) {
                             </p>
                             <div className="flex flex-wrap space-x-4 space-y-2 mt-2">
                               <p className=" text-[#4A5565] text-base">
-                                <b >Total Amount:</b>  <span className="text-base font-medium text-black"> ${booking?.total_amount}</span>
+                                <b >Total Amount:</b>  <span className="text-base font-medium text-black"> ${Number(booking?.total_amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                               </p>
                               <p className=" text-[#4A5565] text-base">
-                                <b>Discount Amount:</b>  <span className="text-base font-medium text-gray-700 ">  ${booking?.discount_applied}</span>
+                                <b>Discount Amount:</b>  <span className="text-base font-medium text-gray-700 ">  ${Number(booking?.discount_applied).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                               </p>
                               <p className=" text-[#4A5565] text-base">
-                                <b>Paid Amount:</b>  <span className="text-base font-medium text-green-600 ">  ${booking?.paid_amount}</span>
+                                <b>Paid Amount:</b>  <span className="text-base font-medium text-green-600 ">  ${Number(booking?.paid_amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                               </p>
 
                               
                                 {Number(booking?.remaining_amount) > 0 && (
                                   <p className=" text-[#4A5565] text-base">
-                                    <b>Pending Amount:</b>  <span className="text-base font-medium text-red-600"> ${booking?.remaining_amount}</span>
+                                    <b>Pending Amount:</b>  <span className="text-base font-medium text-red-600"> ${Number(booking?.remaining_amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                                   </p>
                                 )}
                             </div>
@@ -385,8 +387,20 @@ if (!isAuthenticated) {
         </div>
       </div>
       {showCancelModal && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-[#F3F3F3] rounded-xl  w-full max-w-md shadow-xl relative">
+        <div
+          className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
+          onClick={() => {
+            setShowCancelModal(false);
+            setCancelReason("");
+            setCancelRemarks("");
+          }}
+        >
+          <div
+            className="bg-[#F3F3F3] rounded-xl  w-full max-w-md shadow-xl relative"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
+          >
 
             <button
               onClick={() => {
@@ -395,6 +409,7 @@ if (!isAuthenticated) {
                 setCancelRemarks("");
               }}
               className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              aria-label="Close cancel modal"
             >
               ✕
             </button>

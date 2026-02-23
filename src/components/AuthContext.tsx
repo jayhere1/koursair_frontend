@@ -112,9 +112,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
 
   useEffect(() => {
-    supabase.auth.getSession()
-  }, [])
-  useEffect(() => {
     const savedToken = localStorage.getItem("token");
     const savedUser = localStorage.getItem("user");
 
@@ -155,14 +152,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       }
     };
 
-    if (isAuthenticated) {
-      setDetectedPhoneCode(null);
-      setIsPhoneCodeLoading(false);
-    } else {
-      setIsPhoneCodeLoading(true);
-      fetchCode();
-    }
-  }, [isAuthenticated]);
+    fetchCode();
+  }, []);
 
 
 
@@ -245,11 +236,14 @@ const handleSessionExpired = useCallback(() => {
     }
     if (!isExpired) return;
 
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setToken(null);
     setUser(null);
     closeModals();
     if (onProtectedPage) {
-      setSessionExpiredOpen(true);}
+      setSessionExpiredOpen(true);
+    }
 
 }, [
     sessionExpiredOpen, showSignupModal, showLoginModal, showOTPEmailModal, showForgotPasswordModal, 
@@ -289,12 +283,15 @@ const handleSessionExpired = useCallback(() => {
   }, [authInitialized, token, handleSessionExpired]);
 
 
-  const handleAuthSuccess = async (token: string) => {
+  const handleAuthSuccess = async (token: string, refreshToken?: string) => {
     if (!token) {
       throw new Error("No token provided to handleAuthSuccess");
     }
 
     localStorage.setItem('token', token);
+    if (refreshToken) {
+      localStorage.setItem('refreshToken', refreshToken);
+    }
     setToken(token);
 
     try {
@@ -343,9 +340,8 @@ const handleSessionExpired = useCallback(() => {
       if (!response.ok) {
         throw new Error(data.message || 'Login failed');
       }
+      await handleAuthSuccess(data.token, data.refreshToken);
       closeModals();
-      await handleAuthSuccess(data.token);
-
 
       toast.success('Login successful!');
     } catch (error) {
@@ -400,12 +396,9 @@ const handleSessionExpired = useCallback(() => {
       }
 
       await handleAuthSuccess(data.token);
-
       closeModals();
-      // --- POPUP REPLACEMENT ---
+
       toast.success('Login successful with OTP! Welcome back.');
-      // -------------------------
-      window.location.reload();
     } catch (error) {
       //console.error('OTP Login error:', error);
       const errorMessage = error instanceof Error ? error.message : 'OTP login failed. Please try again.';
@@ -437,12 +430,9 @@ const handleSessionExpired = useCallback(() => {
       }
 
       await handleAuthSuccess(data.token);
-
       closeModals();
-      // --- POPUP REPLACEMENT ---
+
       toast.success('Account created successfully! Welcome to Koursair.');
-      // -------------------------
-      window.location.reload();
     } catch (error) {
       //console.error('Signup error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Signup failed. Please try again.';
@@ -537,7 +527,7 @@ const handleSessionExpired = useCallback(() => {
       }
 
       const session = data.session;
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/social-login`, {
+      const response = await fetch('/api/auth/social-login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -567,6 +557,7 @@ const handleSessionExpired = useCallback(() => {
 
   const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('refreshToken');
     localStorage.removeItem('user');
 
     setUser(null);

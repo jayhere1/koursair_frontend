@@ -4,6 +4,14 @@ import DestinationPage from "@/components/destination/individual_destination";
 import FooterSection from "@/components/landing/Footer";
 import Navbar from "@/components/Navbar";
 import { DESTINATION_DATA } from "@/constants/destination";
+import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tour Destination | Koursair",
+  description:
+    "Explore tours and travel experiences in this destination with Koursair. Discover trips, activities, and local highlights.",
+};
 
 // Function to fetch the trip data (simulated with local object)
 const getTripData = (country: string): typeof DESTINATION_DATA[keyof typeof DESTINATION_DATA] | undefined => {
@@ -35,9 +43,12 @@ const TripDestinationPage = async ({
               New Adventures<br /> Coming Soon...
             </h1>
             <p className="text-xl text-gray-200 ">
-              We’re crafting breathtaking experiences and exclusive journeys.
+              We&apos;re crafting breathtaking experiences and exclusive journeys.
               Stay tuned — your next destination awaits.
             </p>
+            <Link href="/destinations" className="inline-block mt-6 px-8 py-3 bg-white text-black font-bold rounded-xl hover:bg-gray-100 transition">
+              Back to Destinations
+            </Link>
           </div>
         </div>
         <FooterSection />

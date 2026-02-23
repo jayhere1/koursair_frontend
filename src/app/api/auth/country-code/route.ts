@@ -18,14 +18,15 @@ export async function GET() {
     });
 
     if (!apiResponse.ok) {
-      //console.error(`External API failed: ${apiResponse.status}`);
+      console.error(`External API failed: ${apiResponse.status}`);
       throw new Error('External API failed');
     }
     
     const data = await apiResponse.json();
     return NextResponse.json(data);
 
-  } catch {
+  } catch (error) {
+    console.error('Country code API route error:', (error instanceof Error ? error.message : String(error)));
     // On error, return default country code with status 200 (not 500)
     return NextResponse.json({ country_code: 'IN', calling_code: '+91' }, { status: 200 });
   }

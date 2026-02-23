@@ -47,7 +47,8 @@ export async function POST(request: NextRequest) {
       // },
     });
 
-  } catch  { // FIX: Use unknown instead of any
+  } catch (error) {
+    console.error('OTP Login API route error:', (error instanceof Error ? error.message : String(error)));
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }

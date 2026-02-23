@@ -1,19 +1,8 @@
 "use client";
 import React from 'react';
-import { CreditCard, Lock } from 'lucide-react';
-
-interface CardDetails {
-  nameOnCard: string;
-  cardNumber: string;
-  expiryDate: string;
-  cvv: string;
-}
+import { Lock } from 'lucide-react';
 
 interface Props {
-  paymentMethod: 'card' | 'paypal' | 'stripe';
-  setPaymentMethod: (method: 'card' | 'paypal' | 'stripe') => void;
-  cardDetails: CardDetails;
-  setCardDetails: (details: CardDetails) => void;
   paypalEmail: string;
   setPaypalEmail: (email: string) => void;
   onBack: () => void;
@@ -21,10 +10,6 @@ interface Props {
 }
 
 const StepPayment: React.FC<Props> = ({
-  paymentMethod,
-  setPaymentMethod,
-  cardDetails,
-  setCardDetails,
   paypalEmail,
   setPaypalEmail,
   onBack,
@@ -33,111 +18,21 @@ const StepPayment: React.FC<Props> = ({
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
       <div className="flex items-center gap-3 mb-6">
-        <CreditCard className="w-8 h-8 text-black" />
+        <Lock className="w-8 h-8 text-black" />
         <h2 className="text-3xl font-bold text-gray-800">Payment Method</h2>
       </div>
 
-      {/* Payment Method Selection */}
       <div className="space-y-4">
-        {/* Debit/Credit Card */}
-        <div className="border-2 rounded-xl overflow-hidden">
-          <div
-            onClick={() => setPaymentMethod('card')}
-            className={`p-4 cursor-pointer transition-all ${
-              paymentMethod === 'card' ? 'border-black bg-[#F4EFE7]' : 'bg-white'
-            }`}>
-            <div className="flex items-center gap-3">
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                paymentMethod === 'card' ? 'border-black' : 'border-gray-300'
-              }`}>
-                {paymentMethod === 'card' && <div className="w-3 h-3 bg-black rounded-full" />}
-              </div>
-              <CreditCard className="w-6 h-6" />
-              <span className="font-semibold text-lg">Debit/Credit Card</span>
-            </div>
-          </div>
-
-          {/* Card Form - Show when selected */}
-          {paymentMethod === 'card' && (
-            <div className="p-6 bg-gray-50 border-t-2 space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Name on Card*</label>
-                <input
-                  type="text"
-                  placeholder="John Doe"
-                  value={cardDetails.nameOnCard}
-                  onChange={(e) => setCardDetails({...cardDetails, nameOnCard: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Card Number*</label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="1234 5678 9012 3456"
-                    value={cardDetails.cardNumber}
-                    onChange={(e) => setCardDetails({...cardDetails, cardNumber: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-                  />
-                  <Lock className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Expiration Date*</label>
-                  <input
-                    type="text"
-                    placeholder="MM/YY"
-                    value={cardDetails.expiryDate}
-                    onChange={(e) => setCardDetails({...cardDetails, expiryDate: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">CVV*</label>
-                  <input
-                    type="text"
-                    placeholder="123"
-                    value={cardDetails.cvv}
-                    onChange={(e) => setCardDetails({...cardDetails, cvv: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-                  />
-                </div>
-              </div>
-
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <p className="text-sm text-blue-700">
-                  <Lock className="w-4 h-4 inline mr-1" />
-                  Your payment information is encrypted and secure. We comply with PSD2 regulations.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-
         {/* PayPal */}
-        <div className="border-2 rounded-xl overflow-hidden">
-          <div
-            onClick={() => setPaymentMethod('paypal')}
-            className={`p-4 cursor-pointer transition-all ${
-              paymentMethod === 'paypal' ? 'border-black bg-[#F4EFE7]' : 'bg-white'
-            }`}>
+        <div className="border-2 border-black rounded-xl overflow-hidden bg-[#F4EFE7]">
+          <div className="p-4">
             <div className="flex items-center gap-3">
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                paymentMethod === 'paypal' ? 'border-black' : 'border-gray-300'
-              }`}>
-                {paymentMethod === 'paypal' && <div className="w-3 h-3 bg-black rounded-full" />}
-              </div>
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                 width="124px" height="30px" viewBox="0 0 124 33" enableBackground="new 0 0 124 33">
                 <path fill="#253B80" d="M46.211,6.749h-6.839c-0.468,0-0.866,0.34-0.939,0.802l-2.766,17.537c-0.055,0.346,0.213,0.658,0.564,0.658
                   h3.265c0.468,0,0.866-0.34,0.939-0.803l0.746-4.73c0.072-0.463,0.471-0.803,0.938-0.803h2.165c4.505,0,7.105-2.18,7.784-6.5
                   c0.306-1.89,0.013-3.375-0.872-4.415C50.224,7.353,48.5,6.749,46.211,6.749z M47,13.154c-0.374,2.454-2.249,2.454-4.062,2.454
-                  h-1.032l0.724-4.583c0.043-0.277,0.283-0.481,0.563-0.481h0.473c1.235,0,2.4,0,3.002,0.704C47.027,11.668,47.137,12.292,47,13.154z"
-                />
+                  h-1.032l0.724-4.583c0.043-0.277,0.283-0.481,0.563-0.481h0.473c1.235,0,2.4,0,3.002,0.704C47.027,11.668,47.137,12.292,47,13.154z"/>
                 <path fill="#253B80" d="M66.654,13.075h-3.275c-0.279,0-0.52,0.204-0.563,0.481l-0.145,0.916l-0.229-0.332
                   c-0.709-1.029-2.29-1.373-3.868-1.373c-3.619,0-6.71,2.741-7.312,6.586c-0.313,1.918,0.132,3.752,1.22,5.031
                   c0.998,1.176,2.426,1.666,4.125,1.666c2.916,0,4.533-1.875,4.533-1.875l-0.146,0.91c-0.055,0.348,0.213,0.66,0.562,0.66h2.95
@@ -146,8 +41,7 @@ const StepPayment: React.FC<Props> = ({
                   c0.295-1.855,1.805-3.152,3.67-3.152c0.93,0,1.686,0.309,2.184,0.892C62.034,17.721,62.232,18.543,62.089,19.449z"/>
                 <path fill="#253B80" d="M84.096,13.075h-3.291c-0.314,0-0.609,0.156-0.787,0.417l-4.539,6.686l-1.924-6.425
                   c-0.121-0.402-0.492-0.678-0.912-0.678h-3.234c-0.393,0-0.666,0.384-0.541,0.754l3.625,10.638l-3.408,4.811
-                  c-0.268,0.379,0.002,0.9,0.465,0.9h3.287c0.312,0,0.604-0.152,0.781-0.408L84.564,13.97C84.826,13.592,84.557,13.075,84.096,13.075z"
-                />
+                  c-0.268,0.379,0.002,0.9,0.465,0.9h3.287c0.312,0,0.604-0.152,0.781-0.408L84.564,13.97C84.826,13.592,84.557,13.075,84.096,13.075z"/>
                 <path fill="#179BD7" d="M94.992,6.749h-6.84c-0.467,0-0.865,0.34-0.938,0.802l-2.766,17.537c-0.055,0.346,0.213,0.658,0.562,0.658
                   h3.51c0.326,0,0.605-0.238,0.656-0.562l0.785-4.971c0.072-0.463,0.471-0.803,0.938-0.803h2.164c4.506,0,7.105-2.18,7.785-6.5
                   c0.307-1.89,0.012-3.375-0.873-4.415C99.004,7.353,97.281,6.749,94.992,6.749z M95.781,13.154c-0.373,2.454-2.248,2.454-4.062,2.454
@@ -183,94 +77,28 @@ const StepPayment: React.FC<Props> = ({
                   C20.378,0.682,17.853,0,14.622,0h-9.38c-0.66,0-1.223,0.48-1.325,1.133L0.01,25.898c-0.077,0.49,0.301,0.932,0.795,0.932h5.791
                   l1.454-9.225L9.614,7.699z"/>
               </svg>
+              <span className="font-semibold text-lg ml-2">Pay with PayPal</span>
             </div>
           </div>
 
-          {/* PayPal Form - Show when selected */}
-          {paymentMethod === 'paypal' && (
-            <div className="p-6 bg-gray-50 border-t-2 space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">PayPal Email*</label>
-                <input
-                  type="email"
-                  placeholder="your.email@example.com"
-                  value={paypalEmail}
-                  onChange={(e) => setPaypalEmail(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-                />
-              </div>
-
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <p className="text-sm text-blue-700">
-                  You will be redirected to PayPal to complete your payment securely.
-                </p>
-              </div>
-
-              <button className="w-full py-3 bg-[#0070ba] text-white font-bold rounded-xl hover:bg-[#003087] transition-all">
-                Continue with PayPal
-              </button>
+          <div className="p-6 bg-gray-50 border-t-2 space-y-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">PayPal Email*</label>
+              <input
+                type="email"
+                placeholder="your.email@example.com"
+                value={paypalEmail}
+                onChange={(e) => setPaypalEmail(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
+              />
             </div>
-          )}
-        </div>
 
-        {/* Stripe */}
-        <div className="border-2 rounded-xl overflow-hidden">
-          <div
-            onClick={() => setPaymentMethod('stripe')}
-            className={`p-4 cursor-pointer transition-all ${
-              paymentMethod === 'stripe' ? 'border-black bg-[#F4EFE7]' : 'bg-white'
-            }`}>
-            <div className="flex items-center">
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                paymentMethod === 'stripe' ? 'border-black' : 'border-gray-300'
-              }`}>
-                {paymentMethod === 'stripe' && <div className="w-3 h-3 bg-black rounded-full" />}
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 35" fillRule="evenodd" fill="#6772e5"><path d="M92.747 17.790c0-5.885-2.85-10.53-8.3-10.53-5.47 0-8.782 4.644-8.782 10.483 0 6.92 3.908 10.414 9.517 10.414 2.736 0 4.805-.62 6.368-1.494v-4.598c-1.563.782-3.356 1.264-5.632 1.264-2.23 0-4.207-.782-4.46-3.494h11.24c0-.3.046-1.494.046-2.046zM81.400 15.607c0-2.598 1.586-3.678 3.035-3.678 1.402 0 2.897 1.08 2.897 3.678zm-14.597-8.345c-2.253 0-3.7 1.057-4.506 1.793l-.3-1.425H56.930v26.805l5.747-1.218.023-6.506c.828.598 2.046 1.448 4.07 1.448 4.115 0 7.862-3.3 7.862-10.598-.023-6.667-3.816-10.3-7.84-10.3zm-1.38 15.84c-1.356 0-2.16-.483-2.713-1.08l-.023-8.53c.598-.667 1.425-1.126 2.736-1.126 2.092 0 3.54 2.345 3.54 5.356 0 3.08-1.425 5.38-3.54 5.38zm-16.4-17.196l5.77-1.24V0.000l-5.77 1.218zm0 1.747h5.77v20.115h-5.77zm-6.185 1.7l-.368-1.7h-4.966V27.770h5.747V14.136c1.356-1.77 3.655-1.448 4.368-1.195v-5.287c-.736-.276-3.425-.782-4.782 1.7zm-11.494-6.7L25.735 3.850l-.023 18.414c0 3.402 2.552 5.908 5.954 5.908 1.885 0 3.264-.345 4.023-.76v-4.667c-.736.3-4.368 1.356-4.368-2.046V12.550h4.368v-4.897h-4.37zm-15.54 10.828c0-.897.736-1.24 1.954-1.24a12.85 12.85 0 0 1 5.7 1.47V8.320c-1.908-.76-3.793-1.057-5.7-1.057-4.667 0-7.77 2.437-7.77 6.506 0 6.345 8.736 5.333 8.736 8.07 0 1.057-.92 1.402-2.207 1.402-1.908 0-4.345-.782-6.276-1.84v5.47c2.138.92 4.3 1.3 6.276 1.3 4.782 0 8.07-2.368 8.07-6.483-.023-6.85-8.782-5.632-8.782-8.207z"/></svg>
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+              <p className="text-sm text-blue-700">
+                You will be redirected to PayPal to complete your payment securely.
+              </p>
             </div>
           </div>
-
-          {/* Stripe Form - Show when selected */}
-          {paymentMethod === 'stripe' && (
-            <div className="p-6 bg-gray-50 border-t-2 space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Card Information*</label>
-                <input
-                  type="text"
-                  placeholder="1234 5678 9012 3456"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-t-xl focus:ring-2 focus:ring-black"
-                />
-                <div className="grid grid-cols-2">
-                  <input
-                    type="text"
-                    placeholder="MM / YY"
-                    className="px-4 py-3 border-l border-b border-gray-300 focus:ring-2 focus:ring-black"
-                  />
-                  <input
-                    type="text"
-                    placeholder="CVC"
-                    className="px-4 py-3 border-l border-r border-b border-gray-300 rounded-br-xl focus:ring-2 focus:ring-black"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Cardholder Name*</label>
-                <input
-                  type="text"
-                  placeholder="John Doe"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black"
-                />
-              </div>
-
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <p className="text-sm text-blue-700 flex items-center gap-2">
-                  <Lock className="w-4 h-4" />
-                  Powered by Stripe. Your payment is secure and encrypted.
-                </p>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 import FooterSection from "@/components/landing/Footer";
 import HeroSection from "@/components/landing/Hero";
 import NewsEventsSection from "@/components/landing/Insights";
-import PopularActivitiesSection from "@/components/landing/Poplular_activities";
+import PopularActivitiesSection from "@/components/landing/Popular_activities";
 import PopularToursSection from "@/components/landing/Populartour";
 import TestimonialsSection from "@/components/landing/Testimonials";
 import WhyChooseKoursair from "@/components/landing/Whyus";
@@ -14,7 +14,6 @@ export default function Home() {
         <Navbar />
         <HeroSection />
         <PopularToursSection />
-        {/* <AIGroupingComingSoon /> */}
         <WhyChooseKoursair />
         <PopularActivitiesSection />
         <NewsEventsSection />

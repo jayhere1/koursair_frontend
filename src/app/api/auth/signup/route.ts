@@ -34,8 +34,8 @@ export async function POST(request: NextRequest) {
     let data;
     try {
       data = await response.json();
-    } catch  {
-      //console.error("⚠️ Could not parse API response:", err);
+    } catch (error) {
+      console.error("Could not parse API response:", error);
       return NextResponse.json({ message: "Invalid response from external API" }, { status: 502 });
     }
     if (!response.ok || data.success === false || !data.data) {
@@ -57,8 +57,8 @@ export async function POST(request: NextRequest) {
       email: data.data.email,
     });
 
-  } catch {
-    //console.error('Unhandled API error:', error);
+  } catch (error) {
+    console.error('Signup API route error:', error);
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }

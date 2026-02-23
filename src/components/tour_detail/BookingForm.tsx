@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo, ChangeEvent, MouseEvent } from "react";
 import { CustomSelect } from "../UIComponents/customselect";
 import PhoneInputWithCountrySelect, { parsePhoneNumber } from "react-phone-number-input";
-import { Flame, Eye, TrendingUp, AlertCircle } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { useAuth } from "../AuthContext"; // Adjust path
 import Popup from "../Popup"; // Adjust path
 import { useRouter } from "next/navigation";
@@ -22,7 +22,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
   const [firstInvalidField, setFirstInvalidField] = useState<string | null>(null);
   const [formStatus, setFormStatus] = useState<{ message: string; type: "success" | "error"; } | null>(null);
   const [popup, setPopup] = useState<{ message: string; type?: "success" | "error" | "info"; } | null>(null);
-  const TARGET_TRIP_TITLE = "The Endless Summer Tahiti Experience";
   
   const [bookingData, setBookingData] = useState({
     whereTo: title,
@@ -77,36 +76,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
     return selected ? selected.price : fixedDepartureDates[0]?.price || 0;
   };
 
-  const urgencyStats = useMemo(() => {
-    const viewers = Math.floor(Math.random() * (35 - 12 + 1)) + 12;
-    const spotsLeft = Math.floor(Math.random() * (8 - 2 + 1)) + 2;
-    const recentBookings = Math.floor(Math.random() * (15 - 5 + 1)) + 5;
-
-    const lines = [
-      {
-        icon: <Flame className="w-5 h-5 text-orange-600 animate-pulse" />,
-        text: <span className="text-orange-800 font-bold">High Demand: {recentBookings} bookings in the last 5 days!</span>,
-        bg: "bg-orange-50 border-orange-200"
-      },
-      {
-        icon: <AlertCircle className="w-5 h-5 text-red-600" />,
-        text: <span className="text-red-800 font-bold">Hurry! Only {spotsLeft} spots left for this date.</span>,
-        bg: "bg-red-50 border-red-200"
-      },
-      {
-        icon: <Eye className="w-5 h-5 text-blue-600" />,
-        text: <span className="text-blue-800 font-bold">{viewers} people are viewing this tour right now.</span>,
-        bg: "bg-blue-50 border-blue-200"
-      },
-      {
-        icon: <TrendingUp className="w-5 h-5 text-green-600" />,
-        text: <span className="text-green-800 font-bold">Price likely to rise: Secure your spot now!</span>,
-        bg: "bg-green-50 border-green-200"
-      }
-    ];
-    const index = title.length % lines.length;
-    return lines[index];
-  }, [title]);
 
   const handlePhoneChange = (value: string | undefined) => {
     if (value) {
@@ -323,13 +292,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
           </p>)}
         </div>
 
-        <div className={`flex items-center gap-3 p-2 transform transition-all hover:scale-102`}>
-          <div className="flex-shrink-0 bg-white p-2 rounded-full shadow-sm">
-            {urgencyStats.icon}
-          </div>
-          <div className="text-sm leading-tight">{urgencyStats.text}</div>
-        </div>
-
         {/* FORM STATUS FEEDBACK */}
         {formStatus && (
           <div
@@ -350,14 +312,12 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
           >
             {loading ? "Sending..." : "Send Enquiry"}
           </button>
-          {title === TARGET_TRIP_TITLE && (
           <button
             onClick={handleBooking}
             className="w-full py-4 bg-primary text-white font-bold text-lg cursor-pointer rounded-xl shadow-xl hover:bg-green-700 transition-colors"
           >
             Book Now
           </button>
-          )}
         </div>
       </form>
     </div>

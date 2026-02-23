@@ -51,8 +51,8 @@ export async function POST(request: NextRequest) {
       message: data.message || 'Password updated successfully',
     });
 
-  } catch{ // FIX: Added error typing and logging
-    //console.error('Reset Password API route error:', error.message);
+  } catch (error) {
+    console.error('Reset Password API route error:', (error instanceof Error ? error.message : String(error)));
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { testimonials } from '@/constants/testimonial';
 
@@ -8,6 +8,19 @@ const TestimonialsSection = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
   const Route = useRouter();
+
+  useEffect(() => {
+    const refs = videoRefs.current;
+    return () => {
+      Object.values(refs).forEach((video) => {
+        if (video) {
+          video.pause();
+          video.removeAttribute('src');
+          video.load();
+        }
+      });
+    };
+  }, []);
 
   
 
@@ -86,15 +99,16 @@ const TestimonialsSection = () => {
 
               {/* Play button overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div 
-                  className={`w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 ${
+                <button
+                  aria-label="Play testimonial video"
+                  className={`w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 border-none cursor-pointer ${
                     hoveredCard === testimonial.id ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
                   }`}
                 >
                   <svg className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-white ml-0.5 sm:ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
-                </div>
+                </button>
               </div>
 
               {/* Content */}

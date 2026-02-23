@@ -92,7 +92,7 @@ export default function Navbar() {
                 {/* Logo - Adjusted Image height */}
                 <div className="mr-8 lg:mr-15">
                   <Link href="/" className="flex items-center h-full">
-                    <Image src="/logo.png" alt="Koursair Logo" width={180} height={100} className="w-51 h-17 object-cover" /> {/* Reduced size here */}
+                    <Image src="/logo.png" alt="Koursair Logo" width={180} height={100} className="w-[204px] h-[68px] object-cover" /> {/* Reduced size here */}
                   </Link>
                 </div>
 

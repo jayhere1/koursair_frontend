@@ -46,8 +46,8 @@ export async function GET(request: NextRequest) {
     // 4. Return the clean user object
     return NextResponse.json({ user });
 
-  } catch { // FIX: Added error typing and logging
-    //console.error('Fetch Details API route error:', error.message);
+  } catch (error) {
+    console.error('Fetch Details API route error:', (error instanceof Error ? error.message : String(error)));
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }

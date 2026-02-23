@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useAuth } from "../AuthContext";
@@ -8,14 +8,7 @@ import { Facebook, Instagram, Smartphone, Mail } from "lucide-react";
 
 
 export default function FooterSection() {
-  const [email, setEmail] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState("English");
   const { openLogin, openSignup} = useAuth();
-
-  const handleNewsletterSubmit = () => {
-    //console.log("Newsletter signup:", email);
-    setEmail("");
-  };
 
   return (
     <>
@@ -53,7 +46,9 @@ export default function FooterSection() {
                     <Instagram size={20} />
                   </Link>
                   <Link
-                    href="#"
+                    href="https://wa.me/18005214263"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="social-icon text-gray-400 hover:text-white"
                   >
                     <svg
@@ -121,27 +116,6 @@ export default function FooterSection() {
                 </div>
               </div>
 
-              <div>
-                <h4 className="text-sm font-medium mb-3">Newsletter</h4>
-                <div className="flex">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="flex-1 px-3 py-2 bg-[#243141] text-white text-sm rounded-l focus:outline-none focus:ring-1 focus:ring-primary"
-                    onKeyPress={(e) =>
-                      e.key === "Enter" && handleNewsletterSubmit()
-                    }
-                  />
-                  <button
-                    onClick={handleNewsletterSubmit}
-                    className="px-6 py-2 bg-primary text-white font-medium text-sm rounded-r hover:bg-[#a0927e] transition-colors"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -151,91 +125,22 @@ export default function FooterSection() {
               {/* Language and Payment */}
               <div className="flex items-center space-x-6">
                 <div className="flex items-center space-x-2">
-                  <select
-                    value={selectedLanguage}
-                    onChange={(e) => setSelectedLanguage(e.target.value)}
-                    className="bg-transparent text-gray-400 text-sm border border-gray-600 rounded px-3 py-1 focus:outline-none focus:border-primary appearance-none cursor-pointer"
-                  >
-                    <option value="English" className="bg-[#1a2332]">
-                      English
-                    </option>
-                    <option value="Spanish" className="bg-[#1a2332]">
-                      Spanish
-                    </option>
-                    <option value="French" className="bg-[#1a2332]">
-                      French
-                    </option>
-                  </select>
-                  <span className="text-gray-600 text-sm">US Dollars</span>
+                  <span className="text-gray-400 text-sm">USD</span>
                 </div>
 
                 {/* Payment Methods */}
                 <div className="flex items-center space-x-3">
-  {/* <div className="bg-white rounded px-2 py-1">
-    <Image
-      width={50}
-      height={300}
-      src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
-      alt="Visa"
-      className="h-4 w-auto"
-    />
-  </div> */}
-  {/* <div className="bg-white rounded px-2 py-1">
-    <Image
-      width={50}
-      height={300}
-      src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-      alt="Mastercard"
-      className="h-4 w-auto"
-    />
-  </div> */}
-  <div className="bg-white rounded px-2 py-1">
-    <Image
-      width={50}
-      height={300}
-      src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-      alt="PayPal"
-      className="h-4 w-auto"
-    />
-  </div>
-  {/* <div className="bg-white rounded px-2 py-1">
-    <Image
-      width={50}
-      height={300}
-      src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg"
-      alt="American Express"
-      className="h-4 w-auto"
-    />
-  </div> */}
-  {/* <div className="bg-white rounded px-2 py-1">
-    <Image
-      width={50}
-      height={300}
-      src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg"
-      alt="Discover"
-      className="h-4 w-auto"
-    />
-  </div> */}
-  {/* <div className="bg-white rounded px-2 py-1">
-    <Image
-      width={50}
-      height={300}
-      src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Diners_Club_Logo3.svg"
-      alt="Diners Club"
-      className="h-4 w-auto"
-    />
-  </div> */}
-  {/* <div className="bg-white rounded px-2 py-1">
-    <Image
-      width={50}
-      height={300}
-      src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Zelle_logo.svg"
-      alt="Zelle"
-      className="h-4 w-auto"
-    />
-  </div> */}
-</div>
-</div>
+                  <div className="bg-white rounded px-2 py-1">
+                    <Image
+                      width={50}
+                      height={300}
+                      src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                      alt="PayPal"
+                      className="h-4 w-auto"
+                    />
+                  </div>
+                </div>
+              </div>
 
               {/* Footer Links */}
               <div className="flex items-center space-x-6 text-sm text-gray-400">

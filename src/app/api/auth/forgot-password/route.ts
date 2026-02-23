@@ -37,9 +37,9 @@ export async function POST(request: NextRequest) {
 
   } catch (error: unknown) {
     if (error instanceof Error) {
-      //console.error('Forgot password API route error:', error.message);
+      console.error('Forgot password API route error:', error.message);
     } else {
-      //console.error('Forgot password API route error:', error);
+      console.error('Forgot password API route error:', error);
     }
     return NextResponse.json(
       { message: 'Internal server error' },

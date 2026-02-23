@@ -5,7 +5,15 @@ import Navbar from "@/components/Navbar";
 import TripDetailHero from "@/components/tour_detail/tour_hero";
 import TripOverviewBooking from "@/components/tour_detail/tour_overview";
 import { TOUR_DATA, TripData } from "@/types/tour";
-import { redirect } from "next/navigation"; // 1. Import redirect
+import { redirect } from "next/navigation";
+import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tour Details | Koursair",
+  description:
+    "View detailed information about this Koursair tour including itinerary, pricing, and booking options.",
+};
 
 // Function to fetch the trip data (simulated with local object)
 const getTripData = (slug: string): TripData | undefined => {
@@ -23,7 +31,7 @@ const TripDetailPage = async ({
   // 2. Redirect Logic
   // This will instantly redirect the user to /Kenya (HTTP 307 Temporary Redirect)
   if (slug === "Kenya") {
-    redirect("/Kenya"); 
+    redirect("/tour/Kenya");
   }
 
   const tripData = getTripData(slug);
@@ -44,9 +52,12 @@ const TripDetailPage = async ({
               New Adventures<br/> Coming Soon...
             </h1>
             <p className="text-xl text-gray-200 ">
-              We’re crafting breathtaking experiences and exclusive journeys.  
+              We&apos;re crafting breathtaking experiences and exclusive journeys.
               Stay tuned — your next trip awaits.
             </p>
+            <Link href="/destinations" className="inline-block mt-6 px-8 py-3 bg-white text-black font-bold rounded-xl hover:bg-gray-100 transition">
+              Back to Destinations
+            </Link>
           </div>
         </div>
         <FooterSection />

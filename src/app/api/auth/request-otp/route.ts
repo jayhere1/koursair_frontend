@@ -37,8 +37,8 @@ export async function POST(request: NextRequest) {
       message: data.message || 'OTP sent successfully',
     });
 
-  } catch{ // FIX: Use unknown instead of any
-    //console.error('Request OTP API route error:', errorMessage);
+  } catch (error) {
+    console.error('Request OTP API route error:', (error instanceof Error ? error.message : String(error)));
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }

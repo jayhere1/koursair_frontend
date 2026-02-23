@@ -41,7 +41,7 @@ export default function KoursairImage({
         className={`${className} transition-opacity duration-300 ${
           loading ? "opacity-0" : "opacity-100"
         }`}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         onError={() => {
           setImgSrc(fallback);
           setLoading(false);

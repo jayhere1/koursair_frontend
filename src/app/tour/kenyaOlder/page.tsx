@@ -282,7 +282,6 @@ const ItineraryItem = ({ day, onVisible }: { day: ItineraryDay, onVisible: (coor
     );
 };
 
-const CORRECT_PASSWORD = "WEMBA 50s";
 const STORAGE_KEY = "koursair_protected_access";
 
 // --- INTERFACES ---
@@ -575,19 +574,28 @@ const TripOverviewBooking = () => {
     const { destination, title, overview, heroImage, facts, bookingSection } = tripData;
     const { itinerary } = bookingSection;
 
-    const handlePasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handlePasswordSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setAuthError('');
         setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-            if (passwordInput.trim() === CORRECT_PASSWORD) {
+        try {
+            const response = await fetch('/api/auth/verify-access', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password: passwordInput }),
+            });
+            const data = await response.json();
+            if (response.ok && data.success) {
                 setIsAuthenticated(true);
                 if (typeof window !== 'undefined') localStorage.setItem(STORAGE_KEY, 'granted');
             } else {
-                setAuthError("Incorrect password.");
+                setAuthError(data.message || "Incorrect password.");
             }
-        }, 800);
+        } catch {
+            setAuthError("Something went wrong. Please try again.");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

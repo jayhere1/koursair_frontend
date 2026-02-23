@@ -45,22 +45,6 @@ const BookingSummary: React.FC<Props> = ({ bookingData, additionalMembersCount, 
           </div>
         </div>
 
-        {/* <div className="bg-[#F4EFE7] rounded-xl p-4 mt-4">
-          <div className="flex items-start gap-2">
-            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-            <div className="text-sm">
-              <p className="font-semibold text-gray-800">What&apos;s Included:</p>
-              <ul className="text-gray-600 mt-1 space-y-1">
-                <li>• Accommodation</li>
-                <li>• All activities</li>
-                <li>• Pack leader</li>
-                <li>• Local transport</li>
-                <li>• Select meals</li>
-              </ul>
-            </div>
-          </div>
-        </div> */}
-
         {currentStep === 3 && (
           <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
             <p className="text-sm text-blue-800 font-semibold flex items-center gap-2">

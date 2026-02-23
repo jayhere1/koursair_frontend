@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/components/AuthContext";
 import { AuthModals } from "@/components/AuthModal";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import Script from "next/script";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
+  title: {
+    default: "Koursair | Group Travel Experiences",
+    template: "%s | Koursair",
+  },
+  description: "Koursair reinvents group travel with curated, high-energy trips to the world's most iconic destinations.",
   metadataBase: new URL("https://koursair.com"),
   openGraph: {
     type: "website",
@@ -42,11 +48,12 @@ export default function RootLayout({
         </Script>
 
         {/* Existing Google Analytics (gtag.js) */}
-        <Script 
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-KDF0J57BPD"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -82,10 +89,12 @@ export default function RootLayout({
           />
         </noscript>
 
-        <AuthProvider>
-          {children}
-          <AuthModals />
-        </AuthProvider>
+        <ErrorBoundary>
+          <AuthProvider>
+            {children}
+            <AuthModals />
+          </AuthProvider>
+        </ErrorBoundary>
         <Toaster richColors position="top-center" closeButton duration={3000} />
       </body>
     </html>

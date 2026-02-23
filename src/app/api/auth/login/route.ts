@@ -44,8 +44,8 @@ export async function POST(request: NextRequest) {
         email: userData.email,
       },
     });
-  } catch { // Add error logging
-    //console.error('Login API route error:', (error instanceof Error ? error.message : String(error)));
+  } catch (error) {
+    console.error('Login API route error:', (error instanceof Error ? error.message : String(error)));
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }

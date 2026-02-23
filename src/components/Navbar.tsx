@@ -71,7 +71,7 @@ export default function Navbar() {
                     alt="Koursair Logo"
                     width={180}
                     height={100}
-                    className="w-40 h-13 md:w-52 md:h-17 object-cover"
+                    className="w-40 h-[52px] md:w-52 md:h-[68px] object-cover"
                   />
                 </Link>
               </div>
@@ -131,6 +131,8 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="lg:hidden text-black text-xl ml-5"
+                aria-label="Toggle menu"
+                aria-expanded={mobileMenuOpen}
               >
                 {mobileMenuOpen ? <X /> : <Menu />}
               </button>

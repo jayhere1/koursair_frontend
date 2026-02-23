@@ -13,7 +13,7 @@ export default function NewsEventsSection() {
   };
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-[#fffafa]">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-12 md:px-16 lg:px-24 xl:28">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-12 md:px-16 lg:px-24 xl:px-28">
         {/* Section Header */}
         <div className="mb-10 sm:mb-12 lg:mb-16">
           <div className="relative inline-block mb-2">
