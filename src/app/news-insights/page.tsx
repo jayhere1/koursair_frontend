@@ -18,14 +18,16 @@ export default function NewsInsightsPage() {
                       src="https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/BaliResort.jpg"
                       alt="Destinations Hero"
                       fill
-                      priority
+                      loading="eager"
+                      fetchPriority="high"
+                      sizes="100vw"
                       className="object-cover object-center z-0"
                     />
                   </div>
                   {/* Dark Overlay (Replaces linear-gradient) */}
                   <div className="absolute inset-0 bg-black/50 z-10" />
                   <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl relative z-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-alegreya lg:text-6xl font-bold mb-4 sm:mb-6 tracking-wide">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-alegreya lg:text-5xl font-bold mb-4 sm:mb-6 tracking-wide">
             News & Insights
           </h1>
         </div>

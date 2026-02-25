@@ -3,12 +3,12 @@ import React from "react";
 const TermsSection = () => {
   return (
     <div className="space-y-10 scroll-m-24">
-      <h2 className="text-4xl font-extrabold text-primary tracking-tight">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight">
         Full Terms & Essential Details
       </h2>
       <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 space-y-6 border-t-4 border-primary">
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Booking & Payment
           </h3>
           <p className="text-gray-600">
@@ -25,7 +25,7 @@ const TermsSection = () => {
           </p>
         </div>
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Passport & Visa Requirements
           </h3>
           <p className="text-gray-600">
@@ -38,7 +38,7 @@ const TermsSection = () => {
         </div>
 
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Travel Insurance
           </h3>
           <p className="text-gray-600">
@@ -50,7 +50,7 @@ const TermsSection = () => {
         </div>
 
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Itinerary Changes
           </h3>
           <p className="text-gray-600">
@@ -63,7 +63,7 @@ const TermsSection = () => {
         </div>
 
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Cancellation Policy
           </h3>
           <p className="text-gray-600">
@@ -85,7 +85,7 @@ const TermsSection = () => {
         </div>
 
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Responsibility & Liability
           </h3>
           <p className="text-gray-600">
@@ -99,7 +99,7 @@ const TermsSection = () => {
         </div>
 
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Health & Safety
           </h3>
           <p className="text-gray-600">
@@ -111,7 +111,7 @@ const TermsSection = () => {
         </div>
 
         <div className="border-l-4 border-primary pl-4">
-          <h3 className="font-bold text-xl text-gray-800 mb-1">
+          <h3 className="font-bold text-lg text-gray-800 mb-1">
             Acceptance of Terms
           </h3>
           <p className="text-gray-600">

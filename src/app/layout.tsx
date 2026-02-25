@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AuthProvider } from "@/components/AuthContext";
+import StoreHydration from "@/stores/StoreHydration";
 import { AuthModals } from "@/components/AuthModal";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Script from "next/script";
@@ -36,6 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to media origins for faster asset loading */}
+        <link rel="preconnect" href="https://koursair-media.s3.us-east-1.amazonaws.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+
         {/* 1. Google Tag Manager - Main Script */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
@@ -81,19 +85,19 @@ export default function RootLayout({
       <body>
         {/* 2. Google Tag Manager (noscript) */}
         <noscript>
-          <iframe 
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-W3CW6S2L"
-            height="0" 
-            width="0" 
+            height="0"
+            width="0"
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
 
         <ErrorBoundary>
-          <AuthProvider>
+          <StoreHydration>
             {children}
             <AuthModals />
-          </AuthProvider>
+          </StoreHydration>
         </ErrorBoundary>
         <Toaster richColors position="top-center" closeButton duration={3000} />
       </body>

@@ -53,7 +53,7 @@ export const ImageSlider = ({
           fill
           className="object-cover transition-opacity duration-500"
           sizes="(max-width: 768px) 100vw, 50vw"
-          priority={currentIndex === 0}
+          {...(currentIndex === 0 ? { loading: "eager" as const, fetchPriority: "high" as const } : {})}
         />
       </div>
 

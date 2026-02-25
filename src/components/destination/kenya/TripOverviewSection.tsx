@@ -39,6 +39,7 @@ import { PassportUploader } from "./PassportUploader";
 import { FactCard } from "./FactCard";
 import { useProtectedPage } from "@/hooks/useProtectedPage";
 import { CustomSelect } from "@/components/UIComponents/customselect";
+import { useAuthStore } from "@/stores";
 
 const Select = dynamic(() => import("react-select"), {
   ssr: false,
@@ -169,24 +170,15 @@ const TripOverviewBooking = () => {
   const addButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const userStr = localStorage.getItem("user");
-      if (userStr) {
-        try {
-          const user = JSON.parse(userStr);
-          setUserName(user.name || "--");
-          setUserEmail(user.email || "--");
-          setUserPhone(user.phone || "--");
-        } catch {
-          setUserName("");
-          setUserEmail("");
-          setUserPhone("");
-        }
-      } else {
-        setUserName("");
-        setUserEmail("");
-        setUserPhone("");
-      }
+    const user = useAuthStore.getState().user;
+    if (user) {
+      setUserName(user.name || "--");
+      setUserEmail(user.email || "--");
+      setUserPhone(user.phone || "--");
+    } else {
+      setUserName("");
+      setUserEmail("");
+      setUserPhone("");
     }
   }, []);
 
@@ -635,10 +627,7 @@ const TripOverviewBooking = () => {
   };
 
   const handlePassportUpload = async (id: number, file: File) => {
-    const token =
-      typeof window !== "undefined"
-        ? localStorage.getItem("token") || undefined
-        : undefined;
+    const token = useAuthStore.getState().token || undefined;
     try {
       setUploadingPassportIds((prev) => [...prev, id]);
       const url = await uploadFile(file, token);
@@ -1034,14 +1023,14 @@ const TripOverviewBooking = () => {
 
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
             <div className="text-center text-white max-w-5xl px-4 md:px-6">
-              <h1 className="text-3xl md:text-6xl font-extrabold font-alegreya mb-4">
+              <h1 className="text-2xl md:text-5xl font-extrabold font-alegreya mb-4">
                 {title}
               </h1>
-              <p className="text-lg md:text-xl lg:text-3xl font-light">
+              <p className="text-base md:text-lg lg:text-2xl font-light">
                 {destination}
               </p>
 
-              <p className="mt-2 flex justify-center items-center gap-2 text-sm md:text-xl lg:text-lg font-medium text-white/90">
+              <p className="mt-2 flex justify-center items-center gap-2 text-sm md:text-lg lg:text-base font-medium text-white/90">
                 <CalendarClock className="w-4 h-4" />
                 {bookingSection.fixedDepartureDates?.[0]?.label}
               </p>
@@ -1078,7 +1067,7 @@ const TripOverviewBooking = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-bold text-gray-700 bg-white cursor-pointer shadow-md border-1 border-transparent 
+                className="px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-bold text-gray-700 bg-white cursor-pointer shadow-md border-1 border-transparent
                                              hover:bg-[#1b3658] hover:text-white transition duration-300 transform hover:scale-[1.02] whitespace-nowrap"
               >
                 {item.label}
@@ -1091,16 +1080,16 @@ const TripOverviewBooking = () => {
             className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 scroll-mt-16"
           >
             <div className="lg:col-span-3 space-y-6 md:space-y-8">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-primary tracking-tight border-b-4 border-primary pb-3">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight border-b-4 border-primary pb-3">
                 Trip Overview
               </h2>
               <div
-                className="text-gray-700 leading-relaxed text-base md:text-lg"
+                className="text-gray-700 leading-relaxed text-base md:text-base"
                 dangerouslySetInnerHTML={{ __html: overview }}
               />
 
               <div className="bg-[#F4EFE7]/50 p-6 md:p-8 rounded-2xl border border-primary mt-6">
-                <h3 className="font-bold text-lg md:text-xl mb-6 text-primary">
+                <h3 className="font-bold text-base md:text-lg mb-6 text-primary">
                   What&apos;s Included
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -1134,7 +1123,7 @@ const TripOverviewBooking = () => {
 
             <div className="lg:col-span-2 space-y-6">
               <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-primary">
-                <h3 className="text-xl md:text-2xl font-bold text-primary mb-4">
+                <h3 className="text-lg md:text-xl font-bold text-primary mb-4">
                   {kenyaReunionAdventure.highlightsBox.title}
                 </h3>
                 <div className="space-y-4">
@@ -1195,7 +1184,7 @@ const TripOverviewBooking = () => {
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 scroll-mt-32"
           >
             <div className="lg:col-span-1 space-y-10">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-primary tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight">
                 Detailed Itinerary
               </h2>
               <div className="relative border-l-4 border-primary ml-2 md:ml-4">
@@ -1212,7 +1201,7 @@ const TripOverviewBooking = () => {
               id="map"
               className="lg:col-span-1 sticky top-[100px] h-min space-y-6 scroll-mt-32"
             >
-              <h3 className="text-2xl font-bold text-primary border-b pb-2">
+              <h3 className="text-xl font-bold text-primary border-b pb-2">
                 Route Map
               </h3>
               <div className="h-[300px] md:h-[500px] bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden relative z-0">
@@ -1236,10 +1225,10 @@ const TripOverviewBooking = () => {
                   id="register"
                 >
                   <div className="bg-primary-light p-6 md:pt-8 md:pl-8 md:pr-8 md:pb-1 text-center">
-                    <h2 className="text-2xl md:text-4xl font-extrabold text-primary mb-2">
+                    <h2 className="text-xl md:text-3xl font-extrabold text-primary mb-2">
                       Secure Your Spot
                     </h2>
-                    <p className="text-base md:text-lg text-gray-600">
+                    <p className="text-sm md:text-base text-gray-600">
                       Book your place for the Kenya Adventure
                     </p>
                     <div className=" my-2 flex justify-center gap-7 text-sm md:text-base">
@@ -1307,7 +1296,7 @@ const TripOverviewBooking = () => {
                     </div>
                     <div>
                       <div id="contact-section" className="space-y-4">
-                        <h4 className="text-2xl font-bold text-primary flex items-center gap-2">
+                        <h4 className="text-xl font-bold text-primary flex items-center gap-2">
                           {" "}
                           Contact Information
                         </h4>
@@ -1376,7 +1365,7 @@ const TripOverviewBooking = () => {
                       </div>
                     </div>
                     <div className="space-y-4 max-w-sm">
-                      <h4 className="text-xl font-bold text-primary">
+                      <h4 className="text-lg font-bold text-primary">
                         Travelers{" "}
                       </h4>
 
@@ -1473,7 +1462,7 @@ const TripOverviewBooking = () => {
                     <div>
                       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 gap-2">
                         <div>
-                          <h4 className="text-2xl font-bold text-primary">
+                          <h4 className="text-xl font-bold text-primary">
                             Traveler Details
                           </h4>
                           <p className="text-sm text-primary italic mt-1">
@@ -1876,7 +1865,7 @@ const TripOverviewBooking = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-4">
-                        <h4 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                        <h4 className="text-lg font-bold text-gray-800 flex items-center gap-2">
                           <Heart className="w-5 h-5" /> Health & Dietary
                         </h4>
 
@@ -2026,7 +2015,7 @@ const TripOverviewBooking = () => {
                       </div>
 
                       <div className="space-y-4">
-                        <h4 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                        <h4 className="text-lg font-bold text-gray-800 flex items-center gap-2">
                           <AlertTriangle className="w-5 h-5" /> Emergency & Info
                         </h4>
 
@@ -2115,7 +2104,7 @@ const TripOverviewBooking = () => {
 
                     {!isFamilyBooking && (
                       <div className="space-y-4">
-                        <h4 className="text-xl font-bold text-primary">
+                        <h4 className="text-lg font-bold text-primary">
                           Payment Plan <span className="text-red-500">*</span>
                         </h4>
 
@@ -2174,7 +2163,7 @@ const TripOverviewBooking = () => {
                         type="submit"
                         disabled={isLoading}
                         className={`
-    w-full md:w-2/4 py-3 md:py-2 font-extrabold text-lg rounded-2xl shadow-xl
+    w-full md:w-2/4 py-3 md:py-2 font-extrabold text-base rounded-2xl shadow-xl
     transition transform mx-auto mb-4
     ${
       isLoading
@@ -2236,7 +2225,7 @@ const TripOverviewBooking = () => {
                     className="rounded-2xl mb-6 w-full object-cover"
                   />
 
-                  <h3 className="text-xl font-bold text-primary mb-4">
+                  <h3 className="text-lg font-bold text-primary mb-4">
                     Summary
                   </h3>
                   <div className="flex items-start gap-2 mb-4 p-3 rounded-lg border bg-blue-50 border-blue-200">

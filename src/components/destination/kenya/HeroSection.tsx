@@ -26,16 +26,16 @@ export default function KenyaHero({
 
       <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
         <div className="text-center text-white max-w-5xl px-4 md:px-6">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-2">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-2">
             {title}
           </h1>
 
-          <p className="text-lg md:text-xl lg:text-3xl font-light">
+          <p className="text-base md:text-lg lg:text-2xl font-light">
             {destination}
           </p>
 
           {departureLabel && (
-            <p className="mt-2 flex justify-center items-center gap-2 text-sm md:text-lg font-medium text-white/90">
+            <p className="mt-2 flex justify-center items-center gap-2 text-sm md:text-base font-medium text-white/90">
               <CalendarClock className="w-4 h-4" />
               {departureLabel}
             </p>

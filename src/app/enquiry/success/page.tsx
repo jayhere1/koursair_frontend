@@ -23,10 +23,10 @@ const ThankYouPage = () => {
 
         {/* Headings */}
         <div className="space-y-2">
-          <h1 className="text-3xl font-extrabold text-gray-900">
+          <h1 className="text-2xl font-extrabold text-gray-900">
             Enquiry Received!
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-base">
             Thanks for reaching out. We have received your travel details safely.
           </p>
         </div>

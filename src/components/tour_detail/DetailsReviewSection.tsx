@@ -20,7 +20,7 @@ const DetailsReviewsSection: React.FC<DetailsReviewsSectionProps> = ({ inclusion
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 scroll-m-24">
       <div className="lg:col-span-1 space-y-10">
-        <h2 className="text-4xl font-extrabold text-primary tracking-tight">What&apos;s Included</h2>
+        <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight">What&apos;s Included</h2>
         <div className="bg-white rounded-3xl shadow-xl p-8 space-y-8 border-t-4 border-primary">
           <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
             {inclusions.map((item, i) => (
@@ -31,7 +31,7 @@ const DetailsReviewsSection: React.FC<DetailsReviewsSectionProps> = ({ inclusion
             ))}
           </div>
           <div className="pt-6 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-gray-700 mb-3 flex items-center gap-2"><span className="text-red-600">🚫</span> What&apos;s Not Covered</h3>
+            <h3 className="text-lg font-bold text-gray-700 mb-3 flex items-center gap-2"><span className="text-red-600">🚫</span> What&apos;s Not Covered</h3>
             <ul className="grid md:grid-cols-2 gap-2 text-gray-600 text-sm list-disc pl-5">
               {exclusions.map((exc, i) => <li key={i}>{exc}</li>)}
             </ul>
@@ -39,12 +39,12 @@ const DetailsReviewsSection: React.FC<DetailsReviewsSectionProps> = ({ inclusion
         </div>
       </div>
       <div className="lg:col-span-1 space-y-10">
-        <h2 className="text-4xl font-extrabold text-primary tracking-tight">Guest Reviews (4.8 / 5)</h2>
+        <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight">Guest Reviews (4.8 / 5)</h2>
         <div className="space-y-6">
           {reviews.map((review, index) => (
             <div key={index} className="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-primary">
               <div className="flex justify-between items-center mb-2">
-                <h3 className="font-bold text-gray-800 text-lg">{review.name}</h3>
+                <h3 className="font-bold text-gray-800 text-base">{review.name}</h3>
                 <p className="text-sm text-gray-500">{review.date}</p>
               </div>
               <StarRating rating={review.rating} />

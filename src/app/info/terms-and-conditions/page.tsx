@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
     <div className="bg-white">
       <Navbar />
       <div className="bg-[#F4EFE7] text-gray-600 px-6 md:px-20 py-10 max-w-6xl mx-auto">
-        <h1 className="text-4xl text-center text-primary font-bold mb-2">
+        <h1 className="text-3xl text-center text-primary font-bold mb-2">
           TERMS & CONDITIONS
         </h1>
         <p className="text-center text-gray-500 mb-10 font-medium">Updated at February 4th, 2026</p>
@@ -570,7 +570,7 @@ const Section = ({
   children: React.ReactNode;
 }) => (
   <div className="mb-8">
-    <h2 className="text-2xl font-semibold mb-3 text-[#1b3658] uppercase">{title}</h2>
+    <h2 className="text-xl font-semibold mb-3 text-[#1b3658] uppercase">{title}</h2>
     <div className="leading-relaxed">
         {children}
     </div>

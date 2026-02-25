@@ -1,14 +1,14 @@
 "use client";
- 
+
 import Image, { ImageProps } from "next/image";
-import { useState } from "react";
- 
+import { useState, memo, useCallback } from "react";
+
 interface KoursairImageProps extends Omit<ImageProps, "src"> {
   src: string;
   fallback?: string;
 }
- 
-export default function KoursairImage({
+
+const KoursairImage = memo(function KoursairImage({
   src,
   alt,
   width,
@@ -20,10 +20,19 @@ export default function KoursairImage({
 }: KoursairImageProps) {
   const [imgSrc, setImgSrc] = useState(src);
   const [loading, setLoading] = useState(true);
- 
+
   const shimmerClass =
     "animate-pulse bg-gray-200 dark:bg-gray-400 rounded-md absolute inset-0";
- 
+
+  const handleLoad = useCallback(() => {
+    setLoading((prev) => (prev ? false : prev));
+  }, []);
+
+  const handleError = useCallback(() => {
+    setImgSrc(fallback);
+    setLoading(false);
+  }, [fallback]);
+
   return (
   <div
     className="relative overflow-hidden"
@@ -31,7 +40,7 @@ export default function KoursairImage({
   >
       {/* Shimmer Skeleton Loader */}
       {loading && <div className={shimmerClass} />}
- 
+
       <Image
         src={imgSrc}
         alt={alt}
@@ -41,13 +50,12 @@ export default function KoursairImage({
         className={`${className} transition-opacity duration-300 ${
           loading ? "opacity-0" : "opacity-100"
         }`}
-        onLoad={() => setLoading(false)}
-        onError={() => {
-          setImgSrc(fallback);
-          setLoading(false);
-        }}
+        onLoad={handleLoad}
+        onError={handleError}
         {...props}
       />
     </div>
   );
-}
+});
+
+export default KoursairImage;

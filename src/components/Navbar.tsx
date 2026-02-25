@@ -1,18 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { User, Menu, ChevronDown, X, LogOut, CalendarCheck } from "lucide-react";
-import { useAuth } from "./AuthContext";
+import { useAuthStore } from "@/stores";
+import { useUIStore } from "@/stores";
 
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  
-  const { isAuthenticated, user, openLogin, logout } = useAuth();
+
+  const user = useAuthStore((s) => s.user);
+  const logout = useAuthStore((s) => s.logout);
+  const isAuthenticated = !!user;
+  const openLogin = useUIStore((s) => s.openLogin);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   type NavSubItem = {
     label: string;
@@ -28,7 +40,7 @@ export default function Navbar() {
 
   const navItems: NavItem[] = [
     { label: "About Us", href: "/about" },
-    { label: "Destinations", href: "/destinations", 
+    { label: "Destinations", href: "/destinations",
       submenu: [
         { label: "Kenya", href: "/tour/Kenya" },
         { label: "Dubai", href: "/tour/Dubai" },
@@ -52,14 +64,18 @@ export default function Navbar() {
     { label: "Talk to Us", href: "/support" },
   ];
 
-  const handleMouseEnter = (index: number) => setActiveDropdown(index);
-  const handleMouseLeave = () => setActiveDropdown(null);
-  const isCurrentPath = (href: string) => pathname === href;
+  const handleMouseEnter = useCallback((index: number) => setActiveDropdown(index), []);
+  const handleMouseLeave = useCallback(() => setActiveDropdown(null), []);
+  const isCurrentPath = useCallback((href: string) => pathname === href, [pathname]);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-40 bg-white shadow-md">
+    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      scrolled
+        ? "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
+        : "bg-transparent"
+    }`}>
       <div className="relative items-center justify-items-center justify-between">
-        <div className="max-w-[1350px] h-20 mx-auto px-4">
+        <div className="max-w-[1350px] h-16 mx-auto px-4">
           <div className="flex items-center justify-between h-full">
             {/* Left Section */}
             <div className="flex items-center h-full">
@@ -71,7 +87,9 @@ export default function Navbar() {
                     alt="Koursair Logo"
                     width={180}
                     height={100}
-                    className="w-40 h-[52px] md:w-52 md:h-[68px] object-cover"
+                    className={`w-32 md:w-36 object-contain transition-all duration-300 ${
+                      scrolled ? "" : "brightness-0 invert"
+                    }`}
                   />
                 </Link>
               </div>
@@ -87,14 +105,22 @@ export default function Navbar() {
                       onMouseLeave={handleMouseLeave}
                     >
                       {item.label === "Trips" ? (
-                        <span className="nav-link flex items-center px-5 py-2 text-lg font-medium transition-colors duration-300 hover:text-[#363636] text-[#1b3658] cursor-pointer">
+                        <span className={`nav-link flex items-center px-4 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer ${
+                          scrolled
+                            ? "text-[#1b3658] hover:text-[#363636]"
+                            : "text-white hover:text-white/80"
+                        }`}>
                           {item.label}
                           {item.submenu && <ChevronDown className="ml-1 w-3 h-3" />}
                         </span>
                       ) : (
                         <Link
                           href={item.href}
-                          className={`nav-link flex items-center px-5 py-2 text-lg font-medium transition-colors duration-300 hover:text-[#363636] text-[#1b3658] ${
+                          className={`nav-link flex items-center px-4 py-2 text-sm font-medium transition-colors duration-300 ${
+                            scrolled
+                              ? "text-[#1b3658] hover:text-[#363636]"
+                              : "text-white hover:text-white/80"
+                          } ${
                             isCurrentPath(item.href) ? "text-gray-800" : ""
                           }`}
                         >
@@ -130,7 +156,7 @@ export default function Navbar() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden text-black text-xl ml-5"
+                className={`lg:hidden text-xl ml-5 ${scrolled ? "text-black" : "text-white"}`}
                 aria-label="Toggle menu"
                 aria-expanded={mobileMenuOpen}
               >
@@ -140,11 +166,15 @@ export default function Navbar() {
 
             {/* Right Icons */}
             <div className="flex items-center py-0 h-full gap-4">
-              
-              
-              <Link 
+
+
+              <Link
                 href="https://calendar.app.google/6nuswsY8qfkSYnyXA" target="_blank" rel="noopener noreferrer"
-                className="hidden xl:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[#1b3658] rounded-full hover:bg-[#2a456b] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+                className={`hidden xl:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 transform hover:-translate-y-0.5 ${
+                  scrolled
+                    ? "text-white bg-[#1b3658] hover:bg-[#2a456b] shadow-sm hover:shadow-md"
+                    : "text-white border border-white/60 bg-transparent hover:bg-white/10"
+                }`}
               >
                 <CalendarCheck className="w-4 h-4" />
                 <span>Free Consultation</span>
@@ -152,10 +182,14 @@ export default function Navbar() {
 
               {isAuthenticated ? (
                 <div className="relative group">
-                  <button className="w-10 h-10 rounded-full bg-black/10 backdrop-blur-sm flex items-center justify-center cursor-pointer text-blue-500 hover:text-white text-xl transition-all duration-300 hover:bg-black/30">
+                  <button className={`w-10 h-10 rounded-full flex items-center justify-center cursor-pointer text-xl transition-all duration-300 ${
+                    scrolled
+                      ? "bg-gray-100 text-blue-500 hover:bg-gray-200"
+                      : "bg-white/15 text-white hover:bg-white/25"
+                  }`}>
                     <User className="w-6 h-6" />
                   </button>
-                  
+
                   {/* User Dropdown */}
                   <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <div className="p-3 border-b border-gray-200">
@@ -178,7 +212,11 @@ export default function Navbar() {
               ) : (
                 <button
                   onClick={openLogin}
-                  className="w-10 h-10 rounded-full bg-black/10 backdrop-blur-sm flex items-center justify-center text-blue-500 hover:text-white text-xl transition-all cursor-pointer duration-300 hover:bg-black/30"
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all cursor-pointer duration-300 ${
+                    scrolled
+                      ? "bg-gray-100 text-blue-500 hover:bg-gray-200"
+                      : "bg-white/15 text-white hover:bg-white/25"
+                  }`}
                 >
                   <User className="w-6 h-6" />
                 </button>
@@ -237,10 +275,10 @@ export default function Navbar() {
                 )}
               </li>
             ))}
-            
+
             {/* Mobile Consultation Button */}
             <li className="p-6">
-               <Link 
+               <Link
                 href="https://calendar.app.google/6nuswsY8qfkSYnyXA" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full px-5 py-3 text-base font-bold text-white bg-[#1b3658] rounded-full hover:bg-[#2a456b] transition-all duration-300 shadow-md"
               >

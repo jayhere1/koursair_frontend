@@ -25,7 +25,7 @@ export default function PopularToursSection() {
     <section className="py-8 sm:py-12 lg:py-16 bg-[#fffafa]">
       <div className="max-w-8xl mx-auto lg:px-8">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
             Our Popular Tours
           </h2>
           <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
@@ -48,6 +48,7 @@ export default function PopularToursSection() {
                     src={tour.image}
                     alt={tour.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
 
@@ -74,7 +75,7 @@ export default function PopularToursSection() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-[22px] font-semibold text-primary mb-2 capitalize ">
+                  <h3 className="text-lg font-semibold text-primary mb-2 capitalize ">
                     {tour.title}
                   </h3>
                  {tour.dates &&( <div className="flex items-center text-sm text-gray-500 mb-2">
@@ -93,7 +94,7 @@ export default function PopularToursSection() {
                     </div>
                     <p className="text-sm text-gray-600">
                      
-                      <span className="text-[#c49c7a] font-semibold text-lg">
+                      <span className="text-[#c49c7a] font-semibold text-base">
                         ${tour.price}
                       </span>{" "}
                       /per person

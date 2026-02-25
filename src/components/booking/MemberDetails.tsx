@@ -1,49 +1,44 @@
 "use client";
 import React, { useState, useMemo, useRef } from 'react';
 import { Upload, ChevronRight, Plus, Minus, ChevronDown, ChevronUp, FileCheck, Trash2, Loader2 } from 'lucide-react';
-import countryList from 'react-select-country-list'; 
-import { MemberDetails, BookingCounts } from '@/types/booking';
+import countryList from 'react-select-country-list';
+import { MemberDetails } from '@/types/booking';
 import { uploadFile } from '@/services/kenyaApi';
 import Popup from '@/components/Popup';
 import { CustomSelect } from '@/components/UIComponents/customselect';
+import { useBookingStore } from '@/stores';
+import { useAuthStore } from '@/stores';
 
 // --- NEW IMPORTS ---
 import 'react-phone-number-input/style.css'
 import PhoneInputWithCountrySelect, { parsePhoneNumber, Value } from "react-phone-number-input";
 
-
 interface Props {
-  userData: { name: string; email: string; phone: string };
-  userPhoneCode: string;
-  setUserData: { 
-    setName: (val: string) => void; 
-    setEmail: (val: string) => void; 
-    setPhone: (val: string) => void; 
-    setPhoneCode: (val: string) => void;
-  };
-  isPhoneEditable: boolean;
-  counts: BookingCounts;
-  setCounts: (counts: BookingCounts) => void;
-  members: MemberDetails[];
-  updateMember: (index: number, field: keyof MemberDetails | 'passportFile', value: string | File) => void;
-  errors: Record<string, string>;
   onNext: () => void;
   isLoading: boolean;
 }
 
-const TravelerDetails: React.FC<Props> = ({
-  userData,
-  userPhoneCode,
-  setUserData,
-  isPhoneEditable,
-  counts,
-  setCounts,
-  members,
-  updateMember,
-  errors,
-  onNext,
-  isLoading
-}) => {
+const TravelerDetails: React.FC<Props> = ({ onNext, isLoading }) => {
+  // Read from store
+  const userData = {
+    name: useBookingStore((s) => s.userName),
+    email: useBookingStore((s) => s.userEmail),
+    phone: useBookingStore((s) => s.userPhone),
+  };
+  const userPhoneCode = useBookingStore((s) => s.userPhoneCode);
+  const setUserData = {
+    setName: useBookingStore((s) => s.setUserName),
+    setEmail: useBookingStore((s) => s.setUserEmail),
+    setPhone: useBookingStore((s) => s.setUserPhone),
+    setPhoneCode: useBookingStore((s) => s.setUserPhoneCode),
+  };
+  const isPhoneEditable = useBookingStore((s) => s.isPhoneEditable);
+  const counts = useBookingStore((s) => s.counts);
+  const setCounts = useBookingStore((s) => s.setCounts);
+  const members = useBookingStore((s) => s.members);
+  const updateMember = useBookingStore((s) => s.updateMember);
+  const errors = useBookingStore((s) => s.errors);
+
   const options = useMemo(() => countryList().getData(), []);
   const [expandedTraveler, setExpandedTraveler] = useState<number | null>(0);
   const fileInputRefs = useRef<(HTMLInputElement | null)[]>([]);
@@ -65,8 +60,8 @@ const TravelerDetails: React.FC<Props> = ({
   ];
 
   // Prepare country options
-  const nationalityOptions = useMemo(() => 
-    options.map(c => ({ value: c.label, label: c.label })), 
+  const nationalityOptions = useMemo(() =>
+    options.map(c => ({ value: c.label, label: c.label })),
   [options]);
 
   const toggleTraveler = (index: number) => {
@@ -91,10 +86,7 @@ const TravelerDetails: React.FC<Props> = ({
   };
 
   const handlePassportUpload = async (index: number, file: File) => {
-    const token =
-      typeof window !== "undefined"
-        ? localStorage.getItem("token") || undefined
-        : undefined;
+    const token = useAuthStore.getState().token || undefined;
     try {
       setUploadingPassportIds((prev) => [...prev, index]);
       const url = await uploadFile(file, token);
@@ -117,7 +109,7 @@ const TravelerDetails: React.FC<Props> = ({
   };
 
   const totalTravelers = counts.adults + counts.children;
-  
+
   const getInputClass = (errorKey: string, disabled: boolean = false) => {
     const base = "w-full h-11 px-4 border rounded-lg outline-none transition-colors";
     if (disabled) return `${base} bg-gray-50 text-gray-500 cursor-not-allowed border-gray-300`;
@@ -140,8 +132,8 @@ const TravelerDetails: React.FC<Props> = ({
   };
 
   const currentPhoneValue = userData.phone
-    ? (userData.phone.startsWith('+') 
-        ? userData.phone 
+    ? (userData.phone.startsWith('+')
+        ? userData.phone
         : `+${(userPhoneCode || '').replace('+', '')}${userData.phone}`)
     : undefined;
 
@@ -149,30 +141,30 @@ const TravelerDetails: React.FC<Props> = ({
     <>
       {localPopup && <Popup message={localPopup.message} type={localPopup.type} onClose={() => setLocalPopup(null)} />}
       <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-8">
-      
+
       {/* 1. Contact Information */}
       <div>
         <h2 className="text-xl font-bold text-primary mb-4">Contact Information</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-xs font-bold text-gray-700 mb-1">Name</label>
-            <input 
-              type="text" 
-              value={userData.name} 
-              disabled={true} 
+            <input
+              type="text"
+              value={userData.name}
+              disabled={true}
               className={getInputClass('contact_name', true)}
             />
           </div>
           <div>
             <label className="block text-xs font-bold text-gray-700 mb-1">Email</label>
-            <input 
-              type="text" 
-              value={userData.email} 
-              disabled={true} 
+            <input
+              type="text"
+              value={userData.email}
+              disabled={true}
               className={getInputClass('contact_email', true)}
             />
           </div>
-          
+
           <div className="w-full">
             <label className="block text-xs font-bold text-gray-700 mb-1">Mobile</label>
             <PhoneInputWithCountrySelect
@@ -184,12 +176,12 @@ const TravelerDetails: React.FC<Props> = ({
                 disabled={!isPhoneEditable}
                 placeholder="Enter mobile number"
                 className={`flex w-full h-11 items-center px-4 rounded-lg text-sm outline-none transition-all ${
-                  errors['contact_phone'] 
-                  ? "border border-red-500 ring-1 ring-red-500" 
+                  errors['contact_phone']
+                  ? "border border-red-500 ring-1 ring-red-500"
                   : (!isPhoneEditable ? "bg-gray-50 border-1 border-gray-300 opacity-70" : "bg-white border border-gray-300 focus-within:ring-1 focus-within:ring-[#222D65]")
                 }`}
                 numberInputProps={{
-                  className: "border-none outline-none focus:outline-none focus:ring-0 w-full h-full ml-2 bg-transparent", 
+                  className: "border-none outline-none focus:outline-none focus:ring-0 w-full h-full ml-2 bg-transparent",
                 }}
             />
             {errors['contact_phone'] && <p className="text-xs text-red-500 mt-1">{errors['contact_phone']}</p>}
@@ -238,22 +230,22 @@ const TravelerDetails: React.FC<Props> = ({
             {totalTravelers} Traveler(s) Added
           </span>
         </div>
-        
+
         <p className="text-sm text-gray-500 italic mb-6">
           Please enter information exactly as it appears on your PASSPORT.
         </p>
 
-        {members.slice(0, totalTravelers).map((member, index) => {
+        {members.slice(0, totalTravelers).map((member: MemberDetails, index: number) => {
           const isOpen = expandedTraveler === index;
           const isAdult = index < counts.adults;
           const travelerLabel = isAdult ? "Adult" : "Child";
           const fileName = member.passportFile ? member.passportFile.name : null;
-          
+
           return (
             <div key={index} className={`border rounded-lg mb-4 overflow-hidden transition-all duration-200 ${
                 isOpen ? 'bg-white border-blue-200 shadow-md' : 'bg-gray-50 border-gray-300'
             }`}>
-              <div 
+              <div
                 onClick={() => toggleTraveler(index)}
                 className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-100 transition-colors"
               >
@@ -276,24 +268,23 @@ const TravelerDetails: React.FC<Props> = ({
               {isOpen && (
                 <div className="p-6 border-t border-gray-200">
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
-                    
+
                     <div className="md:col-span-2">
                       <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Title <span className="text-red-500">*</span></label>
-                      <CustomSelect 
+                      <CustomSelect
                         value={member.prefix}
                         options={titleOptions}
                         onChange={(val) => updateMember(index, 'prefix', val)}
                         className={getInputClass(`${index}_prefix`)}
                         placeholder="Select..."
-                        // No search needed for Mr/Mrs
                       />
                       {errors[`${index}_prefix`] && <span className="text-[10px] text-red-500">Required</span>}
                     </div>
 
                     <div className="md:col-span-4">
                       <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">First Name <span className="text-red-500">*</span></label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={member.firstName}
                         onChange={(e) => updateMember(index, 'firstName', e.target.value)}
                         placeholder="First Name"
@@ -304,8 +295,8 @@ const TravelerDetails: React.FC<Props> = ({
 
                     <div className="md:col-span-3">
                       <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Middle Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={member.middleName}
                         placeholder="(optional)"
                         onChange={(e) => updateMember(index, 'middleName', e.target.value)}
@@ -315,8 +306,8 @@ const TravelerDetails: React.FC<Props> = ({
 
                     <div className="md:col-span-3">
                       <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Last Name <span className="text-red-500">*</span></label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={member.lastName}
                         onChange={(e) => updateMember(index, 'lastName', e.target.value)}
                         placeholder="Last Name"
@@ -327,24 +318,23 @@ const TravelerDetails: React.FC<Props> = ({
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                    
+
                     <div>
                       <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Gender <span className="text-red-500">*</span></label>
-                      <CustomSelect 
+                      <CustomSelect
                         value={member.gender}
                         options={genderOptions}
                         onChange={(val) => updateMember(index, 'gender', val)}
                         className={getInputClass(`${index}_gender`)}
                         placeholder="Select..."
-                        // No search needed for Male/Female
                       />
                       {errors[`${index}_gender`] && <span className="text-[10px] text-red-500">Required</span>}
                     </div>
 
                     <div>
                       <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Date of Birth <span className="text-red-500">*</span></label>
-                      <input 
-                        type="date" 
+                      <input
+                        type="date"
                         value={member.dateOfBirth}
                         max={new Date().toISOString().split("T")[0]}
                         onChange={(e) => updateMember(index, 'dateOfBirth', e.target.value)}
@@ -356,13 +346,13 @@ const TravelerDetails: React.FC<Props> = ({
                     {/* NATIONALITY - ENABLE SEARCH HERE */}
                     <div>
                       <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Nationality <span className="text-red-500">*</span></label>
-                      <CustomSelect 
+                      <CustomSelect
                         value={member.nationality}
                         options={nationalityOptions}
                         onChange={(val) => updateMember(index, 'nationality', val)}
                         className={getInputClass(`${index}_nationality`)}
                         placeholder="Select Nationality"
-                        searchable={true} // <--- Makes this a typing field
+                        searchable={true}
                       />
                       {errors[`${index}_nationality`] && <span className="text-[10px] text-red-500">Required</span>}
                     </div>
@@ -370,8 +360,8 @@ const TravelerDetails: React.FC<Props> = ({
 
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-2 uppercase">Passport Copy (Front Page)</label>
-                    <input 
-                        type="file" 
+                    <input
+                        type="file"
                         ref={(el) => { fileInputRefs.current[index] = el; }}
                         onChange={(e) => handleFileChange(index, e)}
                         accept=".pdf,.jpg,.jpeg,.png"
@@ -379,13 +369,13 @@ const TravelerDetails: React.FC<Props> = ({
                         disabled={uploadingPassportIds.includes(index)}
                     />
                     <div className="relative">
-                      <div 
+                      <div
                           onClick={() => !uploadingPassportIds.includes(index) && handleFileClick(index)}
                           className={`border-2 border-dashed rounded-lg p-8 flex flex-col items-center justify-center text-center transition-colors ${
-                              uploadingPassportIds.includes(index) 
-                                ? 'bg-gray-50 border-gray-300 cursor-wait' 
+                              uploadingPassportIds.includes(index)
+                                ? 'bg-gray-50 border-gray-300 cursor-wait'
                                 : fileName || member.passportUrl
-                                ? 'bg-blue-50 border-primary cursor-pointer hover:bg-blue-100' 
+                                ? 'bg-blue-50 border-primary cursor-pointer hover:bg-blue-100'
                                 : 'border-gray-200 hover:bg-gray-50 cursor-pointer'
                           }`}
                       >

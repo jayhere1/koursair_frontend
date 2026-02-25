@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback, memo } from "react";
 import { X, Mail, Key, Eye, EyeOff } from "lucide-react";
-import { useAuth } from "./AuthContext";
+import { useAuthStore, useUIStore } from "@/stores";
 import { supabase } from "@/lib/supabaseClient";
 import Popup from "./Popup";
 import KoursairImage from "./Media/Images/KoursairImage";
@@ -855,7 +855,9 @@ const SignupModal = memo(
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     
-    const { detectedPhoneCode, isPhoneCodeLoading, isAuthenticated } = useAuth();
+    const detectedPhoneCode = useAuthStore((s) => s.detectedPhoneCode);
+    const isPhoneCodeLoading = useAuthStore((s) => s.isPhoneCodeLoading);
+    const isAuthenticated = useAuthStore((s) => s.isAuthenticated)();
     
     const [localPopup, setLocalPopup] = useState<LocalPopup | null>(null);
     const [nameError, setNameError] = useState("");
@@ -1071,7 +1073,9 @@ const SignupModal = memo(
                 alt="Background"
                 fill
                 className="object-cover object-center"
-                priority
+                loading="eager"
+                fetchPriority="high"
+                sizes="50vw"
               />
             </div>
 
@@ -1541,24 +1545,23 @@ const ForgotPasswordModal = memo(
 ForgotPasswordModal.displayName = "ForgotPasswordModal";
 
 export const AuthModals = () => {
-  const {
-    showLoginModal,
-    showSignupModal,
-    showForgotPasswordModal,
-    showOTPEmailModal,
-    showCreateNewPasswordModal,
-    closeModals,
-    login,
-    signup,
-    forgotPassword,
-    requestOtp,
-    signInWithOtp,
-    resetPasswordFromLink,
-    switchToLogin,
-    switchToSignup,
-    switchToForgotPassword,
-    switchToOTPEmail,
-  } = useAuth();
+  const showLoginModal = useUIStore((s) => s.showLoginModal);
+  const showSignupModal = useUIStore((s) => s.showSignupModal);
+  const showForgotPasswordModal = useUIStore((s) => s.showForgotPasswordModal);
+  const showOTPEmailModal = useUIStore((s) => s.showOTPEmailModal);
+  const showCreateNewPasswordModal = useUIStore((s) => s.showCreateNewPasswordModal);
+  const closeModals = useUIStore((s) => s.closeModals);
+  const switchToLogin = useUIStore((s) => s.switchToLogin);
+  const switchToSignup = useUIStore((s) => s.switchToSignup);
+  const switchToForgotPassword = useUIStore((s) => s.switchToForgotPassword);
+  const switchToOTPEmail = useUIStore((s) => s.switchToOTPEmail);
+
+  const login = useAuthStore((s) => s.login);
+  const signup = useAuthStore((s) => s.signup);
+  const forgotPassword = useAuthStore((s) => s.forgotPassword);
+  const requestOtp = useAuthStore((s) => s.requestOtp);
+  const signInWithOtp = useAuthStore((s) => s.signInWithOtp);
+  const resetPasswordFromLink = useAuthStore((s) => s.resetPasswordFromLink);
 
   return (
     <>

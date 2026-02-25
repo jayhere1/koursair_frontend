@@ -41,7 +41,7 @@ export default function PaymentSuccessClient() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F4EFE7]">
         <div className="bg-white p-8 rounded-2xl shadow-xl text-center">
-          <p className="text-lg font-semibold text-gray-700">
+          <p className="text-base font-semibold text-gray-700">
             Finalizing your payment…
           </p>
           <p className="text-sm text-gray-500 mt-2">
@@ -58,7 +58,7 @@ export default function PaymentSuccessClient() {
       <div className="min-h-screen flex items-center justify-center bg-[#F4EFE7] px-4">
         <div className="bg-white max-w-lg w-full rounded-3xl shadow-2xl border-t-8 border-red-500 p-8 text-center">
           <AlertTriangle className="w-14 h-14 text-red-500 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">
+          <h1 className="text-xl font-bold text-gray-800 mb-2">
             Payment Verification Issue
           </h1>
           <p className="text-gray-600 mb-6">{errorMsg}</p>
@@ -80,7 +80,7 @@ export default function PaymentSuccessClient() {
       <div className="bg-white max-w-lg w-full rounded-3xl shadow-2xl border-t-8 border-green-600 p-8 text-center">
         <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
 
-        <h1 className="text-3xl font-extrabold text-gray-800 mb-2">
+        <h1 className="text-2xl font-extrabold text-gray-800 mb-2">
           Payment Successful 🎉
         </h1>
 

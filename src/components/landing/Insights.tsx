@@ -17,7 +17,7 @@ export default function NewsEventsSection() {
         {/* Section Header */}
         <div className="mb-10 sm:mb-12 lg:mb-16">
           <div className="relative inline-block mb-2">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-primary">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary">
               News & Insights
             </h2>
             {/* <div className="w-[100px] sm:w-[110px] md:w-[120px] h-[2px] bg-[#e1e1e1]">
@@ -66,10 +66,10 @@ export default function NewsEventsSection() {
                   <span className="mx-2">-</span>
                   <span>{item.publishDate}</span>
                 </div>
-                <h3 className="text-base sm:text-lg md:text-2xl font-bold text-primary mb-1 sm:mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-sm sm:text-base md:text-xl font-bold text-primary mb-1 sm:mb-2 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -79,7 +79,7 @@ export default function NewsEventsSection() {
 
         {/* View All Button */}
         <div className="text-center">
-          <Link href="/news-insights"  className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold bg-primary text-white text-base sm:text-lg transition-all duration-300 hover:shadow-xl cursor-pointer hover:scale-105 transform">
+          <Link href="/news-insights"  className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold bg-primary text-white text-sm sm:text-base transition-all duration-300 hover:shadow-xl cursor-pointer hover:scale-105 transform">
             Explore more Insights
           </Link>
         </div>

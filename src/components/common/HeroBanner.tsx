@@ -23,6 +23,9 @@ const HeroBanner: React.FC<PageHeroProps> = ({
           src={imageSrc}
           alt={imageAlt}
           fill
+          loading="eager"
+          fetchPriority="high"
+          sizes="100vw"
           className="object-cover object-center z-0"
         />
       </div>
@@ -32,11 +35,11 @@ const HeroBanner: React.FC<PageHeroProps> = ({
 
       {/* Title */}
       <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl relative z-20">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-alegreya tracking-wide">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-alegreya tracking-wide">
           {title}
         </h1>
         {subheading && (
-          <p className="mt-4 text-lg sm:text-xl md:text-2xl text-white/90">
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-white/90">
             {subheading}
           </p>
         )}

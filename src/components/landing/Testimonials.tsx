@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { testimonials } from '@/constants/testimonial';
 
 const TestimonialsSection = () => {
@@ -15,23 +16,24 @@ const TestimonialsSection = () => {
       Object.values(refs).forEach((video) => {
         if (video) {
           video.pause();
-          video.removeAttribute('src');
+          // Remove <source> elements and reset
+          while (video.firstChild) {
+            video.removeChild(video.firstChild);
+          }
           video.load();
         }
       });
     };
   }, []);
 
-  
-
-  const handleMouseEnter = (id: number) => {
+  const handleMouseEnter = useCallback((id: number) => {
     setHoveredCard(id);
     if (videoRefs.current[id]) {
       videoRefs.current[id]?.play();
     }
-  };
+  }, []);
 
-  const handleMouseLeave = (id: number) => {
+  const handleMouseLeave = useCallback((id: number) => {
     setHoveredCard(null);
     if (videoRefs.current[id]) {
       videoRefs.current[id]?.pause();
@@ -39,20 +41,17 @@ const TestimonialsSection = () => {
         videoRefs.current[id]!.currentTime = 0;
       }
     }
-  };
+  }, []);
 
   return (
     <div className="w-full py-12 sm:py-16 lg:py-24 bg-[#F4EFE7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight">
             Client Reviews
           </h2>
-          {/* <div className="w-24 sm:w-28 md:w-32 h-0.5 bg-[#e1e1e1] mx-auto mt-1 sm:mt-1 mb-4 sm:mb-6">
-            <div className="w-12 sm:w-14 md:w-16 h-0.5 bg-primary mx-auto"></div>
-          </div> */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md sm:max-w-lg md:max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-md sm:max-w-lg md:max-w-3xl mx-auto leading-relaxed">
             Don&apos;t just take our word for it - hear from travelers who&apos;ve experienced the Koursair difference.
           </p>
         </div>
@@ -63,7 +62,7 @@ const TestimonialsSection = () => {
             <div
               key={testimonial.id}
               className="relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl group h-[400px] sm:h-[450px] md:h-[500px]"
-              style={{ 
+              style={{
                 transform: hoveredCard === testimonial.id ? 'scale(1.05) translateY(-8px)' : 'scale(1)',
                 transformStyle: 'preserve-3d',
                 perspective: '1000px'
@@ -71,13 +70,20 @@ const TestimonialsSection = () => {
               onMouseEnter={() => handleMouseEnter(testimonial.id)}
               onMouseLeave={() => handleMouseLeave(testimonial.id)}
             >
-              {/* Background Image */}
+              {/* Background Image - using Next.js Image instead of CSS backgroundImage */}
               <div
-                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
+                className={`absolute inset-0 transition-opacity duration-500 ${
                   hoveredCard === testimonial.id ? 'opacity-0' : 'opacity-100'
                 }`}
-                style={{ backgroundImage: `url(${testimonial.image})` }}
-              />
+              >
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover object-center"
+                />
+              </div>
 
               {/* Video Element */}
               <video
@@ -87,6 +93,7 @@ const TestimonialsSection = () => {
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                   hoveredCard === testimonial.id ? 'opacity-100' : 'opacity-0'
                 }`}
+                preload="none"
                 muted
                 loop
                 playsInline
@@ -120,24 +127,24 @@ const TestimonialsSection = () => {
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
                     </svg>
                   </div>
-                  
+
                   {/* Quote text */}
-                  <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-alegreya leading-relaxed mb-4 sm:mb-6 font-medium">
+                  <p className="text-white text-sm md:text-base lg:text-lg font-alegreya leading-relaxed mb-4 sm:mb-6 font-medium">
                     {testimonial.quote}
                   </p>
-                  
+
                   {/* Name */}
-                  <p className="text-base sm:text-lg md:text-xl font-medium text-gray-200">
+                  <p className="text-sm sm:text-base md:text-lg font-medium text-gray-200">
                     {testimonial.name}
                   </p>
                 </div>
               </div>
 
               {/* Hover effect overlay */}
-              <div 
+              <div
                 className={`absolute inset-0 transition-all duration-300 ${
                   hoveredCard === testimonial.id ? 'bg-black/10' : 'bg-transparent'
-                }`} 
+                }`}
               />
             </div>
           ))}
@@ -146,15 +153,10 @@ const TestimonialsSection = () => {
         {/* Call to Action */}
         <div className="text-center mt-10 sm:mt-12 lg:mt-20">
           <button onClick={() => Route.push('/reviews')}
-            className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full cursor-pointer font-semibold bg-primary text-white text-base sm:text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 transform mr-3 sm:mr-4 hover:bg-[#A6957D]"
+            className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full cursor-pointer font-semibold bg-primary text-white text-sm sm:text-base transition-all duration-300 hover:shadow-xl hover:scale-105 transform mr-3 sm:mr-4 hover:bg-[#A6957D]"
           >
             Read More Reviews
           </button>
-          {/* <button 
-            className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 mt-2 rounded-full font-semibold text-primary border-primary bg-transparent text-base sm:text-lg border-2 transition-all duration-300 hover:shadow-xl hover:scale-105 transform hover:text-[#A6957D] hover:border-[#A6957D]"
-          >
-            Share Your Story
-          </button> */}
         </div>
       </div>
     </div>

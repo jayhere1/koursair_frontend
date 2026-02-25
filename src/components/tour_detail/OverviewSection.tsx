@@ -21,9 +21,9 @@ const RenderSellingPointIcon = ({ path }: { path: string }) => (
 const OverviewSection: React.FC<OverviewSectionProps> = ({ overview, keySellingPoints }) => {
   return (
     <div className="col-span-3 lg:col-span-2 space-y-8">
-      <h2 className="text-4xl font-extrabold text-primary tracking-tight border-b-4 border-primary pb-3">{overview.title}</h2>
+      <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight border-b-4 border-primary pb-3">{overview.title}</h2>
       {overview.paragraphs.map((p, index) => (
-        <p key={index} className="text-gray-600 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: p }} />
+        <p key={index} className="text-gray-600 text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: p }} />
       ))}
       <div className="grid md:grid-cols-3 gap-6 pt-4">
         {keySellingPoints.map((point, index) => (

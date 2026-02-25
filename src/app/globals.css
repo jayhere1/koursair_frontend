@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Figtree:wght@300..900&display=swap');
 @import "tailwindcss";
 @import "react-phone-number-input/style.css";
 @import "slick-carousel/slick/slick.css";
@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Figtree", sans-serif;
 }
 
 .text-primary {
@@ -52,7 +52,7 @@ body {
   left: 13px;
   right: 13px;
   height: 2px;
-  background-color: #1b3658;
+  background-color: currentColor;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -61,8 +61,8 @@ body {
 .nav-link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-  
-  background-color: #1b3658;
+
+  background-color: currentColor;
 }
 
 .nav-link.active::after {

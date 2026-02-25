@@ -192,10 +192,10 @@ Join us to taste Bali’s culinary heritage, from warungs to gourmet dining. Thi
         <Navbar />
         <section className="py-8 sm:py-12 lg:py-16">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-12 md:px-16 lg:px-24 xl:px-28">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
               News Not Found
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-8">
+            <p className="text-gray-600 text-sm sm:text-sm md:text-base mb-8">
               Sorry, the news article you’re looking for doesn’t exist.
             </p>
             <div className="text-right">
@@ -229,13 +229,13 @@ Join us to taste Bali’s culinary heritage, from warungs to gourmet dining. Thi
                     >
                       {/* Hero Image */}
                       <div className="absolute inset-0">
-                        <KoursairImage src={newsItem.image} alt={newsItem.title} fill className="object-cover" priority />
+                        <KoursairImage src={newsItem.image} alt={newsItem.title} fill className="object-cover" loading="eager" fetchPriority="high" sizes="100vw" />
                       </div>
                       {/* Dark Overlay (Replaces linear-gradient) */}
                       <div className="absolute inset-0 bg-black/50 z-10" />
               
                       <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl relative z-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-alegreya font-bold mb-4 sm:mb-6 tracking-wide">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-alegreya font-bold mb-4 sm:mb-6 tracking-wide">
             {newsItem.title}
           </h1>
         </div>
@@ -257,14 +257,14 @@ Join us to taste Bali’s culinary heritage, from warungs to gourmet dining. Thi
                 <span className="text-primary font-medium">{newsItem.category}</span>
               </div>
               <div className="relative inline-block mb-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary">
                   {newsItem.title}
                 </h2>
                 <div className="w-[100px] sm:w-[110px] md:w-[120px] h-[2px] bg-[#e1e1e1]">
                   <div className="w-[50px] sm:w-[55px] md:w-[60px] h-[2px] bg-primary"></div>
                 </div>
               </div>
-              <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-md sm:max-w-lg md:max-w-2xl">
+              <p className="text-gray-600 text-sm sm:text-sm md:text-base max-w-md sm:max-w-lg md:max-w-2xl">
                 {newsItem.description}
               </p>
             </div>
@@ -274,7 +274,7 @@ Join us to taste Bali’s culinary heritage, from warungs to gourmet dining. Thi
               {newsItem.content.split("\n").map((paragraph, index) => (
                 <div key={index}>
                   {paragraph.startsWith("## ") ? (
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-semibold primary mt-8 mb-4">
+                    <h2 className="text-base sm:text-lg md:text-xl font-semibold primary mt-8 mb-4">
                       {paragraph.replace("## ", "").trim()}
                     </h2>
                   ) : (
@@ -300,7 +300,7 @@ Join us to taste Bali’s culinary heritage, from warungs to gourmet dining. Thi
 
           {/* Sidebar - Recent Posts */}
           <aside className="lg:col-span-2 bg-[#f9f9f9] p-6 rounded-lg shadow-md sticky top-20 h-fit w-[370px]">
-            <h3 className="text-xl font-semibold primary mb-4">
+            <h3 className="text-lg font-semibold primary mb-4">
               Recent Stories
             </h3>
             <p className="text-gray-600 text-sm mb-6">

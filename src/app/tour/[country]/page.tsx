@@ -39,10 +39,10 @@ const TripDestinationPage = async ({
           <div className="absolute inset-0 bg-black/50"></div>
 
           <div className="relative z-10 text-white px-6 max-w-2xl">
-            <h1 className="text-5xl font-semibold mb-6">
+            <h1 className="text-4xl font-semibold mb-6">
               New Adventures<br /> Coming Soon...
             </h1>
-            <p className="text-xl text-gray-200 ">
+            <p className="text-lg text-gray-200 ">
               We&apos;re crafting breathtaking experiences and exclusive journeys.
               Stay tuned — your next destination awaits.
             </p>

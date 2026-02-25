@@ -2,12 +2,12 @@
 
 import React, { useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useAuth } from '@/components/AuthContext';
+import { useUIStore } from '@/stores';
 import Navbar from '@/components/Navbar';
 import Popup from '@/components/Popup';
 
 function ResetPasswordLogic() {
-  const { switchToCreateNewPassword } = useAuth();
+  const switchToCreateNewPassword = useUIStore((s) => s.switchToCreateNewPassword);
   const searchParams = useSearchParams();
   const [popup, setPopup] = React.useState<{ message: string; type?: 'success' | 'error' | 'info' } | null>(null);
 

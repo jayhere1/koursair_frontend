@@ -9,10 +9,10 @@ const WhyChooseKoursair = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
             Why Choose Koursair
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md sm:max-w-lg md:max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-md sm:max-w-lg md:max-w-3xl mx-auto">
             We reinvent group travel by combining unbeatable value with unforgettable destinations.
           </p>
         </div>
@@ -29,7 +29,7 @@ const WhyChooseKoursair = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-primary mb-2 sm:mb-3">Unbeatable Value</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-3">Unbeatable Value</h3>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Premium group travel experiences at prices no competitor can match through large block bookings and trusted partnerships.
             </p>
@@ -46,7 +46,7 @@ const WhyChooseKoursair = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-primary mb-2 sm:mb-3">Iconic Destinations</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-3">Iconic Destinations</h3>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               We focus only on select destinations we know inside and out - from Bali sunsets to Dubai rooftops and Phuket beaches.
             </p>
@@ -62,7 +62,7 @@ const WhyChooseKoursair = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-primary mb-2 sm:mb-3">High-Energy Adventures</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-3">High-Energy Adventures</h3>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Curated stylish trips designed for those who crave connection, adventure, and unforgettable experiences together.
             </p>
@@ -79,7 +79,7 @@ const WhyChooseKoursair = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-primary mb-2 sm:mb-3">Effortless Planning</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-3">Effortless Planning</h3>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Leave the stress behind. We handle all the details so you can focus on making memories with your group.
             </p>
@@ -95,7 +95,7 @@ const WhyChooseKoursair = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-primary mb-2 sm:mb-3">Local Expertise</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-3">Local Expertise</h3>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Our trusted local partners ensure authentic experiences and insider access to the best each destination offers.
             </p>
@@ -111,7 +111,7 @@ const WhyChooseKoursair = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold text-primary mb-2 sm:mb-3">Better Together</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-2 sm:mb-3">Better Together</h3>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               When you travel with Koursair, you don&apos;t just visit places - you create lasting bonds and share incredible moments.
             </p>
@@ -121,7 +121,7 @@ const WhyChooseKoursair = () => {
         {/* Call to Action */}
         <div className="text-center mt-10 sm:mt-12 lg:mt-16">
           <button onClick={() => Route.push('/destinations')}
-            className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold bg-primary text-white text-base sm:text-lg transition-all duration-300 hover:shadow-xl cursor-pointer hover:scale-105 transform">
+            className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold bg-primary text-white text-sm sm:text-base transition-all duration-300 hover:shadow-xl cursor-pointer hover:scale-105 transform">
             Start Your Journey
           </button>
         </div>

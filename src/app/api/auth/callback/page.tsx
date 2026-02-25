@@ -2,12 +2,12 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/components/AuthContext';
+import { useAuthStore } from '@/stores';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function AuthCallbackPage() {
   const router = useRouter();
-  const { handleOAuthCallback } = useAuth();
+  const handleOAuthCallback = useAuthStore((s) => s.handleOAuthCallback);
 
   useEffect(() => {
     handleOAuthCallback(router);

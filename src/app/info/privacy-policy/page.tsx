@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
     <div className="bg-white">
         <Navbar/>
     <div className="bg-[#F4EFE7] text-gray-600 px-6 md:px-20 py-10 max-w-6xl mx-auto">
-      <h1 className="text-4xl text-center text-primary font-bold mb-6">Privacy Policy</h1>
+      <h1 className="text-3xl text-center text-primary font-bold mb-6">Privacy Policy</h1>
       <p className="mb-6">
         At Koursair.com, we are committed to safeguarding your privacy and
         protecting your personal information. This Privacy Policy explains how
@@ -255,14 +255,14 @@ export default PrivacyPolicy;
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mb-8">
-    <h2 className="text-2xl font-semibold mb-2 text-[#1b3658]">{title}</h2>
+    <h2 className="text-xl font-semibold mb-2 text-[#1b3658]">{title}</h2>
     {children}
   </div>
 );
 
 const SubSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mb-4">
-    <h3 className="font-semibold text-lg text-gray-700 mb-1">{title}</h3>
+    <h3 className="font-semibold text-base text-gray-700 mb-1">{title}</h3>
     {children}
   </div>
 );

@@ -113,7 +113,9 @@ const Destination = () => {
             src="https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/destination_hero.jpg"
             alt="Destinations Hero"
             fill
-            priority
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
             className="object-cover object-center z-0"
           />
         </div>
@@ -121,10 +123,10 @@ const Destination = () => {
         <div className="absolute inset-0 bg-black/50 z-10" />
 
         <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl relative z-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-alegreya font-bold mb-4 sm:mb-6 tracking-wide">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-alegreya font-bold mb-4 sm:mb-6 tracking-wide">
             Destinations
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 leading-relaxed opacity-90">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 leading-relaxed opacity-90">
             Discover handpicked destinations where adventure meets luxury and memories are made to last a lifetime.
           </p>
         </div>
@@ -142,10 +144,10 @@ const Destination = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center sm:mb-8 lg:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
               Our Destinations
             </h2>
-            <p className="text-base sm:text-lg md:text-xl max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
               From tropical paradises to urban adventures, discover the world&apos;s most incredible destinations with Koursair.
             </p>
           </div>
@@ -250,12 +252,12 @@ const Destination = () => {
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-20">
                     <div className="text-left">
-                      <p 
-                        className="inline-block px-2 py-1 text-sm sm:text-base md:text-lg font-normal mb-1 sm:mb-2 italic bg-white/10 text-gray-100 w-fit rounded-xl font-alegreya"
+                      <p
+                        className="inline-block px-2 py-1 text-sm sm:text-sm md:text-base font-normal mb-1 sm:mb-2 italic bg-white/10 text-gray-100 w-fit rounded-xl font-alegreya"
                       >
                         {destination.subtitle}
                       </p>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
                         {destination.name}
                       </h3>
                     </div>
@@ -267,7 +269,7 @@ const Destination = () => {
                       <svg className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 mx-auto mb-2 sm:mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-lg font-semibold">Explore {destination.name}</p>
+                      <p className="text-sm sm:text-sm md:text-base font-semibold">Explore {destination.name}</p>
                     </div>
                   </div>
                 </div>
@@ -278,7 +280,7 @@ const Destination = () => {
               <svg className="w-12 h-12 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M12 12a4 4 0 100-8 4 4 0 000 8z" />
               </svg>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600">
+              <p className="text-sm sm:text-sm md:text-base text-gray-600">
                 No destinations found matching your search.
               </p>
               <p className="text-xs sm:text-sm text-gray-500 mt-2">

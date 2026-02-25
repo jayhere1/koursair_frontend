@@ -1,196 +1,86 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import KoursairImage from "../Media/Images/KoursairImage";
 import { COUNTRY_IMAGES } from "@/utils/constants";
 import { Booking } from "@/types/bookings";
 import { AuthModals } from "../AuthModal";
 import { BeatLoader } from "react-spinners";
-import { cancelBooking, getUserBookings } from "@/services/bookingsApi";
-import { createPaypalOrder } from "@/services/paypalApi";
-import { toast } from "sonner";
 import Pagination from "../UIComponents/pagination";
 import ParticipantSlider from "./ParticipantSlider";
 import { capitalizeFirstLetter } from "@/utils/helper";
 import { useProtectedPage } from "@/hooks/useProtectedPage";
+import { useBookingsPageStore } from "@/stores";
 
 
 const YourBookings = () => {
   const { isReady, isAuthenticated } = useProtectedPage();
-const latestRequestRef = useRef(0);
-  const [activeTab, setActiveTab] = useState<
-    "upcoming" | "completed" | "cancelled"
-  >("upcoming");
-  const [bookings, setBookings] = useState<Booking[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const latestRequestRef = useRef(0);
 
-  const [totalPages, setTotalPages] = useState(1);
+  const activeTab = useBookingsPageStore((s) => s.activeTab);
+  const bookings = useBookingsPageStore((s) => s.bookings);
+  const loading = useBookingsPageStore((s) => s.loading);
+  const page = useBookingsPageStore((s) => s.page);
+  const pageSize = useBookingsPageStore((s) => s.pageSize);
+  const totalPages = useBookingsPageStore((s) => s.totalPages);
+  const showOtherTooltip = useBookingsPageStore((s) => s.showOtherTooltip);
+  const showCancelModal = useBookingsPageStore((s) => s.showCancelModal);
+  const cancelReason = useBookingsPageStore((s) => s.cancelReason);
+  const cancelRemarks = useBookingsPageStore((s) => s.cancelRemarks);
+  const cancelLoading = useBookingsPageStore((s) => s.cancelLoading);
+  const payLoading = useBookingsPageStore((s) => s.payLoading);
 
-  const [showOtherTooltip, setShowOtherTooltip] = useState(false);
+  const setActiveTab = useBookingsPageStore((s) => s.setActiveTab);
+  const setPage = useBookingsPageStore((s) => s.setPage);
+  const setPageSize = useBookingsPageStore((s) => s.setPageSize);
+  const setShowOtherTooltip = useBookingsPageStore((s) => s.setShowOtherTooltip);
+  const openCancelModal = useBookingsPageStore((s) => s.openCancelModal);
+  const closeCancelModal = useBookingsPageStore((s) => s.closeCancelModal);
+  const setCancelReason = useBookingsPageStore((s) => s.setCancelReason);
+  const setCancelRemarks = useBookingsPageStore((s) => s.setCancelRemarks);
+  const fetchBookings = useBookingsPageStore((s) => s.fetchBookings);
+  const handleCancelBooking = useBookingsPageStore((s) => s.handleCancelBooking);
+  const handlePayNow = useBookingsPageStore((s) => s.handlePayNow);
 
-  const [showCancelModal, setShowCancelModal] = useState(false);
-  const [selectedBookingId, setSelectedBookingId] = useState<string | null>(null);
-  const [cancelReason, setCancelReason] = useState("");
-  const [cancelRemarks, setCancelRemarks] = useState("");
-  const [cancelLoading, setCancelLoading] = useState(false);
-  const [payLoading, setPayLoading] = useState<string | null>(null); 
+  useEffect(() => {
+    if (!isAuthenticated) return;
 
-useEffect(() => {
-  if (!isAuthenticated) return;
+    const controller = new AbortController();
+    const requestId = ++latestRequestRef.current;
 
-  const controller = new AbortController();
-
-  const requestId = ++latestRequestRef.current;
-
-  setLoading(true);
-
-  getUserBookings(activeTab, page, pageSize, controller.signal)
-    .then((result) => {
-      if (requestId === latestRequestRef.current) {
-        setBookings(result.bookings);
-        setTotalPages(Number(result.total_pages) || 1);
-      }
-    })
-    .catch((err) => {
-      if (err.name === "AbortError") return;
-
-      if (requestId === latestRequestRef.current) {
-        toast.error(err.message || "Server is currently unavailable.");
-        setBookings([]);
-        setTotalPages(1);
-      }
-    })
-    .finally(() => {
-      if (requestId === latestRequestRef.current) {
-        setLoading(false);
-      }
+    fetchBookings(controller.signal).then(() => {
+      // Only relevant if this is still the latest request
+      if (requestId !== latestRequestRef.current) return;
     });
 
-  return () => controller.abort();
+    return () => controller.abort();
+  }, [activeTab, page, pageSize, isAuthenticated, fetchBookings]);
 
-}, [activeTab, page, pageSize, isAuthenticated]);
-
- if (!isReady) {
-  return null; 
-}
-
-if (!isAuthenticated) {
-  return null; 
-}
-
-  const handlePayNow = async (booking: Booking) => {
-    setPayLoading(booking.id);
-    try {
-      const orderPayload = {
-        payment_id: booking.payment_id,
-        amount: Number(booking.remaining_amount),
-        currency: booking.currency,
-        destination: booking.trip_name,
-      };
-      const orderRes = await createPaypalOrder(orderPayload);
-      if (orderRes.data && orderRes.data.approval_url) {
-        window.location.href = orderRes.data.approval_url;
-      } else if (orderRes.message) {
-        toast.error(orderRes.message);
-      } else {
-        toast.error("PayPal order failed");
-      }
-    } catch (err: unknown) {
-      type ErrorWithMessage = { message: string };
-      if (
-        typeof err === "object" &&
-        err !== null &&
-        "message" in err &&
-        typeof (err as ErrorWithMessage).message === "string"
-      ) {
-        toast.error((err as ErrorWithMessage).message || "PayPal order failed");
-      } else {
-        toast.error("PayPal order failed");
-      }
-      console.error("PayPal order error", err);
-    } finally {
-      setPayLoading(null);
-    }
-  };
-
-  const handleCancelBooking = async () => {
-    if (!cancelReason) {
-      toast.error("Please select a reason for cancellation.");
-      return;
-    }
-
-    if (cancelReason === "Others" && !cancelRemarks.trim()) {
-      toast.error("Please type your reason in the 'Other' field.");
-      return;
-    }
-
-    if (!selectedBookingId) {
-      toast.error("No booking selected for cancellation.");
-      return;
-    }
-
-    try {
-      setCancelLoading(true);
-
-      // 1️⃣ Cancel booking
-      await cancelBooking(selectedBookingId, {
-        reason: cancelReason,
-        remarks: cancelRemarks || "",
-      });
-
-      toast.success("Booking cancelled successfully.");
-
-      // 2️⃣ Reset modal & form state
-      setShowCancelModal(false);
-      setCancelReason("");
-      setCancelRemarks("");
-      setSelectedBookingId(null);
-
-      // 3️⃣ Refresh bookings (defensive)
-      try {
-        const updated = await getUserBookings(activeTab, page, pageSize);
-        setBookings(updated.bookings || []);
-        setTotalPages(updated.total_pages || 1);
-      } catch (refreshError) {
-        console.warn("Failed to refresh bookings", refreshError);
-        setBookings([]);
-        setTotalPages(1);
-      }
-
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        toast.error(error.message || "Failed to cancel booking.");
-        console.warn(error.message);
-
-      } else {
-        toast.error("Unknown error occurred");
-        console.error("Unknown error occurred");
-      }
-    } finally {
-      setCancelLoading(false);
-    }
-  };
-
-
+  if (!isReady) return null;
+  if (!isAuthenticated) return null;
 
   return (
     <>
       <AuthModals />
       <div className="w-full">
         <div
-          className="relative h-64 sm:h-80 md:h-96 bg-cover bg-center bg-no-repeat flex items-center justify-center"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2835&q=80')`,
-          }}
+          className="relative h-64 sm:h-80 md:h-96 flex items-center justify-center overflow-hidden"
         >
+          <KoursairImage
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2835&q=80"
+            alt="Your Bookings"
+            fill
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
+            className="object-cover object-center"
+          />
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative text-center text-white px-4 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Your Bookings
             </h1>
-            <p className="text-lg opacity-90">
+            <p className="text-base opacity-90">
               Manage your upcoming and past adventures with ease.
             </p>
           </div>
@@ -203,10 +93,7 @@ if (!isAuthenticated) {
               {(["upcoming", "completed", "cancelled"] as const).map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => {
-                    setActiveTab(tab);
-                    setPage(1); 
-                  }}
+                  onClick={() => setActiveTab(tab)}
                   className={`px-6 cursor-pointer py-2 rounded-full capitalize ${activeTab === tab
                     ? "bg-primary text-white"
                     : "bg-white text-gray-600"
@@ -257,7 +144,7 @@ if (!isAuthenticated) {
                         <div className="flex-1 px-6 py-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
                           {/* LEFT */}
                           <div className="space-y-2 text-sm sm:text-base text-gray-600">
-                            <h3 className="text-xl font-bold text-primary">
+                            <h3 className="text-lg font-bold text-primary">
                               {booking.trip_name}
                             </h3>
                             <p className=" text-gray-600 text-base font-semibold">
@@ -271,8 +158,7 @@ if (!isAuthenticated) {
                               <button
                                 onClick={() => {
                                   if (window.confirm('Are you sure you want to cancel this booking?')) {
-                                    setSelectedBookingId(booking.id);
-                                    setShowCancelModal(true);
+                                    openCancelModal(booking.id);
                                   }
                                 }}
                                 className="mt-6 bg-primary text-white px-4 py-2 rounded-xl disabled:bg-gray-300 cursor-pointer"
@@ -292,7 +178,7 @@ if (!isAuthenticated) {
 
                                 <div className="flex flex-col gap-3 pl-3">
 
-                                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center  justify-center font-semibold text-lg">
+                                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center  justify-center font-semibold text-base">
                                     {booking.travellers.primary_traveller.first_name
                                       ?.charAt(0)
                                       .toUpperCase()}
@@ -342,7 +228,7 @@ if (!isAuthenticated) {
                                 <b>Paid Amount:</b>  <span className="text-base font-medium text-green-600 ">  ${Number(booking?.paid_amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                               </p>
 
-                              
+
                                 {Number(booking?.remaining_amount) > 0 && (
                                   <p className=" text-[#4A5565] text-base">
                                     <b>Pending Amount:</b>  <span className="text-base font-medium text-red-600"> ${Number(booking?.remaining_amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
@@ -370,10 +256,7 @@ if (!isAuthenticated) {
                   totalPages={totalPages}
                   pageSize={pageSize}
                   onPageChange={setPage}
-                  onPageSizeChange={(size) => {
-                    setPageSize(size);
-                    setPage(1);
-                  }}
+                  onPageSizeChange={(size: number) => setPageSize(size)}
                 />
 
 
@@ -389,11 +272,7 @@ if (!isAuthenticated) {
       {showCancelModal && (
         <div
           className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
-          onClick={() => {
-            setShowCancelModal(false);
-            setCancelReason("");
-            setCancelRemarks("");
-          }}
+          onClick={closeCancelModal}
         >
           <div
             className="bg-[#F3F3F3] rounded-xl  w-full max-w-md shadow-xl relative"
@@ -403,11 +282,7 @@ if (!isAuthenticated) {
           >
 
             <button
-              onClick={() => {
-                setShowCancelModal(false);
-                setCancelReason("");
-                setCancelRemarks("");
-              }}
+              onClick={closeCancelModal}
               className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
               aria-label="Close cancel modal"
             >
@@ -415,13 +290,13 @@ if (!isAuthenticated) {
             </button>
 
             {/* HEADER */}
-            <div className="bg-primary text-white px-4 py-3 rounded-t-xl text-3xl font-semibold">
+            <div className="bg-primary text-white px-4 py-3 rounded-t-xl text-xl font-semibold">
               Cancel Booking
             </div>
 
             {/* BODY */}
             <div className="bg-white py-3 mx-1 px-4 space-y-4">
-              <p className="text-lg text-[#636363]">
+              <p className="text-base text-[#636363]">
                 Please select the reason for cancellation
               </p>
 
@@ -469,7 +344,7 @@ if (!isAuthenticated) {
                 >
                   {showOtherTooltip && cancelReason !== "Others" && (
                     <div className="absolute -top-9 left-0 z-10  bg-red-500 text-white text-xs px-3 py-1 rounded-md shadow-lg whitespace-nowrap">
-                      Please select the “Others” option to enter your reason
+                      Please select the &quot;Others&quot; option to enter your reason
                     </div>
                   )}
 
@@ -492,11 +367,6 @@ if (!isAuthenticated) {
             {/* FOOTER */}
             <div className="px-5 pb-5 text-center">
               <button
-                // disabled={
-                //   !cancelReason ||
-                //   (isOtherSelected && !cancelRemarks.trim()) ||
-                //   cancelLoading
-                // }
                 onClick={handleCancelBooking}
                 className="mt-6 bg-primary cursor-pointer text-white px-4 py-2 rounded-xl disabled:bg-gray-300"
               >

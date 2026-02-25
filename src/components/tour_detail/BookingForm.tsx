@@ -4,8 +4,8 @@ import React, { useState, useEffect, useMemo, ChangeEvent, MouseEvent } from "re
 import { CustomSelect } from "../UIComponents/customselect";
 import PhoneInputWithCountrySelect, { parsePhoneNumber } from "react-phone-number-input";
 import { AlertCircle } from "lucide-react";
-import { useAuth } from "../AuthContext"; // Adjust path
-import Popup from "../Popup"; // Adjust path
+import { useAuthStore } from "@/stores";
+import Popup from "../Popup";
 import { useRouter } from "next/navigation";
 
 interface BookingFormProps {
@@ -16,7 +16,10 @@ interface BookingFormProps {
 
 const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, minDeposit }) => {
   const baseCountryCodes = useMemo(() => ["+91", "+1", "+44", "+61"], []);
-  const { isAuthenticated, user, detectedPhoneCode, isPhoneCodeLoading } = useAuth();
+  const user = useAuthStore((s) => s.user);
+  const detectedPhoneCode = useAuthStore((s) => s.detectedPhoneCode);
+  const isPhoneCodeLoading = useAuthStore((s) => s.isPhoneCodeLoading);
+  const isAuthenticated = !!user;
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [firstInvalidField, setFirstInvalidField] = useState<string | null>(null);
@@ -69,7 +72,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
         setBookingData(prev => ({ ...prev, countryCode: detectedPhoneCode }));
       }
     }
-  }, [isAuthenticated, user, detectedPhoneCode, isPhoneCodeLoading]);
+  }, [isAuthenticated, detectedPhoneCode, isPhoneCodeLoading]);
 
   const getSelectedPrice = () => {
     const selected = fixedDepartureDates.find((d) => d.date === bookingData.selectedDate);
@@ -196,7 +199,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
     <>
     {popup && <Popup message={popup.message} type={popup.type} onClose={handleClosePopup} />}
     <div className="bg-white rounded-3xl shadow-2xl p-3 sm:p-4 sticky top-[100px] space-y-4 border-t-8 border-primary">
-      <h3 className="text-3xl font-extrabold text-primary text-center border-b pb-3">Secure Your Seat</h3>
+      <h3 className="text-xl font-extrabold text-primary text-center border-b pb-3">Secure Your Seat</h3>
       <form className="space-y-2">
         {/* NAME */}
         <input
@@ -285,7 +288,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
         {/* PRICING DISPLAY */}
         <div className="bg-[#F4EFE7]/80 rounded-xl p-2 sm:p-2 text-center border-2 border-primary">
           <p className="text-gray-700 text-sm font-medium uppercase tracking-wider">Total Price Per Person</p>
-          <p className="text-3xl font-extrabold text-primary my-1">${getSelectedPrice().toLocaleString()}</p>
+          <p className="text-2xl font-extrabold text-primary my-1">${getSelectedPrice().toLocaleString()}</p>
           {minDeposit && (
           <p className="text-gray-600 text-sm">
             Minimum Deposit: <span className="font-bold text-red-500">${minDeposit}</span>
@@ -308,13 +311,13 @@ const BookingForm: React.FC<BookingFormProps> = ({ title, fixedDepartureDates, m
             type="submit"
             onClick={handleEnquiry}
             disabled={loading}
-            className="w-full py-4 bg-primary text-white font-bold text-lg cursor-pointer rounded-xl shadow-xl hover:bg-orange-600 disabled:bg-gray-400 transition-colors"
+            className="w-full py-4 bg-primary text-white font-bold text-base cursor-pointer rounded-xl shadow-xl hover:bg-orange-600 disabled:bg-gray-400 transition-colors"
           >
             {loading ? "Sending..." : "Send Enquiry"}
           </button>
           <button
             onClick={handleBooking}
-            className="w-full py-4 bg-primary text-white font-bold text-lg cursor-pointer rounded-xl shadow-xl hover:bg-green-700 transition-colors"
+            className="w-full py-4 bg-primary text-white font-bold text-base cursor-pointer rounded-xl shadow-xl hover:bg-green-700 transition-colors"
           >
             Book Now
           </button>

@@ -19,7 +19,7 @@ const StepPayment: React.FC<Props> = ({
     <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
       <div className="flex items-center gap-3 mb-6">
         <Lock className="w-8 h-8 text-black" />
-        <h2 className="text-3xl font-bold text-gray-800">Payment Method</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Payment Method</h2>
       </div>
 
       <div className="space-y-4">
@@ -77,7 +77,7 @@ const StepPayment: React.FC<Props> = ({
                   C20.378,0.682,17.853,0,14.622,0h-9.38c-0.66,0-1.223,0.48-1.325,1.133L0.01,25.898c-0.077,0.49,0.301,0.932,0.795,0.932h5.791
                   l1.454-9.225L9.614,7.699z"/>
               </svg>
-              <span className="font-semibold text-lg ml-2">Pay with PayPal</span>
+              <span className="font-semibold text-base ml-2">Pay with PayPal</span>
             </div>
           </div>
 
@@ -105,13 +105,13 @@ const StepPayment: React.FC<Props> = ({
       <div className="flex gap-4 mt-8">
         <button
           onClick={onBack}
-          className="flex-1 py-4 border-2 border-gray-300 text-gray-700 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all"
+          className="flex-1 py-4 border-2 border-gray-300 text-gray-700 font-bold text-base rounded-xl hover:bg-gray-50 transition-all"
         >
           Back
         </button>
         <button
           onClick={onConfirm}
-          className="flex-1 py-4 bg-black text-white font-bold text-lg rounded-xl shadow-xl hover:bg-gray-800 transition-all"
+          className="flex-1 py-4 bg-black text-white font-bold text-base rounded-xl shadow-xl hover:bg-gray-800 transition-all"
         >
           Confirm Payment
         </button>

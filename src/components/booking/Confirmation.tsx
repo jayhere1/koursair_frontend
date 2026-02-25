@@ -19,8 +19,8 @@ const StepConfirmation: React.FC<Props> = ({ status, bookingData, email, onNavig
           <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle className="w-16 h-16 text-green-500" />
           </div>
-          <h2 className="text-4xl font-bold text-gray-800">Booking Confirmed!</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-3xl font-bold text-gray-800">Booking Confirmed!</h2>
+          <p className="text-lg text-gray-600">
             Your trip to {bookingData.destination} is confirmed.
           </p>
           <div className="bg-green-50 border-2 border-green-500 rounded-xl p-6">
@@ -29,7 +29,7 @@ const StepConfirmation: React.FC<Props> = ({ status, bookingData, email, onNavig
           </div>
           <button 
             onClick={onNavigate}
-            className="w-full py-4 bg-black text-white font-bold text-lg rounded-xl shadow-xl hover:bg-gray-800 transition-all"
+            className="w-full py-4 bg-black text-white font-bold text-base rounded-xl shadow-xl hover:bg-gray-800 transition-all"
           >
             View My Bookings
           </button>
@@ -41,8 +41,8 @@ const StepConfirmation: React.FC<Props> = ({ status, bookingData, email, onNavig
           <div className="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center mx-auto">
             <AlertCircle className="w-16 h-16 text-yellow-500" />
           </div>
-          <h2 className="text-4xl font-bold text-gray-800">Payment Pending</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-3xl font-bold text-gray-800">Payment Pending</h2>
+          <p className="text-lg text-gray-600">
             Your payment is being processed by the bank.
           </p>
           <div className="bg-yellow-50 border-2 border-yellow-500 rounded-xl p-6">
@@ -51,7 +51,7 @@ const StepConfirmation: React.FC<Props> = ({ status, bookingData, email, onNavig
           </div>
           <button 
             onClick={onNavigate}
-            className="w-full py-4 bg-black text-white font-bold text-lg rounded-xl shadow-xl hover:bg-gray-800 transition-all"
+            className="w-full py-4 bg-black text-white font-bold text-base rounded-xl shadow-xl hover:bg-gray-800 transition-all"
           >
             View My Bookings
           </button>
@@ -63,8 +63,8 @@ const StepConfirmation: React.FC<Props> = ({ status, bookingData, email, onNavig
           <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mx-auto">
             <XCircle className="w-16 h-16 text-red-500" />
           </div>
-          <h2 className="text-4xl font-bold text-gray-800">Payment Failed</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-3xl font-bold text-gray-800">Payment Failed</h2>
+          <p className="text-lg text-gray-600">
             We couldn&apos;t process your payment. Please try again.
           </p>
           <div className="bg-red-50 border-2 border-red-500 rounded-xl p-6">
@@ -72,7 +72,7 @@ const StepConfirmation: React.FC<Props> = ({ status, bookingData, email, onNavig
           </div>
           <button
             onClick={onRetry}
-            className="w-full py-4 bg-black text-white font-bold text-lg rounded-xl shadow-xl hover:bg-gray-800 transition-all"
+            className="w-full py-4 bg-black text-white font-bold text-base rounded-xl shadow-xl hover:bg-gray-800 transition-all"
           >
             Try Again
           </button>

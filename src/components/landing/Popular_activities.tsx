@@ -12,10 +12,10 @@ const PopularActivitiesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
             Popular Destinations
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
             Discover our handpicked destinations where adventure meets luxury and memories are made.
           </p>
         </div>
@@ -42,10 +42,10 @@ const PopularActivitiesSection = () => {
               
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
                 <div className="text-left">
-                  <div className="text-sm sm:text-base md:text-lg text-[#F4EFE7] font-normal mb-1 sm:mb-2 italic">
+                  <div className="text-sm sm:text-sm md:text-base text-[#F4EFE7] font-normal mb-1 sm:mb-2 italic">
                     {activity.subtitle}
                   </div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3">
                     {activity.title}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-200 opacity-90">
@@ -75,10 +75,10 @@ const PopularActivitiesSection = () => {
               
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
                 <div className="text-left">
-                  <p className="text-sm sm:text-base md:text-lg text-[#F4EFE7] font-normal mb-1 sm:mb-2 italic">
+                  <p className="text-sm sm:text-sm md:text-base text-[#F4EFE7] font-normal mb-1 sm:mb-2 italic">
                     {activities[3].subtitle}
                   </p>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3">
                     {activities[3].title}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-200 opacity-90">
@@ -106,10 +106,10 @@ const PopularActivitiesSection = () => {
               
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
                 <div className="text-left">
-                  <p className="text-sm sm:text-base md:text-lg text-[#F4EFE7] font-normal mb-1 sm:mb-2 italic">
+                  <p className="text-sm sm:text-sm md:text-base text-[#F4EFE7] font-normal mb-1 sm:mb-2 italic">
                     {activities[4].subtitle}
                   </p>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3">
                     {activities[4].title}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-200 opacity-90">

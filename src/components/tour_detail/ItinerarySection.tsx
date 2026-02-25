@@ -32,7 +32,7 @@ const parseActivity = (activity: string): [string, string[]] | [string] => {
 const ItinerarySection: React.FC<ItinerarySectionProps> = ({ durationString, itinerary, onDayVisible }) => {
   return (
     <div className="lg:col-span-1 space-y-10">
-      <h2 className="text-4xl font-extrabold text-primary tracking-tight">Detailed Itinerary: {durationString.split("•")[1]?.trim() || durationString}</h2>
+      <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight">Detailed Itinerary: {durationString.split("•")[1]?.trim() || durationString}</h2>
       <div className="relative border-l-4 border-primary ml-4">
         {itinerary.map((day) => (
           <ItineraryItemWrapper key={day.day} day={day} onVisible={onDayVisible}>
@@ -42,10 +42,10 @@ const ItinerarySection: React.FC<ItinerarySectionProps> = ({ durationString, iti
                 <div className="relative h-64">
                   <DayImageCollage images={day.images} title={day.title} />
                   <div className="absolute inset-0 bg-black/30"></div>
-                  <div className="absolute top-4 left-4 bg-black/40 text-white font-semibold px-3 py-1 rounded-lg text-lg sm:text-xl uppercase shadow-md">Day {day.day}</div>
+                  <div className="absolute top-4 left-4 bg-black/40 text-white font-semibold px-3 py-1 rounded-lg text-base sm:text-lg uppercase shadow-md">Day {day.day}</div>
                 </div>
                 <div className="p-6 sm:p-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">{day.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">{day.title}</h3>
                   <ul className="space-y-3 text-gray-600">
                     {day.activities.map((act: string, idx: number) => {
                       const parsed = parseActivity(act);

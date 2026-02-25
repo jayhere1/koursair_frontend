@@ -115,14 +115,14 @@ const TripOverviewBooking = () => {
 
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
             <div className="text-center text-white max-w-5xl px-4 md:px-6">
-              <h1 className="text-3xl md:text-6xl font-extrabold font-alegreya mb-4">
+              <h1 className="text-2xl md:text-5xl font-extrabold font-alegreya mb-4">
                 {title}
               </h1>
-              <p className="text-lg md:text-xl lg:text-3xl font-light">
+              <p className="text-base md:text-lg lg:text-2xl font-light">
                 {destination}
               </p>
 
-              <p className="mt-2 flex justify-center items-center gap-2 text-sm md:text-xl lg:text-lg font-medium text-white/90">
+              <p className="mt-2 flex justify-center items-center gap-2 text-sm md:text-lg lg:text-base font-medium text-white/90">
                 <CalendarClock className="w-4 h-4" />
                 {bookingSection.fixedDepartureDates?.[0]?.label}
               </p>
@@ -161,16 +161,16 @@ const TripOverviewBooking = () => {
           {/* Overview Section */}
           <div id="overview" className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 scroll-mt-16">
             <div className="lg:col-span-3 space-y-6 md:space-y-8">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-primary tracking-tight border-b-4 border-primary pb-3">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight border-b-4 border-primary pb-3">
                 Trip Overview
               </h2>
               <div
-                className="text-gray-700 leading-relaxed text-base md:text-lg"
+                className="text-gray-700 leading-relaxed text-base md:text-base"
                 dangerouslySetInnerHTML={{ __html: overview }}
               />
 
               <div className="bg-[#F4EFE7]/50 p-6 md:p-8 rounded-2xl border border-primary mt-6">
-                <h3 className="font-bold text-lg md:text-xl mb-6 text-primary">
+                <h3 className="font-bold text-base md:text-lg mb-6 text-primary">
                   What&apos;s Included
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -199,7 +199,7 @@ const TripOverviewBooking = () => {
             {/* Highlights Section */}
             <div className="lg:col-span-2 space-y-6">
               <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-primary">
-                <h3 className="text-xl md:text-2xl font-bold text-primary mb-4">
+                <h3 className="text-lg md:text-xl font-bold text-primary mb-4">
                   {kenyaReunionAdventure.highlightsBox.title}
                 </h3>
                 <div className="space-y-4">
@@ -250,7 +250,7 @@ const TripOverviewBooking = () => {
           {/* Itinerary & Map */}
           <div id="itinerary" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 scroll-mt-32">
             <div className="lg:col-span-1 space-y-10">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-primary tracking-tight">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight">
                 Detailed Itinerary
               </h2>
               <div className="relative border-l-4 border-primary ml-2 md:ml-4">
@@ -264,7 +264,7 @@ const TripOverviewBooking = () => {
               </div>
             </div>
             <div id="map" className="lg:col-span-1 sticky top-[100px] h-min space-y-6 scroll-mt-32">
-              <h3 className="text-2xl font-bold text-primary border-b pb-2">
+              <h3 className="text-xl font-bold text-primary border-b pb-2">
                 Route Map
               </h3>
               <div className="h-[300px] md:h-[500px] bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden relative z-0">
@@ -291,10 +291,10 @@ const TripOverviewBooking = () => {
                     <span className="inline-block px-4 py-1 bg-[#BAA68E] text-white text-sm font-bold rounded-full mb-2">
                         Limited Spots Available
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+                    <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
                         Ready for the <br/> <span className="text-[#BAA68E]">Kenya Reunion?</span>
                     </h2>
-                    <p className="text-gray-300 text-lg md:text-xl">
+                    <p className="text-gray-300 text-base md:text-lg">
                         Secure your spot for the adventure of a lifetime. Experience the wild, the luxury, and the memories waiting for you.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
@@ -310,7 +310,7 @@ const TripOverviewBooking = () => {
                 </div>
 
                 <div className="flex-shrink-0">
-                    <Link href="/booking/kenya" className="group relative inline-flex items-center justify-center px-8 py-5 text-lg font-bold text-[#1b3658] transition-all duration-200 bg-white font-pj rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:bg-gray-100 hover:scale-105 shadow-xl">
+                    <Link href="/booking/kenya" className="group relative inline-flex items-center justify-center px-8 py-5 text-base font-bold text-[#1b3658] transition-all duration-200 bg-white font-pj rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:bg-gray-100 hover:scale-105 shadow-xl">
                         Proceed to Booking
                         <ArrowRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-1" />
                     </Link>

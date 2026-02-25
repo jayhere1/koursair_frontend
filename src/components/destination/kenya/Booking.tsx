@@ -12,12 +12,14 @@ import PaymentOption from "@/components/destination/payment_options";
 import PhoneInputWithCountrySelect from "react-phone-number-input";
 import Popup from "@/components/Popup";
 import { getAgeFromDob, isFutureDate } from "@/lib/helper";
+import { isValidName, isValidEmail, isValidPhone, validateRequiredFields } from "@/utils/kenyaBookingValidation";
 import countries from "i18n-iso-countries";
 import en from "i18n-iso-countries/langs/en.json";
 import { PassportGuest } from "@/types/passport";
 import { PassportUploader } from "./PassportUploader"; // Adjust path as needed
 import { useProtectedPage } from "@/hooks/useProtectedPage";
 import { CustomSelect } from "@/components/UIComponents/customselect";
+import { useAuthStore } from "@/stores";
 
 const Select = dynamic(() => import("react-select"), {
   ssr: false,
@@ -136,41 +138,19 @@ const KenyaBookingPage = () => {
   const addButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-      if (isReady && isAuthenticated && typeof window !== "undefined") {
-        let attempts = 0;
-        const maxAttempts = 10;
-  
-        const loadUserData = () => {
-          const userStr = localStorage.getItem("user");
-          if (userStr) {
-            try {
-              const user = JSON.parse(userStr);
-              if (user.name || user.email || user.phone) {
-                  setUserName(user.name || user.firstName || "");
-                  setUserEmail(user.email || "");
-                  const rawPhone = user.phone || user.phoneNumber || user.mobile || "";
-                  
-                  if (rawPhone && rawPhone.length > 5) {
-                      setUserPhone(rawPhone); 
-                      setIsPhoneEditable(false);
-                  } else {
-                      setIsPhoneEditable(true);
-                  }
-                  return true;
-              }
-            } catch (e) {
-              console.error("Error parsing user data", e);
-            }
+      if (isReady && isAuthenticated) {
+        const user = useAuthStore.getState().user;
+        if (user) {
+          setUserName(user.name || "");
+          setUserEmail(user.email || "");
+          const rawPhone = user.phone || "";
+          if (rawPhone && rawPhone.length > 5) {
+            setUserPhone(rawPhone);
+            setIsPhoneEditable(false);
+          } else {
+            setIsPhoneEditable(true);
           }
-          return false;
-        };
-  
-        if (loadUserData()) return;
-        const intervalId = setInterval(() => {
-          attempts++;
-          if (loadUserData() || attempts >= maxAttempts) clearInterval(intervalId);
-        }, 200);
-        return () => clearInterval(intervalId);
+        }
       }
     }, [isReady, isAuthenticated]);
 
@@ -189,92 +169,19 @@ const KenyaBookingPage = () => {
     });
   }, [totalTravelers]);
 
-  // --- Validation helpers (Copied from original) ---
-  const isValidName = (s?: string) => {
-    if (!s) return false;
-    if (s === "--") return false;
-    return /^[A-Za-zÀ-ÖØ-öø-ÿ' \-]+$/.test(s.trim());
-  };
-
-  const isValidEmail = (s?: string) => {
-    if (!s) return false;
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
-  };
-
-  const isValidPhone = (s?: string) => {
-    if (!s) return false;
-    const digits = s.replace(/\D/g, "");
-    return digits.length >= 7 && digits.length <= 15;
-  };
-
-  const validateRequiredFields = () => {
-    // 1️⃣ Traveler count mismatch
-    if (travelers.length !== totalTravelers) {
-      const missingIndex = travelers.length + 1;
-      return { valid: false, firstInvalid: `travelerMissing_${missingIndex}` };
-    }
-
-    // 2️⃣ Primary traveler basic validation
-    const primary = travelers[0];
-    if (!primary) return { valid: false, firstInvalid: "travelerCount" };
-
-    if (!primary.firstName || !isValidName(primary.firstName))
-      return { valid: false, firstInvalid: "primaryFirstName" };
-
-    if (!primary.lastName || !isValidName(primary.lastName))
-      return { valid: false, firstInvalid: "primaryLastName" };
-
-    if (!primary.gender) return { valid: false, firstInvalid: "primaryGender" };
-    if (!primary.dob) return { valid: false, firstInvalid: "primaryDob" };
-    if (!primary.nationality || !isValidName(primary.nationality))
-      return { valid: false, firstInvalid: "primaryNationality" };
-
-    for (let i = 1; i < travelers.length; i++) {
-      const t = travelers[i];
-      const idx = i + 1;
-      if (!t.firstName || !isValidName(t.firstName)) return { valid: false, firstInvalid: `traveler_${idx}_firstName` };
-      if (!t.lastName || !isValidName(t.lastName)) return { valid: false, firstInvalid: `traveler_${idx}_lastName` };
-      if (!t.gender) return { valid: false, firstInvalid: `traveler_${idx}_gender` };
-      if (!t.dob) return { valid: false, firstInvalid: `traveler_${idx}_dob` };
-      if (!t.nationality || !isValidName(t.nationality)) return { valid: false, firstInvalid: `traveler_${idx}_nationality` };
-    }
-
-    if (!userName || !userName.trim()) return { valid: false, firstInvalid: "contactName" };
-    if (!isValidName(userName)) return { valid: false, firstInvalid: "contactNameInvalid" };
-    if (!isValidEmail(userEmail)) return { valid: false, firstInvalid: "contactEmail" };
-    if (!isValidPhone(userPhone)) return { valid: false, firstInvalid: "contactPhone" };
-    if (!isValidName(bookingData.emergencyName)) return { valid: false, firstInvalid: "emergencyName" };
-    if (!isValidPhone(bookingData.emergencyContact || "")) return { valid: false, firstInvalid: "emergencyPhone" };
-    if (!bookingData.medicalRestrictions.trim()) return { valid: false, firstInvalid: "medicalRestrictions" };
-    if (!bookingData.mealPreference) return { valid: false, firstInvalid: "mealPreference" };
-    if (bookingData.mealPreference === "Other" && !bookingData.mealPreferenceOther.trim()) return { valid: false, firstInvalid: "mealPreferenceOther" };
-    if (!bookingData.mobilityIssues || bookingData.mobilityIssues.length === 0) return { valid: false, firstInvalid: "mobilityIssues" };
-    if (bookingData.mobilityIssues.includes("Other") && !bookingData.mobilityOther.trim()) return { valid: false, firstInvalid: "mobilityOther" };
-    if (!bookingData.allergies || bookingData.allergies.length === 0) return { valid: false, firstInvalid: "allergies" };
-
-    let invalidAdultCount = 0;
-    let invalidChildCount = 0;
-
-    for (let i = 0; i < travelers.length; i++) {
-      const t = travelers[i];
-      if (!t.dob) continue;
-      if (isFutureDate(t.dob)) {
-        return { valid: false, firstInvalid: i === 0 ? "primaryDobInvalid" : `traveler_${i + 1}_dobInvalid` };
-      }
-      const age = getAgeFromDob(t.dob);
-      const isAdultSelected = i < adultCount;
-      if (isAdultSelected && age < 12) invalidAdultCount++;
-      if (!isAdultSelected && age >= 12) invalidChildCount++;
-    }
-
-    if (invalidAdultCount > 0) return { valid: false, firstInvalid: "adultAgeMismatch" };
-    if (invalidChildCount > 0) return { valid: false, firstInvalid: "childAgeMismatch" };
-
-    if (!isFamilyBooking) {
-      if (!paymentPlan) return { valid: false, firstInvalid: "paymentPlan" };
-    }
-    return { valid: true };
-  };
+  const validateRequiredFieldsLocal = () =>
+    validateRequiredFields({
+      travelers,
+      totalTravelers,
+      adultCount,
+      childCount,
+      userName,
+      userEmail,
+      userPhone,
+      bookingData,
+      isFamilyBooking,
+      paymentPlan,
+    });
 
   const focusField = (key?: string | number) => {
     if (!key) return;
@@ -326,7 +233,7 @@ const KenyaBookingPage = () => {
   };
 
   const handlePassportUpload = async (id: number, file: File) => {
-    const token = typeof window !== "undefined" ? localStorage.getItem("token") || undefined : undefined;
+    const token = useAuthStore.getState().token || undefined;
     try {
       setUploadingPassportIds((prev) => [...prev, id]);
       const url = await uploadFile(file, token);
@@ -348,12 +255,9 @@ const KenyaBookingPage = () => {
      e.preventDefault();
      setIsLoading(true);
      try {
-       const token =
-         typeof window !== "undefined"
-           ? localStorage.getItem("token") || undefined
-           : undefined;
+       const token = useAuthStore.getState().token || undefined;
  
-       const v = validateRequiredFields();
+       const v = validateRequiredFieldsLocal();
        if (!v.valid) {
          const fieldLabel =
            v.firstInvalid && REQUIRED_FIELD_LABELS[v.firstInvalid]

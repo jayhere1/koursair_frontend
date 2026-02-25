@@ -28,6 +28,14 @@ const TripDetailHero: React.FC<TripDetailHeroProps> = ({ data }) => {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Preload next image before transition
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+    const nextIndex = (currentImageIndex + 1) % images.length;
+    const img = new window.Image();
+    img.src = images[nextIndex];
+  }, [currentImageIndex, images]);
+
   // Helper function to render SVG icons from path data (Handles compound paths)
   const RenderIcon: React.FC<{ path: string }> = ({ path }) => (
     <svg
@@ -77,7 +85,8 @@ const TripDetailHero: React.FC<TripDetailHeroProps> = ({ data }) => {
         src={image}
         alt={title}
         fill
-        sizes="90vw 90vh"
+        sizes="100vw"
+        {...(index === 0 ? { loading: "eager" as const, fetchPriority: "high" as const } : {})}
         className="object-cover w-full h-full"/>
           </div>
         ))}

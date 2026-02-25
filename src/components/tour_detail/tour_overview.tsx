@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useMemo } from "react";
+import React, { useRef, useState, useMemo, useCallback } from "react";
 import { TripData } from "@/types/tour";
 import TripTabs from "./NavigationTabs";
 import OverviewSection from "./OverviewSection";
@@ -41,14 +41,14 @@ const TripOverviewBooking: React.FC<TripOverviewBookingProps> = ({ data }) => {
       }));
   }, [itinerary]);
 
-  const handleDayVisibility = (coords: { lat: number, lng: number }, zoom: number) => {
+  const handleDayVisibility = useCallback((coords: { lat: number, lng: number }, zoom: number) => {
     setMapState((prev) => {
       if (prev.lat === coords.lat && prev.lng === coords.lng && prev.zoom === zoom) {
         return prev;
       }
       return { ...coords, zoom };
     });
-  };
+  }, []);
 
   return (
     <div className="relative py-12 sm:py-20 lg:py-24 bg-[#F4EFE7]">

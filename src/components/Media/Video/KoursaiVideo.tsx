@@ -43,11 +43,12 @@ export default function KoursairVideo({
       <video
         ref={videoRef}
         src={src}
+        preload="metadata"
         onLoadedData={() => setLoading(false)}
         className={`object-cover transition-opacity duration-500 ${
           loading ? "opacity-0" : "opacity-100"
         } ${fill ? "w-full h-full" : ""} ${className}`}
-        
+
         autoPlay
         muted
         loop

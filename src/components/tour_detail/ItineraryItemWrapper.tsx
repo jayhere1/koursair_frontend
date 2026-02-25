@@ -24,7 +24,7 @@ const ItineraryItemWrapper: React.FC<ItineraryItemWrapperProps> = ({ children, d
     if (inView && day.coordinates) {
       onVisible(day.coordinates, day.zoom || 11);
     }
-  }, [inView, day, onVisible]);
+  }, [inView, day.coordinates?.lat, day.coordinates?.lng, day.zoom, onVisible]);
 
   return <div ref={ref} className="scroll-item">{children}</div>;
 };

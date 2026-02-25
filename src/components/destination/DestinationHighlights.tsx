@@ -15,7 +15,7 @@ const DestinationHighlights: React.FC<DestinationHighlightsProps> = ({
 
   return (
     <section className="mt-16">
-      <h2 className="text-4xl font-bold text-primary mb-8 text-center">
+      <h2 className="text-3xl font-bold text-primary mb-8 text-center">
         Main Attractions & Cultural Highlights
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -33,7 +33,7 @@ const DestinationHighlights: React.FC<DestinationHighlightsProps> = ({
               />
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-bold text-primary mb-3 border-b border-gray-100 pb-2">
+              <h3 className="text-xl font-bold text-primary mb-3 border-b border-gray-100 pb-2">
                 {highlight.title}
               </h3>
               <p className="text-gray-600 ">

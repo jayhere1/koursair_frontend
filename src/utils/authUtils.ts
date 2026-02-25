@@ -1,11 +1,8 @@
-export function isSessionExpired(): boolean {
-  const token = localStorage.getItem("token");
-  if (!token) return true;
+export { isJwtExpired } from '@/stores/authStore';
 
-  try {
-    const payload = JSON.parse(atob(token.split(".")[1]));
-    return Date.now() >= payload.exp * 1000;
-  } catch {
-    return true;
-  }
+export function isSessionExpired(): boolean {
+  const { useAuthStore, isJwtExpired } = require('@/stores/authStore');
+  const token = useAuthStore.getState().token ?? (typeof window !== 'undefined' ? localStorage.getItem('token') : null);
+  if (!token) return true;
+  return isJwtExpired(token);
 }

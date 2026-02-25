@@ -3,12 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useAuth } from "../AuthContext";
+import { useUIStore } from "@/stores";
 import { Facebook, Instagram, Smartphone, Mail } from "lucide-react";
 
 
 export default function FooterSection() {
-  const { openLogin, openSignup} = useAuth();
+  const openLogin = useUIStore((s) => s.openLogin);
+  const openSignup = useUIStore((s) => s.openSignup);
 
   return (
     <>
@@ -19,7 +20,7 @@ export default function FooterSection() {
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2 mb-4">
-                <span className="text-xl font-semibold">KOURSAIR</span>
+                <span className="text-lg font-semibold">KOURSAIR</span>
               </div>
 
               <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
@@ -65,7 +66,7 @@ export default function FooterSection() {
 
             {/* Useful Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Useful links</h3>
+              <h3 className="text-base font-semibold mb-4">Useful links</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -104,7 +105,7 @@ export default function FooterSection() {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Contact with Us</h3>
+              <h3 className="text-base font-semibold mb-4">Contact with Us</h3>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Smartphone size={18} />

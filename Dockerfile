@@ -1,8 +1,18 @@
 # --- Build Stage ---
 FROM node:20.12.2-alpine AS builder
 WORKDIR /app
+ARG NEXT_PUBLIC_SUPABASE_URL
+ARG NEXT_PUBLIC_SUPABASE_ANON_KEY
+ARG NEXT_PUBLIC_API_BASE_URL
+ARG NEXT_PUBLIC_KOURSAIR_PASSWORD
+ARG NEXT_PUBLIC_KOURSAIR_STORAGE_KEY
+ENV NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY
+ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
+ENV NEXT_PUBLIC_KOURSAIR_PASSWORD=$NEXT_PUBLIC_KOURSAIR_PASSWORD
+ENV NEXT_PUBLIC_KOURSAIR_STORAGE_KEY=$NEXT_PUBLIC_KOURSAIR_STORAGE_KEY
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
 RUN npm run build
 
@@ -10,11 +20,8 @@ RUN npm run build
 FROM node:20.12.2-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
-
 EXPOSE 3000
-CMD ["npm", "start"]
-
+CMD ["node", "server.js"]

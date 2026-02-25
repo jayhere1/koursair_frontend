@@ -10,7 +10,7 @@ export default function PaymentCancelPage() {
       <div className="bg-white max-w-lg w-full rounded-3xl shadow-2xl border-t-8 border-red-500 p-8 text-center">
         <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
 
-        <h1 className="text-3xl font-extrabold text-gray-800 mb-2">
+        <h1 className="text-2xl font-extrabold text-gray-800 mb-2">
           Payment Cancelled
         </h1>
 
