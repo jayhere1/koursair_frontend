@@ -2,7 +2,7 @@
 
 // --- ICON PATHS ---
 // Defined here for clarity, though used in the object below.
-const ICON_PATHS = {
+export const ICON_PATHS = {
     // Currency: Dollar sign / coin stack / general currency symbol
     CURRENCY: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1",
     // Temperature: Thermometer (simplified)
@@ -77,6 +77,8 @@ export interface ItineraryItem {
     activities: string[];
     coordinates?: { lat: number; lng: number;  };
     zoom?: number;
+    subtitle?: string;
+    accommodation?: string;
 }
 
 export interface BookingSectionData {
@@ -94,16 +96,29 @@ export interface BookingSectionData {
     contactNumber: string;
 }
 
+export interface HighlightPoint {
+    title: string;
+    desc: string;
+}
+
+export interface HighlightsBox {
+    title: string;
+    points: HighlightPoint[];
+}
+
 export interface TripData {
     slug: string;
-    destination: string; 
-    title: string; 
+    destination: string;
+    title: string;
     duration: string;
     type: string;
     images: string[];
     facts: DestinationFacts;
     mapImageUrl: string;
     bookingSection: BookingSectionData;
+    overviewHtml?: string;
+    heroImage?: string;
+    highlightsBox?: HighlightsBox;
 }
 
 export const TOUR_DATA: Record<string, TripData> = {

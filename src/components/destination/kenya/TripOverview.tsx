@@ -18,25 +18,57 @@ import { kenyaReunionAdventure } from "@/constants/kenya";
 import { ItineraryItem } from "./ItineraryItem";
 import { ItineraryMap } from "./RouteMapSection";
 import { FactCard } from "./FactCard";
-import Link from "next/link"; // Imported for navigation
+import Link from "next/link";
+import type { TripData } from "@/types/tour";
 
-const TripOverviewBooking = () => {
-  // REMOVED: useProtectedPage (Moved to booking page)
-  
+interface TripOverviewProps {
+  data?: TripData;
+}
+
+const TripOverviewBooking = ({ data }: TripOverviewProps) => {
   const [mapState, setMapState] = useState({
     lat: -1.2921,
     lng: 36.8219,
     zoom: 10,
   });
 
-  const tripData = useMemo(() => kenyaReunionAdventure, []);
+  // Use CMS data if provided, otherwise fall back to hardcoded constant
+  const tripData = useMemo(() => {
+    if (data) {
+      return {
+        destination: data.destination,
+        title: data.title,
+        overview: data.overviewHtml || "",
+        heroImage: data.heroImage || data.images?.[0] || "",
+        facts: {
+          currency: { value: data.facts.currency.value },
+          avgTemp: { value: data.facts.avgTemp.value },
+          timezone: { value: data.facts.timezone.value },
+          language: { value: data.facts.language.value },
+        },
+        highlightsBox: data.highlightsBox || null,
+        bookingSection: {
+          fixedDepartureDates: data.bookingSection.fixedDepartureDates,
+          inclusions: data.bookingSection.inclusions,
+          exclusions: data.bookingSection.exclusions,
+          itinerary: data.bookingSection.itinerary,
+          keySellingPoints: data.bookingSection.keySellingPoints,
+          minDeposit: data.bookingSection.minDeposit,
+          contactNumber: data.bookingSection.contactNumber,
+        },
+      };
+    }
+    return kenyaReunionAdventure;
+  }, [data]);
+
   const { destination, title, overview, heroImage, facts, bookingSection } = tripData;
+  const highlightsBox = 'highlightsBox' in tripData ? tripData.highlightsBox : (kenyaReunionAdventure as any).highlightsBox;
   const { itinerary } = bookingSection;
 
   const mapRoute = useMemo(() => {
     return itinerary
-      .filter((day) => day.coordinates && day.coordinates.lat && day.coordinates.lng)
-      .map((day) => ({
+      .filter((day: any) => day.coordinates && day.coordinates.lat && day.coordinates.lng)
+      .map((day: any) => ({
         lat: day.coordinates!.lat,
         lng: day.coordinates!.lng,
         title: day.title.split(":")[0],
@@ -84,7 +116,7 @@ const TripOverviewBooking = () => {
     },
     { id: "map", label: "Route Map", icon: <Globe className="w-4 h-4" /> },
     {
-      id: "book-cta", // Updated ID
+      id: "book-cta",
       label: "Book Now",
       icon: <CheckCircle className="w-4 h-4" />,
       isPrimary: true,
@@ -101,7 +133,7 @@ const TripOverviewBooking = () => {
   return (
     <main>
       <Navbar />
-      
+
       <div className="relative min-h-screen bg-[#F4EFE7] pb-20">
         {/* 1. HERO SECTION */}
         <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
@@ -148,8 +180,8 @@ const TripOverviewBooking = () => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-bold shadow-md border-1 border-transparent transition duration-300 transform hover:scale-[1.02] whitespace-nowrap ${
-                    item.isPrimary 
-                    ? "bg-primary text-white hover:bg-primary/90" 
+                    item.isPrimary
+                    ? "bg-primary text-white hover:bg-primary/90"
                     : "text-gray-700 bg-white hover:bg-[#1b3658] hover:text-white"
                 }`}
               >
@@ -174,7 +206,7 @@ const TripOverviewBooking = () => {
                   What&apos;s Included
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {bookingSection.inclusions.map((inc, i) => (
+                  {bookingSection.inclusions.map((inc: string, i: number) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-gray-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" />
                       <span className="leading-snug">{inc}</span>
@@ -186,7 +218,7 @@ const TripOverviewBooking = () => {
                     Cost Exclusions (Not Included):
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {bookingSection.exclusions.map((inc, i) => (
+                    {bookingSection.exclusions.map((inc: string, i: number) => (
                       <div key={i} className="flex items-start gap-3 text-sm text-gray-700">
                         <span className="leading-snug">{inc}</span>
                       </div>
@@ -198,24 +230,26 @@ const TripOverviewBooking = () => {
 
             {/* Highlights Section */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-primary">
-                <h3 className="text-lg md:text-xl font-bold text-primary mb-4">
-                  {kenyaReunionAdventure.highlightsBox.title}
-                </h3>
-                <div className="space-y-4">
-                  {kenyaReunionAdventure.highlightsBox.points.map((point, idx) => (
-                    <div key={idx} className="flex gap-4 p-3 rounded-lg bg-gray-50">
-                      <div className="bg-primary p-2 rounded-full h-min">
-                        <CheckCircle className="w-5 h-5 text-white" />
+              {highlightsBox && (
+                <div className="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-primary">
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">
+                    {highlightsBox.title}
+                  </h3>
+                  <div className="space-y-4">
+                    {highlightsBox.points.map((point: any, idx: number) => (
+                      <div key={idx} className="flex gap-4 p-3 rounded-lg bg-gray-50">
+                        <div className="bg-primary p-2 rounded-full h-min">
+                          <CheckCircle className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-gray-900">{point.title}</h4>
+                          <p className="text-sm text-gray-600">{point.desc}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900">{point.title}</h4>
-                        <p className="text-sm text-gray-600">{point.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Images Grid */}
               <div className="grid-cols-2 gap-2 h-100 rounded-2xl overflow-hidden shadow-lg hidden md:grid">
@@ -254,7 +288,7 @@ const TripOverviewBooking = () => {
                 Detailed Itinerary
               </h2>
               <div className="relative border-l-4 border-primary ml-2 md:ml-4">
-                {itinerary.map((day) => (
+                {itinerary.map((day: any) => (
                   <ItineraryItem
                     key={day.day}
                     day={day}
@@ -285,7 +319,7 @@ const TripOverviewBooking = () => {
             <div className="bg-primary rounded-3xl overflow-hidden shadow-2xl relative">
               {/* Background Pattern/Texture Overlay */}
               <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-              
+
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-6 md:p-12 gap-6 text-center md:text-left">
                 <div className="space-y-4 max-w-xl">
                     <span className="inline-block px-4 py-1 bg-[#BAA68E] text-white text-sm font-bold rounded-full mb-2">

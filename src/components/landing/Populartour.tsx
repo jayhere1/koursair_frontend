@@ -1,13 +1,61 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Heart, Clock, Calendar } from "lucide-react";
 import { useRouter } from "next/navigation";
 import KoursairImage from "../Media/Images/KoursairImage";
-import { tours } from "@/constants/tours";
+import { tours as fallbackTours } from "@/constants/tours";
+import { BASE_URL } from "@/utils/apiConfig";
+
+interface TourCard {
+  id: number;
+  image: string;
+  category: string;
+  title: string;
+  country: string;
+  slug: string;
+  duration: string;
+  dates?: string;
+  price: number;
+  rating: number;
+  isLiked: boolean;
+}
+
+function mapCmsToCards(cmsTours: any[]): TourCard[] {
+  return cmsTours.map((t: any, i: number) => ({
+    id: t.id || i + 1,
+    image: t.listingImage || t.images?.[0] || "",
+    category: t.type || "",
+    title: t.title,
+    country: t.destination?.slug || "",
+    slug: t.slug,
+    duration: t.duration || "",
+    dates: t.listingDates?.[0] || undefined,
+    price: t.price || 0,
+    rating: t.rating || 0,
+    isLiked: false,
+  }));
+}
 
 export default function PopularToursSection() {
   const router = useRouter();
+  const [tourCards, setTourCards] = useState<TourCard[]>(fallbackTours as TourCard[]);
+
+  useEffect(() => {
+    async function loadTours() {
+      try {
+        const res = await fetch(`${BASE_URL}/cms/tours`);
+        if (!res.ok) return;
+        const json = await res.json();
+        if (json.data?.length) {
+          setTourCards(mapCmsToCards(json.data));
+        }
+      } catch {
+        // Keep fallback tours
+      }
+    }
+    loadTours();
+  }, []);
 
  const handleTourClick = (slug: string, country: string) => {
   if (country.toLowerCase() === "kenya") {
@@ -19,7 +67,7 @@ export default function PopularToursSection() {
 };
 
 
-  const visibleTours = tours.slice(0, 3);
+  const visibleTours = tourCards.slice(0, 3);
 
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-[#fffafa]">
@@ -82,9 +130,6 @@ export default function PopularToursSection() {
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>{tour.dates}</span>
                   </div>)}
-                  {/* <p className="text-gray-600 text-[15px] mb-4 line-clamp-2">
-                    {tour.description}
-                  </p> */}
 
                   {/* Duration & Price */}
                   <div className="flex items-center justify-between mb-4">
@@ -93,7 +138,7 @@ export default function PopularToursSection() {
                       <span className="text-sm">{tour.duration}</span>
                     </div>
                     <p className="text-sm text-gray-600">
-                     
+
                       <span className="text-[#c49c7a] font-semibold text-base">
                         ${tour.price}
                       </span>{" "}
@@ -105,8 +150,6 @@ export default function PopularToursSection() {
                   <div className="flex items-center justify-between pt-4 border-t border-gray-200">
   <div className="flex items-center text-sm text-gray-600">
     <span className="font-medium">Good</span>
-    {/* <span className="mx-1">•</span>
-    <span>{tour.reviews} Reviews</span> */}
   </div>
 
   {/* Pill Badge */}
@@ -115,7 +158,7 @@ export default function PopularToursSection() {
     <svg className="w-4 h-4 text-orange-50 fill-current" viewBox="0 0 24 24">
       <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
     </svg>
-    
+
     <div className="flex items-baseline gap-0.5">
       <span className="text-sm font-bold text-white">
         {tour.rating.toFixed(1)}

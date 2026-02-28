@@ -1,8 +1,8 @@
-// app/[country]/[slug]/page.tsx
-
 import DestinationPage from "@/components/destination/individual_destination";
 import FooterSection from "@/components/landing/Footer";
 import Navbar from "@/components/Navbar";
+import { fetchDestinationBySlug } from "@/services/cmsApi";
+import { transformStrapiDestination } from "@/utils/cmsTransformers";
 import { DESTINATION_DATA } from "@/constants/destination";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -13,12 +13,6 @@ export const metadata: Metadata = {
     "Explore tours and travel experiences in this destination with Koursair. Discover trips, activities, and local highlights.",
 };
 
-// Function to fetch the trip data (simulated with local object)
-const getTripData = (country: string): typeof DESTINATION_DATA[keyof typeof DESTINATION_DATA] | undefined => {
-  return DESTINATION_DATA[country];
-};
-
-// ✅ Await params
 const TripDestinationPage = async ({
   params,
 }: {
@@ -26,7 +20,20 @@ const TripDestinationPage = async ({
 }) => {
   const { country } = await params;
 
-  const destinationData = getTripData(country);
+  // Try CMS first, fall back to hardcoded constants
+  let destinationData;
+  try {
+    const raw = await fetchDestinationBySlug(country.toLowerCase());
+    if (raw) {
+      destinationData = transformStrapiDestination(raw);
+    }
+  } catch {
+    // CMS unavailable, fall through to constant fallback
+  }
+
+  if (!destinationData) {
+    destinationData = DESTINATION_DATA[country] ?? null;
+  }
 
   if (!destinationData) {
     return (
