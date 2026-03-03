@@ -2,10 +2,11 @@ import FooterSection from "@/components/landing/Footer";
 import Navbar from "@/components/Navbar";
 import TripDetailHero from "@/components/tour_detail/tour_hero";
 import TripOverviewBooking from "@/components/tour_detail/tour_overview";
-import { fetchTourBySlug } from "@/services/cmsApi";
+import { fetchTourBySlug, fetchTourBySlugDraft } from "@/services/cmsApi";
 import { transformStrapiTour } from "@/utils/cmsTransformers";
 import { TOUR_DATA, TripData } from "@/types/tour";
 import { redirect } from "next/navigation";
+import { draftMode } from "next/headers";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -27,10 +28,14 @@ const TripDetailPage = async ({
     redirect("/tour/Kenya");
   }
 
+  const { isEnabled: isDraft } = await draftMode();
+
   // Try CMS first, fall back to hardcoded constants
   let tripData: TripData | undefined;
   try {
-    const raw = await fetchTourBySlug(slug);
+    const raw = isDraft
+      ? await fetchTourBySlugDraft(slug)
+      : await fetchTourBySlug(slug);
     if (raw) {
       tripData = transformStrapiTour(raw);
     }

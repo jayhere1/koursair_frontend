@@ -1,9 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const CORRECT_PASSWORD = process.env.PROTECTED_PAGE_PASSWORD || "WEMBA 50s";
-
 export async function POST(request: NextRequest) {
   try {
+    const correctPassword = process.env.PROTECTED_PAGE_PASSWORD;
+    if (!correctPassword) {
+      console.error('PROTECTED_PAGE_PASSWORD env var is not set');
+      return NextResponse.json(
+        { message: 'Access verification is not configured' },
+        { status: 503 }
+      );
+    }
+
     const { password } = await request.json();
 
     if (!password) {
@@ -13,7 +20,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (password.trim() === CORRECT_PASSWORD) {
+    if (password.trim() === correctPassword) {
       return NextResponse.json({ success: true });
     }
 

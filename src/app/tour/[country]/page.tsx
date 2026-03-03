@@ -1,10 +1,11 @@
 import DestinationPage from "@/components/destination/individual_destination";
 import FooterSection from "@/components/landing/Footer";
 import Navbar from "@/components/Navbar";
-import { fetchDestinationBySlug } from "@/services/cmsApi";
+import { fetchDestinationBySlug, fetchDestinationBySlugDraft } from "@/services/cmsApi";
 import { transformStrapiDestination } from "@/utils/cmsTransformers";
 import { DESTINATION_DATA } from "@/constants/destination";
 import Link from "next/link";
+import { draftMode } from "next/headers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,11 +20,14 @@ const TripDestinationPage = async ({
   params: Promise<{ country: string }>;
 }) => {
   const { country } = await params;
+  const { isEnabled: isDraft } = await draftMode();
 
   // Try CMS first, fall back to hardcoded constants
   let destinationData;
   try {
-    const raw = await fetchDestinationBySlug(country.toLowerCase());
+    const raw = isDraft
+      ? await fetchDestinationBySlugDraft(country.toLowerCase())
+      : await fetchDestinationBySlug(country.toLowerCase());
     if (raw) {
       destinationData = transformStrapiDestination(raw);
     }

@@ -5,6 +5,22 @@ import type { Trip } from "@/types/trip";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+/** Extract URL from a Strapi media object, or pass through a plain string. */
+function mediaUrl(field: any): string {
+  if (!field) return "";
+  if (typeof field === "string") return field;
+  return field.url || "";
+}
+
+/** Extract URLs from a Strapi multi-media array, or pass through plain string[]. */
+function mediaUrls(field: any): string[] {
+  if (!field) return [];
+  if (Array.isArray(field) && typeof field[0] === "string") return field;
+  if (Array.isArray(field))
+    return field.map((f: any) => f.url || "").filter(Boolean);
+  return [];
+}
+
 function transformKeyFacts(raw: any): DestinationFacts {
   return {
     currency: { value: raw?.currency || "", iconPath: ICON_PATHS.CURRENCY },
@@ -22,14 +38,14 @@ export function transformStrapiDestination(raw: any): DestinationData {
     continent: raw.continent || "",
     overview: raw.overview || "",
     whygo: raw.whygo || "",
-    image: raw.image || "",
-    heroImage: raw.heroImage || "",
-    collageImages: raw.collageImages || [],
+    image: mediaUrl(raw.image),
+    heroImage: mediaUrl(raw.heroImage),
+    collageImages: mediaUrls(raw.collageImages),
     keyFacts: transformKeyFacts(raw.keyFacts),
     highlights: (raw.highlights || []).map((h: any) => ({
       title: h.title,
       description: h.description,
-      image: h.image || "",
+      image: mediaUrl(h.image),
     })),
     availableTours: (raw.tours || []).map((t: any) => ({
       title: t.title,
@@ -40,7 +56,7 @@ export function transformStrapiDestination(raw: any): DestinationData {
       price: t.price || 0,
       rating: t.rating || 0,
       reviews: t.reviewCount || 0,
-      image: t.listingImage || "",
+      image: mediaUrl(t.listingImage),
       dates: t.listingDates || [],
     })),
   };
@@ -53,8 +69,8 @@ export function transformStrapiTour(raw: any): TripData {
     title: raw.title,
     duration: raw.duration || "",
     type: raw.type || "",
-    images: raw.images || [],
-    mapImageUrl: raw.mapImageUrl || "",
+    images: mediaUrls(raw.images),
+    mapImageUrl: mediaUrl(raw.mapImageUrl),
     facts: transformKeyFacts(raw.facts),
     bookingSection: {
       overview: {
@@ -71,7 +87,7 @@ export function transformStrapiTour(raw: any): TripData {
       itinerary: (raw.itinerary || []).map((day: any) => ({
         day: day.day,
         title: day.title,
-        images: day.images || [],
+        images: mediaUrls(day.images),
         activities: day.activities || [],
         coordinates:
           day.latitude && day.longitude
@@ -96,7 +112,7 @@ export function transformStrapiTour(raw: any): TripData {
       contactNumber: raw.contactNumber || "",
     },
     overviewHtml: raw.overviewHtml || undefined,
-    heroImage: raw.heroImage || undefined,
+    heroImage: mediaUrl(raw.heroImage) || undefined,
     highlightsBox: raw.highlightsBox
       ? {
           title: raw.highlightsBox.title,
@@ -131,7 +147,7 @@ export function transformStrapiToursToTrips(rawTours: any[]): Trip[] {
     description: t.listingDescription || "",
     slug: t.slug,
     country: t.destination?.slug || t.destination?.title?.toLowerCase() || "",
-    image: t.listingImage || (t.images && t.images[0]) || "",
+    image: mediaUrl(t.listingImage) || mediaUrl(t.images?.[0]) || "",
     category: (t.type || "").toUpperCase(),
     categoryColor: CATEGORY_COLORS[(t.type || "").toUpperCase()] || "#888888",
     price: t.price || 0,
