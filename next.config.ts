@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  env: {
+    PREVIEW_SECRET: process.env.PREVIEW_SECRET,
+    STRAPI_URL: process.env.STRAPI_URL,
+    STRAPI_API_TOKEN: process.env.STRAPI_API_TOKEN,
+  },
   images: {
     remotePatterns: [
       {
@@ -13,12 +18,6 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "koursair-media.s3.us-east-1.amazonaws.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "koursair-media-709141.s3.us-east-1.amazonaws.com",
         port: "",
         pathname: "/**",
       },
