@@ -38,6 +38,7 @@ export default function RootLayout({
       <head>
         {/* Preconnect to media origins for faster asset loading */}
         <link rel="preconnect" href="https://koursair-media.s3.us-east-1.amazonaws.com" />
+        <link rel="preconnect" href="https://koursair-media-709141.s3.us-east-1.amazonaws.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
 
         {/* 1. Google Tag Manager - Main Script */}
