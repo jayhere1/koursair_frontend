@@ -20,6 +20,7 @@ const GRID_PATTERNS = [
 
 interface DestinationItem {
   id: number;
+  slug: string;
   name: string;
   subtitle: string;
   image: string;
@@ -30,6 +31,7 @@ interface DestinationItem {
 const FALLBACK_DESTINATIONS: DestinationItem[] = [
   {
     id: 1,
+    slug: "Dubai",
     name: "Dubai",
     subtitle: "Luxury",
     image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
@@ -37,6 +39,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 2,
+    slug: "Thailand",
     name: "Thailand",
     subtitle: "Wildlife",
     image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/Thailand.jpg",
@@ -44,6 +47,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 3,
+    slug: "Bali",
     name: "Bali",
     subtitle: "Paradise",
     image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/Bali.jpg",
@@ -51,6 +55,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 4,
+    slug: "Kenya",
     name: "Kenya",
     subtitle: "Safari",
     image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/kenya.jpg",
@@ -58,6 +63,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 5,
+    slug: "Tahiti",
     name: "Tahiti",
     subtitle: "Tropical Escape",
     image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/main1.jpg",
@@ -65,6 +71,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 6,
+    slug: "India",
     name: "India",
     subtitle: "Spiritual Healing",
     image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg",
@@ -72,6 +79,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 7,
+    slug: "Maldives",
     name: "Maldives",
     subtitle: "Tropical",
     image: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
@@ -79,6 +87,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 8,
+    slug: "Greece",
     name: "Greece",
     subtitle: "Islands",
     image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
@@ -86,6 +95,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 9,
+    slug: "Singapore",
     name: "Singapore",
     subtitle: "Urban",
     image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
@@ -93,6 +103,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
   {
     id: 10,
+    slug: "Turkey",
     name: "Turkey",
     subtitle: "Historic",
     image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
@@ -112,6 +123,7 @@ function mediaUrl(field: any): string {
 function mapCmsDestinations(cmsData: any[]): DestinationItem[] {
   return cmsData.map((d, i) => ({
     id: d.id,
+    slug: d.slug || d.title,
     name: d.title,
     subtitle: d.subtitle || d.continent || '',
     image: mediaUrl(d.image) || mediaUrl(d.heroImage),
@@ -272,7 +284,7 @@ const Destination = ({ cmsDestinations }: DestinationProps) => {
               {filteredDestinations.map((destination) => (
                 <button
                   type="button"
-                  onClick={() => router.push(`/tour/${destination.name}`)}
+                  onClick={() => router.push(`/tour/${destination.slug}`)}
                   key={destination.id}
                   aria-label={`Explore ${destination.name} — ${destination.subtitle}`}
                   className={`relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 text-left ${destination.className}`}
