@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import KoursairImage from '../Media/Images/KoursairImage';
 
 // Grid layout pattern that repeats for a visually appealing bento grid
@@ -139,7 +139,6 @@ interface DestinationProps {
 const Destination = ({ cmsDestinations }: DestinationProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
-  const router = useRouter();
 
   const destinations = cmsDestinations?.length
     ? mapCmsDestinations(cmsDestinations)
@@ -282,9 +281,8 @@ const Destination = ({ cmsDestinations }: DestinationProps) => {
           {filteredDestinations.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 auto-rows-[150px] sm:auto-rows-[180px] md:auto-rows-[200px]">
               {filteredDestinations.map((destination) => (
-                <button
-                  type="button"
-                  onClick={() => router.push(`/tour/${destination.slug}`)}
+                <Link
+                  href={`/tour/${destination.slug}`}
                   key={destination.id}
                   aria-label={`Explore ${destination.name} — ${destination.subtitle}`}
                   className={`relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 text-left ${destination.className}`}
@@ -323,7 +321,7 @@ const Destination = ({ cmsDestinations }: DestinationProps) => {
                       <p className="text-sm sm:text-sm md:text-base font-semibold">Explore {destination.name}</p>
                     </div>
                   </div>
-                </button>
+                </Link>
               ))}
             </div>
           ) : (

@@ -28,7 +28,7 @@ export async function fetchDestinationBySlugDraft(slug: string) {
 
 export async function fetchAllDestinations() {
   const res = await fetch(`${BASE_URL}/cms/destinations`, {
-    next: { revalidate: 300 },
+    next: { revalidate: 1800 },
   });
   if (!res.ok) throw new Error("Failed to fetch destinations");
   const json = await res.json();
@@ -37,7 +37,7 @@ export async function fetchAllDestinations() {
 
 export async function fetchDestinationBySlug(slug: string) {
   const res = await fetch(`${BASE_URL}/cms/destinations/${slug}`, {
-    next: { revalidate: 300 },
+    next: { revalidate: 1800 },
   });
   if (!res.ok) return null;
   const json = await res.json();
@@ -46,7 +46,7 @@ export async function fetchDestinationBySlug(slug: string) {
 
 export async function fetchAllTours() {
   const res = await fetch(`${BASE_URL}/cms/tours`, {
-    next: { revalidate: 300 },
+    next: { revalidate: 1800 },
   });
   if (!res.ok) throw new Error("Failed to fetch tours");
   const json = await res.json();
@@ -55,7 +55,7 @@ export async function fetchAllTours() {
 
 export async function fetchTourBySlug(slug: string) {
   const res = await fetch(`${BASE_URL}/cms/tours/${slug}`, {
-    next: { revalidate: 300 },
+    next: { revalidate: 1800 },
   });
   if (!res.ok) return null;
   const json = await res.json();
