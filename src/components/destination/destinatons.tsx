@@ -100,13 +100,21 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
   },
 ];
 
+/** Extract URL from a Strapi media object or plain string. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function mediaUrl(field: any): string {
+  if (!field) return '';
+  if (typeof field === 'string') return field;
+  return field.url || '';
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapCmsDestinations(cmsData: any[]): DestinationItem[] {
   return cmsData.map((d, i) => ({
     id: d.id,
     name: d.title,
     subtitle: d.subtitle || d.continent || '',
-    image: d.image || d.heroImage || '',
+    image: mediaUrl(d.image) || mediaUrl(d.heroImage),
     className: GRID_PATTERNS[i % GRID_PATTERNS.length],
   }));
 }
