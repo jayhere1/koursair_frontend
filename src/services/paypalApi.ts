@@ -1,4 +1,4 @@
-import { getToken } from "@/utils/apiConfig";
+import { BASE_URL, getToken } from "@/utils/apiConfig";
 
 export const capturePaypalOrder = async (
   { order_id }: { order_id: string }
@@ -12,7 +12,7 @@ export const capturePaypalOrder = async (
   }
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/payments/capture/p1/payment`,
+    `${BASE_URL}/payments/capture/p1/payment`,
     {
       method: "POST",
       headers,
@@ -43,7 +43,7 @@ export const createPaypalOrder = async (
   }
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/payments/p1/order`,
+    `${BASE_URL}/payments/p1/order`,
     {
       method: "POST",
       headers,

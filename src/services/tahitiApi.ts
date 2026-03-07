@@ -1,9 +1,9 @@
 // services/bookingService.ts
 import {  ApiResponse } from "@/types/api";
-import { getToken } from "@/utils/apiConfig";
+import { BASE_URL, getToken } from "@/utils/apiConfig";
 import { BookingPayload, BookingResponseData } from "@/types/booking";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = BASE_URL;
 
 export const bookingService = {
   createTahitiBooking: async (payload: BookingPayload): Promise<BookingResponseData> => {

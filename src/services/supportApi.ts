@@ -1,4 +1,4 @@
-import { getToken, BASE_URL } from "@/utils/apiConfig";
+import { BASE_URL, getToken } from "@/utils/apiConfig";
 
 interface SupportIssuePayload {
   subject: string;

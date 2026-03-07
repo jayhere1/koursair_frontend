@@ -1,4 +1,4 @@
-
+import { BASE_URL } from "@/utils/apiConfig";
 
 export interface NameDetail {
   name: string;
@@ -130,7 +130,7 @@ export const createEnrollment = async (
   }
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/enrollment-payment-summary`,
+    `${BASE_URL}/users/enrollment-payment-summary`,
     {
       method: "POST",
       headers,
@@ -151,7 +151,7 @@ export const uploadFile = async (file: File, token?: string): Promise<string> =>
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/upload/file`,
+    `${BASE_URL}/api/upload/file`,
     {
       method: "POST",
       headers,
@@ -180,7 +180,7 @@ export const createUserBooking = async (
     if (token) headers["Authorization"] = `Bearer ${token}`;
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/travel/booking`,
+      `${BASE_URL}/users/travel/booking`,
       {
         method: "POST",
         headers,
@@ -230,7 +230,7 @@ export const getLastBooking = async (
     if (token) headers["Authorization"] = `Bearer ${token}`;
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/travel/last-booking`,
+      `${BASE_URL}/users/travel/last-booking`,
       {
         method: "GET",
         headers,
