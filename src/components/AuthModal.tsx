@@ -1069,7 +1069,7 @@ const SignupModal = memo(
           <div className="hidden md:flex md:w-1/2 relative overflow-hidden">
             <div className="absolute inset-0">
               <KoursairImage
-                src="https://koursair-media.s3.us-east-1.amazonaws.com/images/others/hero/signup.jpg"
+                src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/hero/signup.jpg"
                 alt="Background"
                 fill
                 className="object-cover object-center"

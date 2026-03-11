@@ -1,7 +1,7 @@
 export const tours = [
   {
     id: 1,
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day1-2.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day1-2.jpg",
     category: "Adventure",
     title: "Kenya Business Excursion: Where the World Meets the Wild",
     country: "kenya",
@@ -16,7 +16,7 @@ export const tours = [
   },
   {
     id: 2,
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
     category: "HISTORIC",
     slug: "dubai-discovery",
     country: "dubai",
@@ -29,7 +29,7 @@ export const tours = [
   },
   {
     id: 3,
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tihati.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tihati.jpg",
     category: "Tropical Escape",
     country: "tahiti",
     title: "Tahiti Meets Endless Summer",
@@ -42,7 +42,7 @@ export const tours = [
   },
   {
     id: 4,
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg",
     category: "WALKING",
     slug: "rishikesh-haridwar-yoga-healing",
     country: "india",
@@ -57,7 +57,7 @@ export const tours = [
   },
   {
     id: 5,
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
     category: "LUXURY",
     slug: "dubai-luxury-adventure",
     country: "dubai",
@@ -74,7 +74,7 @@ export const tours = [
 
   {
     id: 6,
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/misc/japan.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/misc/japan.jpg",
     category: "HISTORIC",
     title: "Japan Getaway",
     country: "japan",
@@ -90,7 +90,7 @@ export const tours = [
   },
   {
     id: 7,
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
     category: "MUSEUM",
     country: "thailand",
     title: "Thailand Vibrant Escape",

@@ -36,7 +36,7 @@ export const kenyaReunionAdventure = {
     ],
   },
   heroImage:
-    "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/kenya.jpg",
+    "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/kenya.jpg",
   facts: {
     currency: { value: "USD (All Inclusive)" },
     avgTemp: { value: "20°C - 28°C" },
@@ -61,8 +61,8 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Nairobi Luxury Hotel (Tribe Hotel or Similar)",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/kenya_1st.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day1-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/kenya_1st.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day1-2.jpg",
         ],
         coordinates: {
           lat: -1.2921,
@@ -86,10 +86,10 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Nairobi Luxury Hotel (Tribe Hotel or Similar)",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-3.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-4.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-4.jpg",
         ],
         zoom: 11,
       },
@@ -106,8 +106,8 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Nairobi Luxury Hotel (Tribe Hotel or Similar)",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day3-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day3-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day3-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day3-2.jpg",
         ],
       },
       {
@@ -124,8 +124,8 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Little Zebra River Camp and Zebra Valley Camp",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day6-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day6-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day6-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day6-2.jpg",
         ],
         coordinates: {
           lat: -1.4061,
@@ -146,10 +146,10 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Little Zebra River Camp and Zebra Valley Camp",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-3.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-4.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-4.jpg",
         ],
       },
       {
@@ -164,9 +164,9 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Little Zebra River Camp and Zebra Valley Camp",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day8-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day8-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day8-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day8-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day8-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day8-3.jpg",
         ],
       },
       {
@@ -183,9 +183,9 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Lake Naivasha Sopa Lodge",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day4-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day4-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day4-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day4-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day4-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day4-3.jpg",
         ],
         coordinates: {
           lat: -0.7667,
@@ -205,10 +205,10 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Lake Naivasha Sopa Lodge",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-3.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-4.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-4.jpg",
         ],
       },
       {
@@ -222,7 +222,7 @@ export const kenyaReunionAdventure = {
           "End of Service.",
         ],
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day9.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day9.jpg",
         ],
       },
     ],
@@ -298,12 +298,12 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     title: "Dubai, United Arab Emirates",
     subtitle: "Where Luxury Meets Limitless Adventure",
     continent: "Asia",
-    heroImage: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
+    heroImage: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
     overview:
       "Dubai is a city of unparalleled ambition, where **futuristic architecture** meets the ancient traditions of Arabia. From the world's tallest buildings and man-made islands to thrilling desert safaris and elite nightlife, Dubai offers a unique, luxurious experience that caters to both the cultural seeker and the extreme adventurer.",
     whygo:
       "Dubai offers the **guarantee of world-class luxury** and the excitement of **extreme, organized adventure**. It is a modern city built to amaze, making it ideal for travelers who want top-tier service, thrilling activities like skydiving and zip-lining, and iconic sightseeing.",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-3.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-3.jpg",
 
     keyFacts: {
       currency: { value: "AED (Dirham)", iconPath: ICON_PATHS.CURRENCY },
@@ -313,11 +313,11 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     },
 
     collageImages: [
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-1.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-2.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-5.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-1.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-1.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-2.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-5.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-1.jpg",
     ],
 
     availableTours: [
@@ -326,7 +326,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         slug: "dubai-luxury-adventure",
         duration: "5 Nights • 6 Days",
         price: 6389,
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
         type: "Luxury & Adventure",
         description:
           "Experience Dubai's ultimate blend of 5-star service, extreme activities like X-Line Ziplining, and elite nightlife including a Private Yacht Party.",
@@ -340,7 +340,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         slug: "dubai-discovery",
         duration: "5 Nights • 6 Days",
         price: 2749,
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
         type: "Sightseeing & Cultural",
         description:
           "A comprehensive tour covering the iconic Burj Khalifa, historic Deira Dhow Cruise, Desert Safari, and modern attractions like the Museum of the Future.",
@@ -356,19 +356,19 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         title: "Burj Khalifa & Downtown",
         description:
           "Ascend the world's tallest structure for panoramic views and witness the mesmerizing Dubai Fountain Show.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-2.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-2.jpg",
       },
       {
         title: "Palm Jumeirah & Yachting",
         description:
           "Explore the iconic man-made island and enjoy luxury yacht cruises along the spectacular Marina skyline.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-3.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-3.jpg",
       },
       {
         title: "Desert Thrills",
         description:
           "Experience high-adrenaline dune bashing followed by a luxurious, traditional dinner under the Arabian stars.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-4.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-4.jpg",
       },
     ],
   },
@@ -377,12 +377,12 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     title: "Thailand",
     subtitle: "The Land of Smiles: Tropical Isles & Ancient Temples",
     continent: "Asia",
-    heroImage: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/thailand-1.jpg",
+    heroImage: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/thailand-1.jpg",
     overview:
       "Thailand offers an intoxicating mix of breathtaking natural beauty and rich cultural heritage. From the bustling, chaotic energy of Bangkok to the serene limestone cliffs of Krabi and the white-sand beaches of Phuket, it’s a destination that promises adventure, relaxation, and delicious street food at every turn.",
     whygo:
       "Visit Thailand for the stunning combination of tropical diversity and rich cultural heritage. Travelers come to experience the magnetic energy of Bangkok, explore ancient temples, and relax on world-famous, white-sand beaches perfect for adventurous island hopping.",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-2.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-2.jpg",
     keyFacts: {
       currency: { value: "THB (Baht)", iconPath: ICON_PATHS.CURRENCY },
       avgTemp: { value: "32°C", iconPath: ICON_PATHS.TEMPERATURE },
@@ -391,11 +391,11 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     },
 
     collageImages: [
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-2.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-1.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-5.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-2.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day6-2.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-2.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-1.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-5.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-2.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day6-2.jpg",
     ],
 
     availableTours: [
@@ -404,7 +404,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         slug: "thailand-vibrant-escape",
         duration: "9 Nights • 10 Days",
         price: 4799,
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
         type: "Island Hopping & City",
         description:
           "A comprehensive 10-day tour combining the islands of Phuket and Krabi with the bustling capital of Bangkok, including all domestic flights and transfers.",
@@ -420,19 +420,19 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         title: "Island Hopping",
         description:
           "Discover the breathtaking beauty of Phi Phi Islands, Maya Bay, and the towering limestone karsts of Krabi.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-4.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-4.jpg",
       },
       {
         title: "Bangkok's Wonders",
         description:
           "Explore the Grand Palace, Wat Arun, and enjoy a vibrant dinner cruise on the Chao Phraya River.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-1.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-1.jpg",
       },
       {
         title: "Thai Cuisine",
         description:
           "Indulge in world-famous street food, floating markets, and authentic local cooking classes.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-1.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-1.jpg",
       },
     ],
   },
@@ -441,11 +441,11 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     title: 'Bali',
     subtitle: 'Island of the Gods: Wellness, Culture & Tropical Serenity',
     continent: 'Asia',
-    heroImage: 'https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-1.jpg',
+    heroImage: 'https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-1.jpg',
     overview: "Known globally as the Island of the Gods, Bali is a spiritual haven renowned for its volcanic mountains, iconic rice paddies, world-class beaches, and vibrant artistic scene. It is the perfect destination for **wellness seekers**, honeymooners, and cultural explorers.",
     whygo:
       "Choose Bali for profound spiritual renewal, lush rice paddies, serene yoga retreats, and the deep culture of the Island of the Gods. It is the perfect destination for wellness seekers looking to combine tropical relaxation with deep cultural and artistic immersion.",
-    image: 'https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-2.jpg',
+    image: 'https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-2.jpg',
     keyFacts: {
       currency: { value: "IDR (Rupiah)", iconPath: ICON_PATHS.CURRENCY },
       avgTemp: { value: "28°C", iconPath: ICON_PATHS.TEMPERATURE },
@@ -454,9 +454,9 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     },
 
     collageImages: [
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-1.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-2.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-3.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-1.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-2.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-3.jpg",
     ],
 
     availableTours: [
@@ -465,7 +465,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         slug: 'bali-yoga-retreat',
         duration: '9 Nights • 10 Days',
         price: 4449,
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/BaliResort.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/BaliResort.jpg",
         type: 'Wellness & Spiritual',
         description: "A 10-day retreat focusing on daily yoga, pranayama, Ayurvedic healing, and cultural immersion in Ubud, Canggu, Seminyak, and Uluwatu.",
         rating: 4.9,
@@ -476,9 +476,9 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     ],
 
     highlights: [
-      { title: "Ubud's Spiritual Heart", description: "Explore the Tegalalang Rice Terraces, the Monkey Forest, and participate in healing ceremonies in Bali's cultural center.", image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali1.jpg" },
-      { title: "Water Temples", description: "Experience the sacred purification rituals at Tirta Empul and witness the dramatic clifftop location of Uluwatu Temple.", image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/Bali.jpg" },
-      { title: "Coastal Vibe", description: "Enjoy the laid-back surf culture of Canggu and the stylish boutiques and nightlife of Seminyak.", image: 'https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/highlight.jpg' }
+      { title: "Ubud's Spiritual Heart", description: "Explore the Tegalalang Rice Terraces, the Monkey Forest, and participate in healing ceremonies in Bali's cultural center.", image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali1.jpg" },
+      { title: "Water Temples", description: "Experience the sacred purification rituals at Tirta Empul and witness the dramatic clifftop location of Uluwatu Temple.", image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/Bali.jpg" },
+      { title: "Coastal Vibe", description: "Enjoy the laid-back surf culture of Canggu and the stylish boutiques and nightlife of Seminyak.", image: 'https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/highlight.jpg' }
     ]
 
   },
@@ -487,11 +487,11 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     title: 'India: Yoga, Himalayas & Spiritual Rivers',
     subtitle: 'Gateway to the Ganges and the Yoga Capital of the World',
     continent: 'Asia',
-    heroImage: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-3.jpg",
+    heroImage: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-3.jpg",
     overview: "This segment of India, focusing on the foothills of the Himalayas and the banks of the sacred Ganges, is a global epicenter for **yoga, meditation, and spiritual healing**. It combines ancient Ayurvedic practices with breathtaking natural landscapes in Rishikesh and Haridwar.",
     whygo:
       "Travel to this region for an immersive spiritual and healing journey focused on the self. Go to experience the profound connection with the sacred Ganges river, engage in intensive Yoga and detox practices in the global capital of Yoga (Rishikesh), and receive authentic Ayurvedic and Vedic healing treatments.",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day1-1.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day1-1.jpg",
     keyFacts: {
       currency: { value: "INR (Rupee)", iconPath: ICON_PATHS.CURRENCY },
       avgTemp: { value: "24°C (Avg)", iconPath: ICON_PATHS.TEMPERATURE },
@@ -500,11 +500,11 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     },
 
     collageImages: [
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day2-1.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day3-4.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-2.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day5-1.jpg",
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-3.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day2-1.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day3-4.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-2.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day5-1.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-3.jpg",
     ],
 
     availableTours: [
@@ -513,7 +513,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         slug: 'rishikesh-haridwar-yoga-healing',
         duration: '6 Nights • 7 Days',
         price: 4779,
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg",
         type: 'Spiritual & Detox',
         description: "An intensive 7-day retreat covering Hatha, Vinyasa, Kriya Yoga, Ayurvedic detox treatments, and participation in the Haridwar Ganga Aarti.",
         rating: 4.7,
@@ -524,9 +524,9 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     ],
 
     highlights: [
-      { title: "The Holy Ganges", description: "Witness the spectacular Ganga Aarti ceremony at Har Ki Pauri and meditate on the banks of the sacred river.", image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg" },
-      { title: "Rishikesh Yoga", description: "Practice various forms of yoga in the global capital of the discipline and explore the Beatles Ashram.", image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day2-3.jpg" },
-      { title: "Ayurvedic Treatments", description: "Receive personalized Ayurvedic consultations and detoxifying treatments like Abhyanga massage and Shirodhara.", image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day3-2.jpg" }
+      { title: "The Holy Ganges", description: "Witness the spectacular Ganga Aarti ceremony at Har Ki Pauri and meditate on the banks of the sacred river.", image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg" },
+      { title: "Rishikesh Yoga", description: "Practice various forms of yoga in the global capital of the discipline and explore the Beatles Ashram.", image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day2-3.jpg" },
+      { title: "Ayurvedic Treatments", description: "Receive personalized Ayurvedic consultations and detoxifying treatments like Abhyanga massage and Shirodhara.", image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day3-2.jpg" }
     ]
   },
   'Tahiti': {
@@ -534,7 +534,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     title: "Tahiti Meets Endless Summer",
     subtitle: "The Endless Summer: Surf, Lagoons & Island Luxury",
     continent: "Oceania",
-    heroImage: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-banner.jpg.png",
+    heroImage: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-banner.jpg.png",
 
     overview:
       "Tahiti and its sister island Moorea offer the ultimate South Pacific escape, where **turquoise lagoons, volcanic peaks, and world-class surf** meet relaxed island culture. This destination blends marine adventure, eco-boutique stays, and Polynesian landscapes into one seamless tropical journey.",
@@ -542,7 +542,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
     whygo:
       "Travelers choose Tahiti for its rare mix of **surf culture, marine life encounters, and untouched island beauty**. From snorkeling coral gardens and watching whales to exploring lush interior valleys and iconic lagoons, this is a bucket-list destination that feels both adventurous and deeply rejuvenating.",
 
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-03.jpg.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-03.jpg.jpg",
 
     keyFacts: {
       currency: { value: "CFP Franc (XPF)", iconPath: ICON_PATHS.CURRENCY },
@@ -551,7 +551,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
       language: { value: "French, Tahitian, English", iconPath: ICON_PATHS.LANGUAGE },
     },
 
-    collageImages: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-12.jpg.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-05.jpg.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-04.jpg.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-07.jpg.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-09.jpg.jpg"],
+    collageImages: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-12.jpg.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-05.jpg.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-04.jpg.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-07.jpg.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-09.jpg.jpg"],
 
     availableTours: [
       {
@@ -559,7 +559,7 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         slug: "tahiti-endless-summer-experience",
         duration: "5 Nights • 6 Days",
         price: 3250,
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tihati.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tihati.jpg",
         type: "Surf, Marine & Island Adventure",
         description:
           "A curated 6-day Tahiti and Moorea journey combining two full days of guided surf coaching, lagoon snorkeling, marine life encounters, scenic island tours, and boutique eco-lodge living at Green Lodge Moorea — all with seamless transfers and flights included.",
@@ -575,19 +575,19 @@ export const DESTINATION_DATA: Record<string, DestinationData> = {
         title: "Endless Summer Surf",
         description:
           "Two days of coached surf sessions in Moorea’s warm Pacific waters, designed for beginner to intermediate levels with expert guidance.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-06.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-06.jpg",
       },
       {
         title: "Lagoon & Marine Life",
         description:
           "Snorkel coral gardens, spot tropical fish, and experience unforgettable whale and dolphin encounters in the pristine lagoons of French Polynesia.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-14.jpg.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-14.jpg.jpg",
       },
       {
         title: "Moorea Landscapes",
         description:
           "Discover Belvedere Lookout, waterfalls, pineapple plantations, jungle valleys, and panoramic island viewpoints on guided scenic tours.",
-        image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-02.jpg",
+        image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-02.jpg",
       },
     ],
   },

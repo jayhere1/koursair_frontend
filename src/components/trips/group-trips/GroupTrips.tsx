@@ -48,7 +48,7 @@ const GroupTrips = ({ trips, categories, filters }: Props) => {
       <HeroBanner
         title="Group Trips"
         subheading="Join like-minded travelers on curated adventures to the world&apos;s most incredible destinations."
-        imageSrc="https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/groupbanner.jpg"
+        imageSrc="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/banners/groupbanner.jpg"
       /> 
 
     <div className="py-12 sm:py-16 lg:py-20 bg-[#F4EFE7]">

@@ -1512,7 +1512,7 @@ const KenyaBookingPage = () => {
               <div className="lg:sticky lg:top-28 h-fit">
                 <div className="bg-[#fffafa] rounded-3xl shadow-2xl border p-6">
                   <Image
-                    src="https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/spot_summary.jpg"
+                    src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/spot_summary.jpg"
                     alt="Trip Summary"
                     width={400}
                     height={250}

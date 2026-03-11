@@ -13,7 +13,7 @@ const AboutContent = () => {
 
       <HeroBanner
         title="About Koursair – Redefining Group & Solo Travel"
-        imageSrc="https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/about_hero.jpg"
+        imageSrc="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/banners/about_hero.jpg"
       />
       <AboutContentSection />
       <PhilosophySection />

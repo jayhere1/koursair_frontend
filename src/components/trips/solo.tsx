@@ -44,7 +44,7 @@ const SoloTripsPage = ({ trips, categories, filters }: Props) => {
         title="Solo Adventures"
         subheading="Design your own journey. Explore the world on your terms with
             confidence and freedom."
-        imageSrc="https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/solobanner.jpg"
+        imageSrc="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/banners/solobanner.jpg"
       />
 
       <div className="py-12 sm:py-16 lg:py-20 bg-[#F4EFE7]">

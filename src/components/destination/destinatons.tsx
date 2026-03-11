@@ -34,7 +34,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
     slug: "Dubai",
     name: "Dubai",
     subtitle: "Luxury",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/BurjKhalifa.jpg",
     className: "md:col-span-1 md:row-span-1"
   },
   {
@@ -42,7 +42,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
     slug: "Thailand",
     name: "Thailand",
     subtitle: "Wildlife",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/Thailand.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/Thailand.jpg",
     className: "md:col-span-2 md:row-span-1"
   },
   {
@@ -50,7 +50,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
     slug: "Bali",
     name: "Bali",
     subtitle: "Paradise",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/Bali.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/Bali.jpg",
     className: "md:col-span-1 md:row-span-1"
   },
   {
@@ -58,7 +58,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
     slug: "Kenya",
     name: "Kenya",
     subtitle: "Safari",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/kenya.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/kenya.jpg",
     className: "md:col-span-2 md:row-span-2"
   },
   {
@@ -66,7 +66,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
     slug: "Tahiti",
     name: "Tahiti",
     subtitle: "Tropical Escape",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/main1.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/main1.jpg",
     className: "md:col-span-2 md:row-span-2"
   },
   {
@@ -74,7 +74,7 @@ const FALLBACK_DESTINATIONS: DestinationItem[] = [
     slug: "India",
     name: "India",
     subtitle: "Spiritual Healing",
-    image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg",
+    image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg",
     className: "md:col-span-1 md:row-span-2"
   },
   {
@@ -168,7 +168,7 @@ const Destination = ({ cmsDestinations }: DestinationProps) => {
         {/* Hero Image */}
         <div className="absolute inset-0">
           <KoursairImage
-            src="https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/destination_hero.jpg"
+            src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/banners/destination_hero.jpg"
             alt="Destinations Hero"
             fill
             loading="eager"

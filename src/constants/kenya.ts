@@ -34,7 +34,7 @@ export const kenyaReunionAdventure = {
     ],
   },
   heroImage:
-    "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/kenya.jpg",
+    "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/kenya.jpg",
   facts: {
     currency: { value: "USD (All Inclusive)" },
     avgTemp: { value: "20°C - 28°C" },
@@ -59,8 +59,8 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Nairobi Luxury Hotel (Tribe Hotel or Similar)",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/kenya_1st.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day1-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/kenya_1st.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day1-2.jpg",
         ],
         coordinates: {
           lat: -1.2921,
@@ -84,10 +84,10 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Nairobi Luxury Hotel (Tribe Hotel or Similar)",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-3.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day2-4.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day2-4.jpg",
         ],
         zoom: 11,
       },
@@ -104,8 +104,8 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Nairobi Luxury Hotel (Tribe Hotel or Similar)",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day3-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day3-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day3-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day3-2.jpg",
         ],
       },
       {
@@ -122,8 +122,8 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Little Zebra River Camp and Zebra Valley Camp",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day6-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day6-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day6-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day6-2.jpg",
         ],
         coordinates: {
           lat: -1.4061,
@@ -144,10 +144,10 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Little Zebra River Camp and Zebra Valley Camp",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-3.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day7-4.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day7-4.jpg",
         ],
       },
       {
@@ -162,9 +162,9 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Little Zebra River Camp and Zebra Valley Camp",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day8-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day8-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day8-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day8-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day8-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day8-3.jpg",
         ],
       },
       {
@@ -181,9 +181,9 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Lake Naivasha Sopa Lodge",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day4-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day4-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day4-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day4-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day4-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day4-3.jpg",
         ],
         coordinates: {
           lat: -0.7667,
@@ -203,10 +203,10 @@ export const kenyaReunionAdventure = {
         ],
         accommodation: "Lake Naivasha Sopa Lodge",
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-1.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-2.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-3.jpg",
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day5-4.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-1.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-2.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-3.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day5-4.jpg",
         ],
       },
       {
@@ -220,7 +220,7 @@ export const kenyaReunionAdventure = {
           "End of Service.",
         ],
         images: [
-          "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/day9.jpg",
+          "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/day9.jpg",
         ],
       },
     ],

@@ -9,8 +9,8 @@ export default function HeroSection() {
     <section className="relative h-screen overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <KoursairVideo
-          src="https://koursair-media.s3.us-east-1.amazonaws.com/videos/Koursair_Video.mp4"
-          poster="https://koursair-media.s3.us-east-1.amazonaws.com/images/others/hero/bali_bg.jpg"
+          src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/videos/Koursair_Video.mp4"
+          poster="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/hero/bali_bg.jpg"
           fill
           className="object-cover"
           autoPlay

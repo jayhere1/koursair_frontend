@@ -15,7 +15,7 @@ export default function NewsInsightsPage() {
                   {/* Hero Image */}
                   <div className="absolute inset-0">
                     <KoursairImage
-                      src="https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/BaliResort.jpg"
+                      src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/BaliResort.jpg"
                       alt="Destinations Hero"
                       fill
                       loading="eager"

@@ -1,7 +1,7 @@
  export const newsItems = [
     {
       id: 1,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/news/bali_temple.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/news/bali_temple.jpg",
       date: "9",
       month: "Jan",
       author: "EMILY CHAN",
@@ -13,7 +13,7 @@
     },
     {
       id: 2,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai2.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai2.jpg",
       date: "22",
       month: "Jan",
       author: "AMIR KHAN",
@@ -25,7 +25,7 @@
     },
     {
       id: 3,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/news/news4.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/news/news4.jpg",
       date: "15",
       month: "Dec",
       author: "SARAH LIN",
@@ -37,7 +37,7 @@
     },
     {
       id: 4,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/news/bali_culinary.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/news/bali_culinary.jpg",
       date: "10",
       month: "Jan",
       author: "JAMES PARK",

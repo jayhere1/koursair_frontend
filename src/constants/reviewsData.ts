@@ -18,7 +18,7 @@ export const reviewsData: Review[] = [
     comment:
       "Traveling felt like stepping into a dream. Every moment was thoughtfully planned and full of wonder. We can't wait to book again!",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/1.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/1.jpg",
     tripTitle: "Dubai Luxury Experience",
   },
   {
@@ -29,7 +29,7 @@ export const reviewsData: Review[] = [
     comment:
       "The perfect blend of culture, adventure, and comfort. Koursair took my journey to a whole new level.",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/2.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/2.jpg",
     tripTitle: "Bali Adventure",
   },
   {
@@ -40,7 +40,7 @@ export const reviewsData: Review[] = [
     comment:
       "I never imagined I'd experience such authentic local life while still feeling completely at ease. Truly unforgettable.",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/3.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/3.jpg",
     tripTitle: "Kyoto Cultural Immersion",
   },
   {
@@ -51,7 +51,7 @@ export const reviewsData: Review[] = [
     comment:
       "From boutique stays to immersive experiences, Koursair delivered magic at every turn. I can't wait to go again.",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/4.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/4.jpg",
     tripTitle: "Icelandic Ring Road Expedition",
   },
   {
@@ -62,7 +62,7 @@ export const reviewsData: Review[] = [
     comment:
       "Our honeymoon was a dream come true. Pure romance and luxury. We couldn't have asked for a more perfect trip!",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/5.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/5.jpg",
     tripTitle: "Maldives Romantic Getaway",
   },
   {
@@ -72,7 +72,7 @@ export const reviewsData: Review[] = [
     rating: 4,
     comment: "Fantastic trip. We visited the most iconic spots.",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/6.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/6.jpg",
     tripTitle: "Thailand Tour",
   },
   {
@@ -82,7 +82,7 @@ export const reviewsData: Review[] = [
     rating: 3,
     comment: "Good value, but itinerary was too rushed.",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/7.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/7.jpg",
     tripTitle: "City Break",
   },
   {
@@ -92,7 +92,7 @@ export const reviewsData: Review[] = [
     rating: 4,
     comment: "Amazing experience with Koursair! Smooth booking, great support, and a perfectly planned trip.",
     clientImage:
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/reviews/8.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/reviews/8.jpg",
     tripTitle: "Paris Romance",
   },
 ];

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/solobanner.jpg",
+        url: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/banners/solobanner.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preconnect to media origins for faster asset loading */}
-        <link rel="preconnect" href="https://koursair-media.s3.us-east-1.amazonaws.com" />
+        <link rel="preconnect" href="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
 
         {/* 1. Google Tag Manager - Main Script */}

@@ -32,7 +32,7 @@ const ReviewsPage = () => {
       <HeroBanner
         title="Client Reviews"
         subheading="Hear what our happy travelers have to say about their unforgettable journeys."
-        imageSrc="https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/review_hero.jpg"
+        imageSrc="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/banners/review_hero.jpg"
       />
 
       <div className="py-12 sm:py-16 lg:py-20 bg-[#F4EFE7]">

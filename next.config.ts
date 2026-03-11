@@ -17,13 +17,13 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "koursair-media.s3.us-east-1.amazonaws.com",
+        hostname: "koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com",
         port: "",
         pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "koursair-media-709141.s3.us-east-1.amazonaws.com",
+        hostname: "koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com",
         port: "",
         pathname: "/**",
       },

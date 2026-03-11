@@ -3,7 +3,7 @@ export const activities = [
       id: 1,
       title: "Kenya",
       subtitle: "Safari",
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/kenya.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/kenya.jpg",
       description: "Wildlife adventures"
     },
     {
@@ -17,7 +17,7 @@ export const activities = [
       id: 3,
       title: "India",
       subtitle: "Spiritual Healing",
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg",
       description: "Yoga, healing, and spiritual bliss"
 
     },
@@ -25,14 +25,14 @@ export const activities = [
       id: 4,
       title: "Tahiti",
       subtitle: "Tropical Escape",
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/main1.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/main1.jpg",
       description: "Island paradise and ocean adventures"
     },
     {
       id: 5,
       title: "Bali",
       subtitle: "Island Hopping",
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/Bali.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/Bali.jpg",
       description: "Aegean adventures and timeless beauty"
     }
   ];

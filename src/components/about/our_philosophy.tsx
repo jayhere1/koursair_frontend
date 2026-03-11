@@ -18,17 +18,17 @@ const PhilosophySection = () => {
     philosophy: {
       title: 'Our Philosophy',
       text: "Travel isn't just about where you go — it's how you feel while you're there. We believe it should be effortless, elevated, and full of connection. That's why we take care of every detail, so you can just show up and enjoy the ride.",
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/about/Philosophy.jpg"
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/about/Philosophy.jpg"
     },
     promise: {
       title: 'Our Promise',
       text: "From start to finish, we handle everything — flights, stays, local guides, and epic experiences. You get the freedom to be present, the thrill of new places, and the support of a team that cares. No stress. All magic.",
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/about/Promise.jpg"
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/about/Promise.jpg"
     },
     focus: {
       title: 'Our Focus',
       text: "Our secret? We focus only on select destinations we know inside and out. By securing large block bookings and leveraging trusted local partners, we deliver premium group travel experiences at prices no competitor can match.",
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/others/about/Focus.jpg"
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/about/Focus.jpg"
     }
   };
 

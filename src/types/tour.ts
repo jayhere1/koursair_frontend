@@ -129,11 +129,11 @@ export const TOUR_DATA: Record<string, TripData> = {
     duration: '5 Nights • 6 Days',
     type: 'Cultural & Sightseeing',
     images: [
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai1.jpg", 
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai2.jpg", 
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai3.jpg",
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai1.jpg", 
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai2.jpg", 
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai3.jpg",
     ],
-    mapImageUrl: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/map.jpg",
+    mapImageUrl: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/map.jpg",
     facts: {
       currency: { value: "AED (Dirham)", iconPath: ICON_PATHS.CURRENCY, svgAttributes: { strokeWidth: 1.5 } },
       avgTemp: { value: "28°C", iconPath: ICON_PATHS.TEMPERATURE, svgAttributes: { viewBox: "0 0 24 24", strokeWidth: 1.5 } },
@@ -174,7 +174,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 1, 
                 title: "Arrival & Evening Dhow Cruise", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-4.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-4.jpg"], 
                 activities: [" Arrive at Dubai International Airport", " Meet & greet + private transfer to your hotel", " Check-in & relax after your long-haul flight from the USA", "Buffet Dinner in the hotel &  Overnight stay in Dubai"],
                 coordinates: { lat: 25.2532, lng: 55.3657 }, // Dubai Airport Area
                 zoom: 10
@@ -182,7 +182,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 2, 
                 title: "Iconic City Tour & Burj Khalifa", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-3.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-3.jpg"], 
                 activities: [" Breakfast at hotel  ", " Start your day with a Half-Day Guided Dubai City Tour:1. Jumeirah Mosque (photo stop) 2. Jumeirah Beach & Burj Al Arab (photo stop) 3. Drive through Palm Jumeirah & Atlantis (photo stop) 4. Drive down Sheikh Zayed Road (Dubai’s main highway)", " Late afternoon: Visit Burj Khalifa – At The Top (124th Floor) – High speed elevator to the observation deck", " Evening: Head to Deira Creek Dhow Cruise - Traditional wooden boat ride on the historic Dubai creek", "Buffet dinner with live music & Tanoura dance", " Overnight stay at hotel in Dubai"],
                 coordinates: { lat: 25.1972, lng: 55.2744 }, // Burj Khalifa / Downtown
                 zoom: 12
@@ -190,7 +190,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 3, 
                 title: "Desert Adventure & BBQ Feast", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-4.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-5.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-4.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-5.jpg"], 
                 activities: [" Breakfast at hotel  ", "Morning at leisure (relax by the pool or explore local cafes)", "Afternoon: Depart for Desert Safari - 4x4 Dune Bashing across the golden sand dunes", "Camel rides, sandboarding, and henna painting", "Traditional dance performances: Belly Dance & Tanoura", "Lavish BBQ Dinner at desert camp", "Return to hotel & overnight stay"],
                 coordinates: { lat: 24.8500, lng: 55.7000 }, // Dubai Desert Conservation Reserve area
                 zoom: 10
@@ -198,7 +198,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 4, 
                 title: "Future & Past: Museums & Souqs", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-3.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-3.jpg"], 
                 activities: [" Breakfast at hotel  ", "Visit the futuristic & immersive Museum of the Future - Explore exhibits on AI, space, health & future tech", "Visit the Dubai Frame", "Explore the Gold Souq & Spice Souq in Deira. (Optional: Purchase authentic gold, souvenirs, spices)", "Continue to Dubai Mall - World's largest shopping mall with 1,200 + stores", "Free time for shopping", "Buffet Dinner in the hotel &  Overnight stay in Dubai"],
                 coordinates: { lat: 25.2194, lng: 55.2818 }, // Museum of the Future
                 zoom: 13
@@ -206,7 +206,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 5, 
                 title: "Botanical Wonders & Global Village", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-3.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day5-3.jpg"], 
                 activities: [" Breakfast at hotel  ", "Explore the world’s largest natural flower garden – Miracle Garden", "Start exploring the world’s cultures in one place – Global Village 1. 25+ country pavilions (India, Egypt, Turkey, Africa, Europe, USA, and more) 2. Authentic souvenirs, street performances, and cultural shows 3. Street Food: Turkish kebabs, Indian chaat, Filipino snacks 4. Don’t miss Floating Market for seafood & Asian bites 5. Catch live shows, acrobatics, or musical performances at the Main Stage 6. Stroll through pavilions for souvenirs, crafts, perfumes, and spices 7. Optional: Enjoy rides at the Carnaval amusement park", "Buffet Dinner in the hotel & Overnight stay in Dubai"],
                 coordinates: { lat: 25.0599, lng: 55.2446 }, // Miracle Garden / Global Village area
                 zoom: 12
@@ -214,7 +214,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 6, 
                 title: "Departure", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day6.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day6.jpg"], 
                 activities: [" Breakfast at hotel  ", "Check-out and transfer to Dubai International Airport ", "Board your flight back to the USA", "Take home unforgettable memories of Dubai’s wonders."],
             },
         ],
@@ -239,11 +239,11 @@ export const TOUR_DATA: Record<string, TripData> = {
     duration: '9 Nights • 10 Days',
     type: 'Island Hopping & City Exploration',
     images: [
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/thailand-1.jpg", 
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/thailand-2.jpg", 
-         "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/Thailand.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/thailand-1.jpg", 
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/thailand-2.jpg", 
+         "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/Thailand.jpg",
     ],
-    mapImageUrl: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/map.jpg",
+    mapImageUrl: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/map.jpg",
     facts: {
         currency: { value: "THB (Baht)", iconPath: ICON_PATHS.CURRENCY, svgAttributes: { strokeWidth: 1.5 } },
         avgTemp: { value: "32°C", iconPath: ICON_PATHS.TEMPERATURE, svgAttributes: { viewBox: "0 0 24 24", strokeWidth: 2.5 } },
@@ -285,7 +285,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 1, 
                 title: "Arrival in Phuket", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day1-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day1-2.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day1-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day1-2.jpg"], 
                 activities: [" Arrival at Phuket International Airport – greeted by representative.", "Transfer & hotel check-in.", "Relax and recover from the journey.", "Evening: Welcome dinner at hotel + leisure walk to soak in the tropical vibe."],
                 coordinates: { lat: 8.1110, lng: 98.3075 }, // Phuket Airport / City
                 zoom: 10
@@ -293,7 +293,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 2, 
                 title: "Phuket City & Beaches Tour", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-4.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day2-4.jpg"], 
                 activities: ["Breakfast at hotel.", "Highlights:1. Big Buddha – A majestic 45-meter marble statue offering breathtaking panoramic views of Phuket Town, Chalong Bay, and Kata Beach. 2. Wat Chalong – Phuket’s most revered Buddhist temple, known for its intricate architecture and spiritual ambiance. 3. Phuket Old Town – Discover colorful Sino-Portuguese architecture, vibrant street art, and local markets. Lunch at a local restaurant.", "Evening: Phuket FantaSea Show – cultural extravaganza with Thai traditions, acrobatics & entertainment."],
                 coordinates: { lat: 7.8275, lng: 98.3129 }, // Big Buddha Phuket
                 zoom: 12
@@ -301,7 +301,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 3, 
                 title: "Phi Phi Islands & James Bond Island Adventure", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-4.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-5.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-4.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day3-5.jpg"], 
                 activities: ["Full-day speedboat excursion:1. Maya Bay – Iconic film location (The Beach). 2. Pileh Lagoon – Swim among towering limestone cliffs. 3. Viking Cave – Famous for bird nests & ancient wall paintings. 4. Monkey Beach – Encounter playful monkeys. 5. James Bond Island – Featured in The Man with the Golden Gun. Lunch at Phi Phi Don Island – Savor authentic Thai cuisine by the beach.", "Evening: Return to Phuket. Relax or explore Patong Beach & Walking Street nightlife."],
                 coordinates: { lat: 7.7407, lng: 98.7784 }, // Phi Phi Islands
                 zoom: 10
@@ -309,7 +309,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 4, 
                 title: "Free Day in Phuket", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day4-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day4-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day4-3.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day4-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day4-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day4-3.jpg"], 
                 activities: ["Leisure day at your own pace.", "Optional activities: Ziplining, ATV, snorkeling, or Thai spa."],
                 coordinates: { lat: 7.8804, lng: 98.3923 }, // Phuket Town
                 zoom: 11
@@ -317,7 +317,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 5, 
                 title: "Transfer to Krabi", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-3.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day5-3.jpg"], 
                 activities: ["Breakfast + hotel check-out.", "Ferry/speedboat transfer to Krabi (2 hrs).", "Hotel check-in.", "Evening: Relax on Ao Nang Beach, explore local walking street & enjoy beachside dinner."],
                 coordinates: { lat: 8.0307, lng: 98.8213 }, // Ao Nang, Krabi
                 zoom: 12
@@ -325,7 +325,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 6, 
                 title: "Krabi 4-Island Tour", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day6-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day6-2.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day6-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day6-2.jpg"], 
                 activities: ["Full-day speedboat tour:1. Phra Nang Cave Beach – Known for the sacred Princess Cave and its intriguing local legends. 2. Chicken Island – Unique rock formation, snorkeling. 3. Tup Island – Sandbar walk connecting islands at low tide. 4. Poda Island – White sands & tropical relaxation.", "Inclusions: Snorkeling gear, lunch on the beach, and national park fees.", "Evening at leisure."],
                 coordinates: { lat: 7.9620, lng: 98.8105 }, // Poda Island area
                 zoom: 11
@@ -333,7 +333,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 7, 
                 title: "Krabi → Bangkok", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day7-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day7-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day7-3.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day7-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day7-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day7-3.jpg"], 
                 activities: ["Breakfast & check-out.", "Flight to Bangkok (2 hrs).", "Hotel check-in.", "Evening: Chao Phraya River Dinner Cruise – illuminated views of Wat Arun & Grand Palace."],
                 coordinates: { lat: 13.7563, lng: 100.5018 }, // Bangkok
                 zoom: 11
@@ -341,7 +341,7 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 8, 
                 title: "Floating Market & Shopping", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-3.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day8-3.jpg"], 
                 activities: ["Morning: Visit Damnoen Saduak Floating Market (traditional boat ride).", "Return to Bangkok by noon.", "Afternoon: Shopping at Siam Paragon, MBK, or Icon Siam.", "Evening: Dinner with skyline views at a rooftop bar (e.g., Sky Bar, Lebua Tower)."],
                 coordinates: { lat: 13.5186, lng: 99.9602 }, // Damnoen Saduak
                 zoom: 11
@@ -349,13 +349,13 @@ export const TOUR_DATA: Record<string, TripData> = {
             { 
                 day: 9, 
                 title: "Bangkok Exploration & Leisure", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-4.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day9-4.jpg"], 
                 activities: ["Morning shopping at Platinum Mall or Terminal 21.", "Afternoon optional: Grand Palace, Wat Pho, tuk-tuk ride.", "Evening free for nightlife or relaxation."],
             },
             { 
                 day: 10, 
                 title: "Departure from Bangkok", 
-                images: ["https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day10.jpg"], 
+                images: ["https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/thailand-vibrant-escape/day10.jpg"], 
                 activities: ["Breakfast at hotel.", "Hotel check-out & airport transfer.", "Flight home with unforgettable memories."],
             },
         ],
@@ -380,11 +380,11 @@ export const TOUR_DATA: Record<string, TripData> = {
     duration: '9 Nights • 10 Days',
     type: 'Wellness & Cultural',
     images: [
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali1.jpg", 
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali2.jpg", 
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/Bali.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali1.jpg", 
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali2.jpg", 
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/Bali.jpg",
     ],
-    mapImageUrl: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/map.jpg",
+    mapImageUrl: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/map.jpg",
     facts: {
         currency: { value: "IDR (Rupiah)", iconPath: ICON_PATHS.CURRENCY, svgAttributes: { strokeWidth: 1.5 } },
         avgTemp: { value: "28°C", iconPath: ICON_PATHS.TEMPERATURE, svgAttributes: { viewBox: "0 0 24 24", strokeWidth: 2.5 } },
@@ -430,7 +430,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Gentle arrival yoga class to relieve jet lag.",
                 "Evening: Welcome dinner with locally sourced vegetarian cuisine."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day1-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day1-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day1-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day1-2.jpg" ],
               coordinates: { lat: -8.5069, lng: 115.2625 }, // Ubud
               zoom: 10
             },
@@ -443,7 +443,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Afternoon: Browse the Ubud Art Market for handcrafted goods.",
                 "Evening: Restorative Yin session for the parasympathetic nervous system."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-4.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-5.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-4.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day2-5.jpg" ],
               coordinates: { lat: -8.5190, lng: 115.2580 }, // Monkey Forest
               zoom: 12
             },
@@ -456,7 +456,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Guided mindfulness walk through the Tegalalang rice terraces.",
                 "Evening: Slow restorative yoga to integrate the day's cultural depth."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-3.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day3-3.jpg" ],
               coordinates: { lat: -8.4332, lng: 115.2796 }, // Tegalalang / Tirta Empul
               zoom: 11
             },
@@ -469,7 +469,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Late afternoon: **Sound Healing Ceremony** using gongs and singing bowls.",
                 "Evening: Deep relaxation and emotional release therapy."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-3.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day4-3.jpg" ],
             },
             { 
               day: 5, 
@@ -480,7 +480,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Optional: Beginner surf lesson.",
                 "Evening: Dinner and leisure time to explore Canggu's vibrant cafe culture."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day5-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day5-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day5-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day5-2.jpg" ],
               coordinates: { lat: -8.6478, lng: 115.1385 }, // Canggu
               zoom: 13
             },
@@ -493,7 +493,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Enjoy quiet ceremonial feeling and optimal photography opportunities.",
                 "Evening: Slow restorative yoga to integrate the day’s energy."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-3.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day6-3.jpg" ],
               coordinates: { lat: -8.6212, lng: 115.0868 }, // Tanah Lot
               zoom: 13
             },
@@ -506,7 +506,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Free afternoon to enjoy beach clubs, boutique shopping, or a seaside spa.",
                 "Evening class: Restorative practices, optionally incorporating gentle moon salutations."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day7-1.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day7-1.jpg" ],
               coordinates: { lat: -8.6845, lng: 115.1599 }, // Seminyak
               zoom: 13
             },
@@ -518,7 +518,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Witness the spectacular sunset **Kecak Fire Dance** (male chorus, rhythmic chanting).",
                 "Evening: Return to Seminyak or dine at a nearby clifftop venue."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day8-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/bali2.jpg" ],
               coordinates: { lat: -8.8291, lng: 115.0849 }, // Uluwatu
               zoom: 13
             },
@@ -531,7 +531,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Late afternoon: Group sharing circle and a **gratitude closing ceremony** with guided journaling.",
                 "Farewell dinner with live music and certificate of participation."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day9-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day9-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day9-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day9-2.jpg" ],
             },
             { 
               day: 10, 
@@ -541,7 +541,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Breakfast and check-out.",
                 "Private transfer to Ngurah Rai International Airport (DPS)."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day-10.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/bali-yoga-retreat/day-10.jpg" ],
             },
         ],
         reviews: [
@@ -568,11 +568,11 @@ export const TOUR_DATA: Record<string, TripData> = {
     duration: '5 Nights • 6 Days',
     type: 'Luxury & Adventure',
     images: [
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai1.jpg", 
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai2.jpg", 
-      "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai3.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai1.jpg", 
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai2.jpg", 
+      "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai3.jpg",
     ],
-    mapImageUrl: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/map.jpg",
+    mapImageUrl: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/map.jpg",
     facts: {
         currency: { value: "AED (Dirham)", iconPath: ICON_PATHS.CURRENCY, svgAttributes: { strokeWidth: 1.5 } },
         avgTemp: { value: "27°C", iconPath: ICON_PATHS.TEMPERATURE, svgAttributes: { viewBox: "0 0 24 24", strokeWidth: 2.5 } },
@@ -624,7 +624,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "🏨 Check-in & relax after your long-haul flight from the USA.",
                 "Evening: Buffet Dinner in the hotel & 🌙 Overnight stay in Dubai."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day1-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-3.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day1-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day1-3.jpg" ],
               coordinates: { lat: 25.2532, lng: 55.3657 }, // Dubai Airport
               zoom: 10
             },
@@ -638,7 +638,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "🌆 Evening: Party at Aura Skypool Dubai – the world’s highest 360° infinity pool with music, skyline views, and drinks (8 pm onwards).",
                 "Ala Carte Dinner with music & 🌙 Overnight stay at hotel in Dubai."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day2-1.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day2-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day4-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day2-1.jpg" ],
               coordinates: { lat: 25.1127, lng: 55.1390 }, // Palm Jumeirah / Aura Skypool Area
               zoom: 12
             },
@@ -654,7 +654,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "**Luxurious BBQ Dinner** with closest seating to stage under the stars at desert camp.",
                 "🌙 Return to hotel & overnight stay."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-4.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-5.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-4.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/dubai-discovery/day3-5.jpg" ],
               coordinates: { lat: 24.8500, lng: 55.7000 }, // Desert Reserve
               zoom: 10
             },
@@ -668,7 +668,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Free time for shopping.",
                 "Evening: Buffet Dinner in the hotel & 🌙 Overnight stay in Dubai."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day4-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day4-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day4-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day4-2.jpg" ],
               coordinates: { lat: 25.0784, lng: 55.1407 }, // Dubai Marina
               zoom: 13
             },
@@ -682,7 +682,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Evening: Relax on a **private 4-hour yacht party** in Dubai Marina with unlimited drinks, a BBQ dinner, and scenic cruising past Palm Jumeirah, Bluewaters, and Ain Dubai.",
                 "🌙 Overnight stay in Dubai."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day5-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day5-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day5-3.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day5-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day5-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day5-3.jpg" ],
             },
             { 
               day: 6, 
@@ -693,7 +693,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "✈️ Board your flight back to the USA.",
                 "📸 Take home unforgettable memories of Dubai’s Adventures."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/luxury-adventure/day6-1.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/luxury-adventure/day6-1.jpg" ],
             },
         ],
         reviews: [
@@ -717,11 +717,11 @@ export const TOUR_DATA: Record<string, TripData> = {
     duration: '6 Nights • 7 Days',
     type: 'Wellness, Yoga & Spiritual',
     images: [
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg", 
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-2.jpg", 
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-3.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg", 
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-2.jpg", 
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-3.jpg",
     ],
-    mapImageUrl: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/map.jpg",
+    mapImageUrl: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/map.jpg",
     facts: {
         currency: { value: "INR (Rupee)", iconPath: ICON_PATHS.CURRENCY, svgAttributes: { strokeWidth: 1.5 } },
         avgTemp: { value: "24°C (Avg)", iconPath: ICON_PATHS.TEMPERATURE, svgAttributes: { viewBox: "0 0 24 24", strokeWidth: 2.5 } },
@@ -769,7 +769,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Evening: Orientation session with your yoga master.",
                 "Light sattvic welcome dinner & Overnight stay in Rishikesh."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day1-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day1-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day1-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day1-2.jpg" ],
               coordinates: { lat: 30.0869, lng: 78.2676 }, // Rishikesh
               zoom: 11
             },
@@ -784,7 +784,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Evening: Ganga Aarti ceremony.",
                 "Overnight in Rishikesh."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day2-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day2-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day2-3.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day2-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day2-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day2-3.jpg" ],
               coordinates: { lat: 30.1302, lng: 78.3242 }, // Parmarth Niketan Area
               zoom: 12
             },
@@ -799,7 +799,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Evening: Sound healing & mantra chanting session.",
                 "Overnight in Rishikesh."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day3-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day3-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day3-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day3-4.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day3-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day3-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day3-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day3-4.jpg" ],
               coordinates: { lat: 30.1198, lng: 78.3090 }, // Tapovan Area
               zoom: 14
             },
@@ -814,7 +814,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Evening: Har Ki Pauri Ganga Aarti (special VIP seating).",
                 "Return to Rishikesh & overnight stay."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day4-4.jpg" ],
               coordinates: { lat: 29.9560, lng: 78.1706 }, // Har Ki Pauri, Haridwar
               zoom: 12
             },
@@ -829,7 +829,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Evening: Silent meditation by candlelight.",
                 "Overnight in Rishikesh."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day5-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day5-2.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day5-3.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day5-4.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day5-5.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day5-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day5-2.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day5-3.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day5-4.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day5-5.jpg" ],
               coordinates: { lat: 30.1130, lng: 78.3150 }, // Beatles Ashram
               zoom: 12
             },
@@ -843,7 +843,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Evening: Fire ceremony (Havan) with Vedic chanting for purification.",
                 "Overnight in Rishikesh."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day6-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day6-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day6-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day6-2.jpg" ],
             },
             { 
               day: 7, 
@@ -853,7 +853,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Breakfast.",
                 "Private transfer to Delhi Airport for onward journey."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/day7-1.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/day7-1.jpg" ],
             },
         ],
         reviews: [
@@ -878,11 +878,11 @@ export const TOUR_DATA: Record<string, TripData> = {
     duration: '5 Nights • 6 Days',
     type: 'Surf, Adventure & Island Lifestyle',
     images: [
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/main1.jpg", 
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-03.jpg.jpg", 
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-09.jpg.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/main1.jpg", 
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-03.jpg.jpg", 
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-09.jpg.jpg",
     ],
-    mapImageUrl: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tahiti/map.jpg",
+    mapImageUrl: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tahiti/map.jpg",
     facts: {
         currency: { value: "XPF (CFP Franc)", iconPath: ICON_PATHS.CURRENCY, svgAttributes: { strokeWidth: 1.5 } },
         avgTemp: { value: "26°C (Avg)", iconPath: ICON_PATHS.TEMPERATURE, svgAttributes: { viewBox: "0 0 24 24", strokeWidth: 2.5 } },
@@ -931,7 +931,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Complimentary transfer to Green Lodge Moorea for check-in.",
                 "Free time to settle in, explore the lodge, and relax."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-07.jpg.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-12.jpg.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-07.jpg.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-12.jpg.jpg" ],
               coordinates: { lat: -17.5069, lng: -149.7577 }, // Green Lodge area
               zoom: 11
             },
@@ -945,7 +945,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Visit Belvedere Lookout, interior viewpoints, waterfalls, and plantations.",
                 "Tasting at the Rotui Rum Distillery."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-06.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-14.jpg.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/tahiti-visual-02.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-06.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-14.jpg.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/tahiti-visual-02.jpg" ],
               coordinates: { lat: -17.5330, lng: -149.8335 }, // Belvedere Lookout
               zoom: 12
             },
@@ -959,7 +959,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Explore coral gardens and tropical marine life in protected waters.",
                 "Evening: Free for rest or independent exploration."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day3-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day3-2.jpg","https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day3-3.jpg","https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day3-4.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day3-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day3-2.jpg","https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day3-3.jpg","https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day3-4.jpg" ],
               coordinates: { lat: -17.4900, lng: -149.8500 }, // Lagoon area
               zoom: 14
             },
@@ -970,7 +970,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Guided ATV adventure through Moorea’s valleys and jungle trails.",
                 "Remainder of the day at leisure."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day4-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day4-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day4-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day4-2.jpg" ],
               coordinates: { lat: -17.5500, lng: -149.8000 }, // Interior/Ocean
               zoom: 12
             },
@@ -982,7 +982,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Optional ideas: Beach time, lagoon cruising, spa services, or rental car exploration.",
                 "Evening: Hosted Farewell Dinner celebrating the week’s experience."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day5-1.jpg", "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day5-2.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day5-1.jpg", "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day5-2.jpg" ],
               coordinates: { lat: -17.5069, lng: -149.7577 }, // Green Lodge
               zoom: 13
             },
@@ -996,7 +996,7 @@ export const TOUR_DATA: Record<string, TripData> = {
                 "Transfer to Fa’a’ā International Airport (PPT).",
                 "Return flight to Los Angeles or San Francisco (Supplement applies from different airports)."
               ],
-              images: [ "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/tihati/endless-summer/day6.jpg" ],
+              images: [ "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/tihati/endless-summer/day6.jpg" ],
             },
         ],
         reviews: [

@@ -255,7 +255,7 @@ const TripOverviewBooking = ({ data }: TripOverviewProps) => {
               <div className="grid-cols-2 gap-2 h-100 rounded-2xl overflow-hidden shadow-lg hidden md:grid">
                  <div className="w-full h-[150px] relative">
                   <KoursairImage
-                    src="https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/main1.jpg"
+                    src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/main1.jpg"
                     alt="Safari"
                     fill
                     className="object-cover hover:scale-110 transition duration-500"
@@ -263,7 +263,7 @@ const TripOverviewBooking = ({ data }: TripOverviewProps) => {
                 </div>
                 <div className="w-full h-[150px] relative">
                   <KoursairImage
-                    src="https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/main3.jpg"
+                    src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/main3.jpg"
                     alt="Lion"
                     fill
                     className="object-cover hover:scale-110 transition duration-500"
@@ -271,7 +271,7 @@ const TripOverviewBooking = ({ data }: TripOverviewProps) => {
                 </div>
                 <div className="col-span-2 w-[462px] h-[257px]">
                   <KoursairImage
-                    src="https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/kenya/main2.jpg"
+                    src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/kenya/main2.jpg"
                     alt="Mara"
                     fill
                     className="object-contain hover:scale-110 transition duration-500"

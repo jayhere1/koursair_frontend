@@ -1,7 +1,7 @@
   export const trips = [
     { 
       id: 1,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
       category: "HISTORIC",
       slug: "dubai-discovery",
       country: "dubai",
@@ -16,7 +16,7 @@
     },
     {
       id: 2,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/BaliResort.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/BaliResort.jpg",
       category: "SPIRITUAL",
       title: "Bali Yoga Retreat",
       country: "bali",
@@ -31,7 +31,7 @@
     },
     {
       id: 3,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
       category: "MUSEUM",
       country: "thailand",
       title: "Thailand Vibrant Escape",
@@ -46,7 +46,7 @@
     },
     {
       id: 4,
-      image: "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg",
+      image: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/india/yoga-healing/main-1.jpg",
       category: "WALKING",
       slug: "rishikesh-haridwar-yoga-healing",
       country: "india",
@@ -79,7 +79,7 @@
     {
       id: 1,
       image:
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/dubai/museum_of_the_future_dubai.jpg",
       category: "HISTORIC",
       slug: "dubai-discovery",
       country: "dubai",
@@ -95,7 +95,7 @@
     {
       id: 2,
       image:
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/bali/BaliResort.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/bali/BaliResort.jpg",
       category: "SPIRITUAL",
       title: "Bali Yoga Retreat",
       country: "bali",
@@ -111,7 +111,7 @@
     {
       id: 3,
       image:
-        "https://koursair-media.s3.us-east-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
+        "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/destination/thailand/Thailand_Street.jpg",
       category: "MUSEUM",
       country: "thailand",
       title: "Thailand Vibrant Escape",

@@ -12,7 +12,7 @@ const AboutContentSection = () => {
           
           <div className="order-2 md:order-1 relative h-64 sm:h-80 md:h-96">
             <KoursairImage
-              src="https://koursair-media.s3.us-east-1.amazonaws.com/images/others/about/about.jpg"
+              src="https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/others/about/about.jpg"
               alt="About Koursair"
               fill
               className="object-cover transform hover:scale-105 transition-transform duration-700 rounded-xl"

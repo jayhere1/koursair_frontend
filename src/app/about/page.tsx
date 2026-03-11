@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Koursair",
     images: [
       {
-        url: "https://koursair-media.s3.us-east-1.amazonaws.com/images/banners/about_hero.jpg",
+        url: "https://koursair-media-996549485205-ap-south-1.s3.ap-south-1.amazonaws.com/images/banners/about_hero.jpg",
         width: 1200,
         height: 630,
         alt: "About Koursair – Modern Group & Solo Travel",
