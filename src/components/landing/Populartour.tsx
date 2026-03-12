@@ -24,7 +24,7 @@ interface TourCard {
 function mapCmsToCards(cmsTours: any[]): TourCard[] {
   return cmsTours.map((t: any, i: number) => ({
     id: t.id || i + 1,
-    image: t.listingImage || t.images?.[0] || "",
+    image: t.listingImage?.url || t.images?.[0]?.url || "",
     category: t.type || "",
     title: t.title,
     country: t.destination?.slug || "",
